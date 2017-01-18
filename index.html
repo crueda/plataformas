@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Dashboard</title>
+  <title>Kyros LBS | Plataformas</title>
+  <link href='./img/kyros_v2.png' rel='shortcut icon' type='image/png'>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -46,7 +47,7 @@
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b>LTE</span>
+      <span class="logo-lg"><b>Kyros</b>LBS</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -251,22 +252,22 @@
             </ul>
           </li>
           <!-- User Account: style can be found in dropdown.less -->
-          <li class="dropdown user user-menu">
+          <!--li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Alexander Pierce</span>
+              <img src="./img/kyros_v2.png" class="user-image" alt="User Image">
+              <span class="hidden-xs"></span>
             </a>
             <ul class="dropdown-menu">
-              <!-- User image -->
+
               <li class="user-header">
-                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="./img/kyros_v2.png" class="img-circle" alt="User Image">
 
                 <p>
-                  Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
+                  Kyros LBS
+                  <small>Elecnor - Deimos group</small>
                 </p>
               </li>
-              <!-- Menu Body -->
+
               <li class="user-body">
                 <div class="row">
                   <div class="col-xs-4 text-center">
@@ -279,9 +280,9 @@
                     <a href="#">Friends</a>
                   </div>
                 </div>
-                <!-- /.row -->
+
               </li>
-              <!-- Menu Footer-->
+   
               <li class="user-footer">
                 <div class="pull-left">
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
@@ -291,7 +292,7 @@
                 </div>
               </li>
             </ul>
-          </li>
+          </li-->
           <!-- Control Sidebar Toggle Button -->
           <li>
             <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
@@ -307,17 +308,17 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="./img/kyros_v2.png" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          <p>Plataformas</p>
+          <!--a href="#"><i class="fa fa-circle text-success"></i> Online</a-->
         </div>
       </div>
       <!-- search form -->
       <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Search...">
+          <input type="text" name="q" class="form-control" placeholder="Buscar...">
               <span class="input-group-btn">
                 <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
                 </button>
@@ -327,7 +328,39 @@
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
-        <li class="header">MAIN NAVIGATION</li>
+        <li class="header">Menú principal</li>
+
+        <li class="active treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Producción</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="arquitectura_produccion.html"><i class="fa fa-circle-o"></i>Arquitectura</a></li>
+            <li><a href="estado_produccion.html"><i class="fa fa-circle-o"></i>Estado</a></li>
+            <li><a href="trafico_produccion.html"><i class="fa fa-circle-o"></i>Trafico</a></li>
+            <li><a href="estadisticas_produccion.html"><i class="fa fa-circle-o"></i>Estadisticas</a></li>
+          </ul>
+        </li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Correos</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="arquitectura_correos.html"><i class="fa fa-circle-o"></i>Arquitectura</a></li>
+            <li><a href="estado_correos.html"><i class="fa fa-circle-o"></i>Estado</a></li>
+            <li><a href="trafico_correos.html"><i class="fa fa-circle-o"></i>Trafico</a></li>
+            <li><a href="estadisticas_correos.html"><i class="fa fa-circle-o"></i>Estadisticas</a></li>
+          </ul>
+        </li>
+
+
         <li class="active treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
