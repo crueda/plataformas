@@ -1,0 +1,1 @@
+rsync -avr /Users/Carlos/Workspace/plataformas/* root@192.168.29.4:/home/kyros/www/files/plataformas
