@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
   <title>Kyros LBS | Plataformas</title>
   <link href='./img/kyros_v2.png' rel='shortcut icon' type='image/png'>
   <!-- Tell the browser to be responsive to screen width -->

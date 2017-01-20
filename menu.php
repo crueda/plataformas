@@ -1,7 +1,11 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
+<meta http-equiv="expires" content="Sun, 01 Jan 2014 00:00:00 GMT"/>
+<meta http-equiv="pragma" content="no-cache" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <base target="_parent" />
   <title>Kyros LBS | Plataformas</title>
