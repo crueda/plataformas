@@ -89,7 +89,7 @@
                 </span>
               </a>
               <ul class="treeview-menu">
-                <li><a href="./CPD/trafico_uva.php"><i class="fa fa-circle-o"></i>Tráfico</a></li>
+                <li><a href="./cpd_uva_trafico.php"><i class="fa fa-circle-o"></i>Tráfico</a></li>
               </ul>
               <ul class="treeview-menu">
                 <li><a href="https://drive.google.com/a/deimos-space.com/file/d/0B6b11tK_Z5aSZlNEa2lNMk5XQU0/edit" target="_blank"><i class="fa fa-circle-o"></i>IPs</a></li>
@@ -102,7 +102,7 @@
                 </span>
               </a>
               <ul class="treeview-menu">
-                <li><a href="./CPD/trafico_oficina.php"><i class="fa fa-circle-o"></i>Tráfico</a></li>
+                <li><a href="./cpd_oficina_trafico.php"><i class="fa fa-circle-o"></i>Tráfico</a></li>
               </ul>
               <ul class="treeview-menu">
                 <li><a href="./CPD/temp_oficina_frontal.php"><i class="fa fa-circle-o"></i>Sensor frontal</a></li>
@@ -195,9 +195,9 @@
             <i class="fa fa-dashboard"></i> <span>Correos Pre</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
-              <small class="label pull-right bg-red">0</small>
+              <!--small class="label pull-right bg-red">0</small>
               <small class="label pull-right bg-yellow">0</small>
-              <small class="label pull-right bg-green">0</small>
+              <small class="label pull-right bg-green">0</small-->
             </span>
           </a>
           <ul class="treeview-menu">

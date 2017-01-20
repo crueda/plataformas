@@ -52,8 +52,12 @@
     </a>
 
     <!-- BARRA SUPERIOR-->
-    <iframe src="./nav.php" frameborder="0" style="overflow: hidden; height: 100%;
-        width: 100%; position: absolute;" height="100%" width="100%"></iframe>
+    <?php
+    $file = fopen("./nav0.php", "r");
+    while(!feof($file)) {
+    echo fgets($file);
+    }
+    ?>
 
   </header>
     <!-- MENU-->
