@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <base target="_parent" />
   <title>Kyros LBS | Plataformas</title>
   <link href='./img/kyros_v2.png' rel='shortcut icon' type='image/png'>
   <!-- Tell the browser to be responsive to screen width -->
@@ -44,7 +45,7 @@
     <section class="sidebar">
       <!-- Sidebar user panel -->
             <!-- search form -->
-      <form action="#" method="get" class="sidebar-form">
+      <!--form action="#" method="get" class="sidebar-form">
         <div class="input-group">
           <input type="text" name="q" class="form-control" placeholder="Buscar...">
               <span class="input-group-btn">
@@ -52,7 +53,7 @@
                 </button>
               </span>
         </div>
-      </form>
+      </form-->
       
       <div class="user-panel">
         <div class="pull-left image">
@@ -224,8 +225,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="./hawkeye_map.php"><i class="fa fa-circle-o"></i>Mapa</a></li>
-            <li><a href="./hawkeye_urls.php"><i class="fa fa-circle-o"></i>URLs</a></li>
+            <li <?php if ($_GET["o2"]=='m') echo 'class="active"' ?> ><a href="./hawkeye_mapa.php"><i class="fa fa-circle-o"></i>Mapa</a></li>
+            <li <?php if ($_GET["o2"]=='u') echo 'class="active"' ?> ><a href="./hawkeye_urls.php"><i class="fa fa-circle-o"></i>URLs</a></li>
             <li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> ><a href="./hawkeye_estado.php"><i class="fa fa-circle-o"></i>Estado</a></li>
           </ul>
         </li>

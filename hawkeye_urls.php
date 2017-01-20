@@ -61,7 +61,7 @@
   </header>
     <!-- MENU-->
 
-    <iframe src="./menu.php?o1=h&o2=e" frameborder="0" style="overflow: hidden; height: 100%;
+    <iframe src="./menu.php?o1=h&o2=u" frameborder="0" style="overflow: hidden; height: 100%;
         width: 100%; position: absolute;" height="100%" width="100%"></iframe>
 
 
@@ -71,7 +71,7 @@
     <section class="content-header">
       <h1>
         Hawkeye
-        <small>Estado</small>
+        <small>URLs</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Menú</a></li>
@@ -82,18 +82,7 @@
     <!-- Main content -->
     <section class="content">
 
-<iframe src="https://<?php
-    $file = fopen('./credentials/user_nagios.txt', 'r');
-    while(!feof($file)) {
-    echo fgets($file);
-    }
-    ?>:<?php
-    $file = fopen('./credentials/pass_nagios.txt', 'r');
-    while(!feof($file)) {
-    echo fgets($file);
-    }
-    ?>@hawkeye.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=Hawkeye-production&style=overview" frameborder="0" style="overflow: hidden; height: 100%;
-        width: 100%; position: absolute;" height="100%" width="100%"></iframe>
+
 
 
     </section>
