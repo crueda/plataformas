@@ -84,8 +84,11 @@
     <!-- Main content -->
     <section class="content">
 
-<iframe src="https://hawkeye.kyroslbs.com/mrtg/" frameborder="0" style="overflow: hidden; height: 100%;
+<iframe src="http://nagiosadmin:p4j4r0@mykyros.es/traffic/" frameborder="0" style="overflow: hidden; height: 100%;
         width: 100%; position: absolute;" height="100%" width="100%"></iframe>
+
+
+
 
     </section>
     <!-- /.content -->

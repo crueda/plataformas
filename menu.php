@@ -58,6 +58,12 @@
               <ul class="treeview-menu">
                 <li><a href="../CPD/trafico_oficina.php"><i class="fa fa-circle-o"></i>Tráfico</a></li>
               </ul>
+              <ul class="treeview-menu">
+                <li><a href="../CPD/temp_oficina_frontal.php"><i class="fa fa-circle-o"></i>Sensor frontal</a></li>
+              </ul>
+              <ul class="treeview-menu">
+                <li><a href="../CPD/temp_oficina_trasero.php"><i class="fa fa-circle-o"></i>Sensor trasero</a></li>
+              </ul>
             </li>
             <li>
               <a href="#"><i class="fa fa-circle-o"></i>Rally
@@ -86,7 +92,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="../produccion/map.php"><i class="fa fa-circle-o"></i>Arquitectura</a></li>
+            <li><a href="../produccion/map.php"><i class="fa fa-circle-o"></i>Mapa</a></li>
+            <li><a href="../produccion/urls.php"><i class="fa fa-circle-o"></i>URLs</a></li>
             <li><a href="../produccion/estado.php"><i class="fa fa-circle-o"></i>Estado</a></li>
             <li><a href="../produccion/estadisticas.php"><i class="fa fa-circle-o"></i>Estadisticas</a></li>
           </ul>
@@ -100,9 +107,25 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="../correos/map.php"><i class="fa fa-circle-o"></i>Arquitectura</a></li>
+            <li><a href="../correos/map.php"><i class="fa fa-circle-o"></i>Mapa</a></li>
+            <li><a href="../correos/urls.php"><i class="fa fa-circle-o"></i>URLs</a></li>
             <li><a href="../correos/estado.php"><i class="fa fa-circle-o"></i>Estado</a></li>
             <li><a href="../correos/estadisticas.php"><i class="fa fa-circle-o"></i>Estadisticas</a></li>
+          </ul>
+        </li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>WRC</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="../wrc/map.php"><i class="fa fa-circle-o"></i>Mapa</a></li>
+            <li><a href="../wrc/urls.php"><i class="fa fa-circle-o"></i>URLs</a></li>
+            <li><a href="../wrc/estado.php"><i class="fa fa-circle-o"></i>Estado</a></li>
+            <li><a href="../wrc/estadisticas.php"><i class="fa fa-circle-o"></i>Estadisticas</a></li>
           </ul>
         </li>
 
@@ -114,7 +137,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="../hawkeye/map.php"><i class="fa fa-circle-o"></i>Arquitectura</a></li>
+            <li><a href="../hawkeye/map.php"><i class="fa fa-circle-o"></i>Mapa</a></li>
+            <li><a href="../hawkeye/urls.php"><i class="fa fa-circle-o"></i>URLs</a></li>
             <li><a href="../hawkeye/estado.php"><i class="fa fa-circle-o"></i>Estado</a></li>
             <li><a href="../hawkeye/estadisticas.php"><i class="fa fa-circle-o"></i>Estadisticas</a></li>
           </ul>
@@ -128,7 +152,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="../sumo/map.php"><i class="fa fa-circle-o"></i>Arquitectura</a></li>
+            <li><a href="../sumo/map.php"><i class="fa fa-circle-o"></i>Mapa</a></li>
+            <li><a href="../sumo/urls.php"><i class="fa fa-circle-o"></i>URLs</a></li>
             <li><a href="../sumo/estado.php"><i class="fa fa-circle-o"></i>Estado</a></li>
             <li><a href="../sumo/estadisticas.php"><i class="fa fa-circle-o"></i>Estadisticas</a></li>
           </ul>

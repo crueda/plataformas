@@ -84,7 +84,7 @@
     <!-- Main content -->
     <section class="content">
 
-<iframe src="https://mykyros.es/pnp4nagios/index.php/graph?host=trafico-web-camion&srv=https%20sessions" frameborder="0" style="overflow: hidden; height: 100%;
+<iframe src="nagiosadmin:p4j4r0@https://mykyros.es/pnp4nagios/index.php/graph?host=trafico-web-camion&srv=https%20sessions" frameborder="0" style="overflow: hidden; height: 100%;
         width: 100%; position: absolute;" height="100%" width="100%"></iframe>
 
     </section>
