@@ -43,7 +43,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="index.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b></b>LBS</span>
       <!-- logo for regular state and mobile devices -->
@@ -51,12 +51,8 @@
     </a>
 
     <!-- BARRA SUPERIOR-->
-    <?php
-    $file = fopen("./nav.php", "r");
-    while(!feof($file)) {
-    echo fgets($file);
-    }
-    ?>
+    <iframe src="./nav.php" frameborder="0" style="overflow: hidden; height: 100%;
+        width: 100%; position: absolute;" height="100%" width="100%"></iframe>
 
   </header>
     <!-- MENU-->
@@ -97,13 +93,6 @@
     }
     ?>
 
-  <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      <b>Version</b> 1.0
-    </div>
-    <strong>Copyright &copy; 2005-2017 <a href="http://kyroslbs.com">Kyros LBS</a>.</strong> All rights
-    reserved.
-  </footer>
 
     <!-- ACTIVIDAD-->
     <?php
