@@ -45,6 +45,9 @@
               <ul class="treeview-menu">
                 <li><a href="../CPD/trafico_uva.php"><i class="fa fa-circle-o"></i>Tráfico</a></li>
               </ul>
+              <ul class="treeview-menu">
+                <li><a href="https://drive.google.com/a/deimos-space.com/file/d/0B6b11tK_Z5aSZlNEa2lNMk5XQU0/edit" target="_blank"><i class="fa fa-circle-o"></i>IPs</a></li>
+              </ul>
             </li>
             <li>
               <a href="#"><i class="fa fa-circle-o"></i>Oficina
