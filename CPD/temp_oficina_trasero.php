@@ -73,7 +73,7 @@
     <section class="content-header">
       <h1>
         CPD de la oficina
-        <small>Temperatura y humedad del sensor frontal</small>
+        <small>Temperatura y humedad del sensor trasero</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Menú</a></li>
@@ -84,7 +84,19 @@
     <!-- Main content -->
     <section class="content">
 
-<iframe src="https://nagiosadmin:d31m05@hawkeye.kyroslbs.com/pnp4nagios/index.php/graph?host=raspberry&srv=Sensor-trasero" frameborder="0" style="overflow: hidden; height: 100%;
+
+<iframe src="https://<?php
+    $file = fopen('../credentials/user_nagios.txt', 'r');
+    while(!feof($file)) {
+    echo fgets($file);
+    }
+    ?>:
+    $file = fopen('../credentials/pass_nagios.txt', 'r');
+    while(!feof($file)) {
+    echo fgets($file);
+    }
+    ?>
+    @hawkeye.kyroslbs.com/pnp4nagios/index.php/graph?host=raspberry&srv=Sensor-trasero" frameborder="0" style="overflow: hidden; height: 100%;
         width: 100%; position: absolute;" height="100%" width="100%"></iframe>
     </section>
     <!-- /.content -->

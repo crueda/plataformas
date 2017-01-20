@@ -84,9 +84,21 @@
     <!-- Main content -->
     <section class="content">
 
-<iframe src="https://nagiosadmin:d31m05@hawkeye.kyroslbs.com/pnp4nagios/index.php/graph?host=raspberry&srv=Sensor-frontal" frameborder="0" style="overflow: hidden; height: 100%;
+<iframe src="http://<?php
+    $file = fopen('../credentials/user_nagios.txt', 'r');
+    while(!feof($file)) {
+    echo fgets($file);
+    }
+    ?>:<?php
+    $file = fopen('../credentials/pass_nagios.txt', 'r');
+    while(!feof($file)) {
+    echo fgets($file);
+    }
+    ?>@hawkeye.kyroslbs.com/pnp4nagios/index.php/graph?host=raspberry&srv=Sensor-frontal" frameborder="0" style="overflow: hidden; height: 100%;
         width: 100%; position: absolute;" height="100%" width="100%"></iframe>
 
+<iframe src="https://nagiosadmin:p4j4r0@hawkeye.kyroslbs.com/pnp4nagios/index.php/graph?host=raspberry&srv=Sensor-frontal" frameborder="0" style="overflow: hidden; height: 100%;
+        width: 100%; position: absolute;" height="100%" width="100%"></iframe>
 
     </section>
 

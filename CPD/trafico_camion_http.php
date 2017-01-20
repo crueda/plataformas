@@ -84,7 +84,20 @@
     <!-- Main content -->
     <section class="content">
 
-<iframe src="https://nagiosadmin:p4j4r0@mykyros.es/pnp4nagios/index.php/graph?host=trafico-web-camion&srv=http%20sessions" frameborder="0" style="overflow: hidden; height: 100%;
+<iframe src="http://
+    <?php
+    $file = fopen('../credentials/user_nagios.txt', 'r');
+    while(!feof($file)) {
+    echo fgets($file);
+    }
+    ?>:
+    <?php
+    $file = fopen('../credentials/pass_nagios.txt', 'r');
+    while(!feof($file)) {
+    echo fgets($file);
+    }
+    ?>
+    @mykyros.es/pnp4nagios/index.php/graph?host=trafico-web-camion&srv=http%20sessions" frameborder="0" style="overflow: hidden; height: 100%;
         width: 100%; position: absolute;" height="100%" width="100%"></iframe>
 
 

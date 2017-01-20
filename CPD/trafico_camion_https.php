@@ -73,7 +73,7 @@
     <section class="content-header">
       <h1>
         CPD del camión
-        <small>Tráfico HTTP</small>
+        <small>Tráfico HTTPS</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Menú</a></li>
@@ -84,8 +84,23 @@
     <!-- Main content -->
     <section class="content">
 
-<iframe src="nagiosadmin:p4j4r0@https://mykyros.es/pnp4nagios/index.php/graph?host=trafico-web-camion&srv=https%20sessions" frameborder="0" style="overflow: hidden; height: 100%;
+<iframe src="http://<?php
+    $file = fopen('../credentials/user_nagios.txt', 'r');
+    while(!feof($file)) {
+    echo fgets($file);
+    }
+    ?>:
+    <?php $file = fopen('../credentials/pass_nagios.txt', 'r');
+    while(!feof($file)) {
+    echo fgets($file);
+    }
+    ?>@mykyros.es/pnp4nagios/index.php/graph?host=trafico-web-camion&srv=https%20sessions" frameborder="0" style="overflow: hidden; height: 100%;
         width: 100%; position: absolute;" height="100%" width="100%"></iframe>
+
+<!--iframe src="http://nagiosadmin:p4j4r0@mykyros.es/pnp4nagios/index.php/graph?host=trafico-web-camion&srv=https%20sessions" frameborder="0" style="overflow: hidden; height: 100%;
+        width: 100%; position: absolute;" height="100%" width="100%"></iframe-->
+
+
 
     </section>
     <!-- /.content -->
