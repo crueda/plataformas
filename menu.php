@@ -231,7 +231,8 @@
           <ul class="treeview-menu">
             <li <?php if ($_GET["o2"]=='m') echo 'class="active"' ?> ><a href="./hawkeye_mapa.php"><i class="fa fa-circle-o"></i>Mapa</a></li>
             <li <?php if ($_GET["o2"]=='u') echo 'class="active"' ?> ><a href="./hawkeye_urls.php"><i class="fa fa-circle-o"></i>URLs</a></li>
-            <li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> ><a href="./hawkeye_estado.php"><i class="fa fa-circle-o"></i>Estado</a></li>
+            <!--li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> ><a href="./hawkeye_estado.php"><i class="fa fa-circle-o"></i>Estado</a></li-->
+            <li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=h'.'&02=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
           </ul>
         </li>
 
