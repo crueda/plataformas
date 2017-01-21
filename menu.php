@@ -105,10 +105,14 @@
                 <li><a href="./cpd_oficina_trafico.php"><i class="fa fa-circle-o"></i>Tráfico</a></li>
               </ul>
               <ul class="treeview-menu">
-                <li><a href="./CPD/temp_oficina_frontal.php"><i class="fa fa-circle-o"></i>Sensor frontal</a></li>
+                <li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=oficina'.'&02=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
+              </ul>
+
+              <ul class="treeview-menu">
+                <li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=sf'.'&02=e'?>"><i class="fa fa-circle-o"></i>Sensor frontal</a></li>
               </ul>
               <ul class="treeview-menu">
-                <li><a href="./CPD/temp_oficina_trasero.php"><i class="fa fa-circle-o"></i>Sensor trasero</a></li>
+                <li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=st'.'&02=e'?>"><i class="fa fa-circle-o"></i>Sensor trasero</a></li>
               </ul>
             </li>
             <li>
@@ -130,7 +134,7 @@
           </ul>
         </li>
 
-        <li class="treeview">
+        <li class="<?php if ($_GET["o1"]=='k') echo 'active' ?> treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Kyros</span>
             <span class="pull-right-container">
@@ -144,7 +148,7 @@
           </ul>
         </li>
 
-        <li class="treeview">
+        <li class="<?php if ($_GET["o1"]=='kp') echo 'active' ?> treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Kyros Pre</span>
             <span class="pull-right-container">
@@ -154,11 +158,11 @@
           <ul class="treeview-menu">
             <li><a href="./kyrospre_map.php"><i class="fa fa-circle-o"></i>Mapa</a></li>
             <li><a href="./kyrospre_urls.php"><i class="fa fa-circle-o"></i>URLs</a></li>
-            <li><a href="./kyrospre_estado.php"><i class="fa fa-circle-o"></i>Estado</a></li>
+            <li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=kp'.'&02=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
           </ul>
         </li>
 
-        <li class="treeview">
+        <li class="<?php if ($_GET["o1"]=='c') echo 'active' ?> treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Correos</span>
             <span class="pull-right-container">
@@ -190,7 +194,7 @@
           </ul>
         </li>
 
-        <li class="treeview">
+        <li class="<?php if ($_GET["o1"]=='cp') echo 'active' ?> treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Correos Pre</span>
             <span class="pull-right-container">
@@ -203,11 +207,11 @@
           <ul class="treeview-menu">
             <li><a href="./correospre_map.php"><i class="fa fa-circle-o"></i>Mapa</a></li>
             <li><a href="./correospre_urls.php"><i class="fa fa-circle-o"></i>URLs</a></li>
-            <li><a href="./correospre_estado.php"><i class="fa fa-circle-o"></i>Estado</a></li>
+            <li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=cp'.'&02=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
           </ul>
         </li>
 
-        <li class="treeview">
+        <li class=" <?php if ($_GET["o1"]=='w') echo 'active' ?> treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>WRC</span>
             <span class="pull-right-container">
@@ -236,7 +240,7 @@
           </ul>
         </li>
 
-        <li class="treeview">
+        <li class="<?php if ($_GET["o1"]=='s') echo 'active' ?> treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>SUMO</span>
             <span class="pull-right-container">
