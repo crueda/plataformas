@@ -122,13 +122,13 @@
                 </span>
               </a>
               <ul class="treeview-menu">
-                <li><a href="./CPD/trafico_sit.php"><i class="fa fa-circle-o"></i>Tráfico SIT</a></li>
+                <li><a href="./cpd_sit_trafico.php"><i class="fa fa-circle-o"></i>Tráfico SIT</a></li>
               </ul>
               <ul class="treeview-menu">
-                <li><a href="./CPD/trafico_camion_http.php"><i class="fa fa-circle-o"></i>Tráfico Camión (http)</a></li>
+                <li><a href="./cpd_sit_trafico_http_camion.php"><i class="fa fa-circle-o"></i>Tráfico Camión (http)</a></li>
               </ul>
               <ul class="treeview-menu">
-                <li><a href="./CPD/trafico_camion_https.php"><i class="fa fa-circle-o"></i>Tráfico Camión (https)</a></li>
+                <li><a href="./cpd_sit_trafico_https_camion.php"><i class="fa fa-circle-o"></i>Tráfico Camión (https)</a></li>
               </ul>
             </li>
           </ul>

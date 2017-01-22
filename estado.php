@@ -133,7 +133,7 @@
         echo 'pnp4nagios/index.php/graph?host=raspberry&srv=Sensor-frontal';
       } 
       else if ($_GET["o1"]=='st') {
-        echo '/pnp4nagios/index.php/graph?host=raspberry&srv=Sensor-trasero';
+        echo 'pnp4nagios/index.php/graph?host=raspberry&srv=Sensor-trasero';
       } 
       else {
         echo 'cgi-bin/nagios3/status.cgi?hostgroup=all';
