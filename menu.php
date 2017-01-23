@@ -1,11 +1,41 @@
+<?php
+
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
+
+$csvHawkeyeFile = file('./data/counters/hawkeye.csv');
+$csvCorreosFile = file('./data/counters/correos.csv');
+
+$dataHawkeye = [];
+foreach ($csvHawkeyeFile as $line) {
+  $dataHawkeye[] = str_getcsv($line, $delimiter = ";" );              
+}
+$dataCorreos = [];
+foreach ($csvCorreosFile as $line) {
+  $dataCorreos[] = str_getcsv($line, $delimiter = ";" );              
+}
+
+$hawkeye_ok = $dataHawkeye[0][0];
+$hawkeye_warning = $dataHawkeye[0][1]; 
+$hawkeye_error = $dataHawkeye[0][2];
+
+$correos_ok = $dataCorreos[0][0];
+$correos_warning = $dataCorreos[0][1]; 
+$correos_error = $dataCorreos[0][2];
+
+$services_ok = $hawkeye_ok + $correos_ok;
+?>
 
 
 <!DOCTYPE html>
 <html>
 <head>
+
   <meta charset="utf-8">
-<meta http-equiv="expires" content="Sun, 01 Jan 2014 00:00:00 GMT"/>
-<meta http-equiv="pragma" content="no-cache" />
+  <meta http-equiv="expires" content="Sun, 01 Jan 2014 00:00:00 GMT"/>
+  <meta http-equiv="pragma" content="no-cache" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <base target="_parent" />
   <title>Kyros LBS | Plataformas</title>
@@ -65,7 +95,7 @@
         </div>
         <div class="pull-left info">
           <p>Menú principal</p>
-          <a href="#"><i class="fa fa-circle text-success"></i> Conectado</a>
+          <a href="#"><i class="fa fa-circle text-success"></i> <?php echo $services_ok ?>servicios Ok</a>
         </div>
       </div>
 
@@ -232,11 +262,14 @@
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Hawkeye</span>
             <span class="pull-right-container">
+              <small class="label pull-right bg-red"><?php  if ($hawkeye_error>0) echo $hawkeye_error; ?></small>
+              <small class="label pull-right bg-yellow"><?php if ($hawkeye_warning>0) echo $hawkeye_warning; ?></small>
+              <small class="label pull-right bg-green"><?php echo $hawkeye_ok ?></small>
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li <?php if ($_GET["o2"]=='m') echo 'class="active"' ?> ><a href="./hawkeye_mapa.php"><i class="fa fa-circle-o"></i>Mapa</a></li>
+           <li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> ><a href="./mapa.php<?php echo '?o1=h'.'&02=m'?>"><i class="fa fa-circle-o"></i>Mapa</a></li>
             <li <?php if ($_GET["o2"]=='u') echo 'class="active"' ?> ><a href="./hawkeye_urls.php"><i class="fa fa-circle-o"></i>URLs</a></li>
             <!--li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> ><a href="./hawkeye_estado.php"><i class="fa fa-circle-o"></i>Estado</a></li-->
             <li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=h'.'&02=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
