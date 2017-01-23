@@ -95,7 +95,7 @@ $services_ok = $hawkeye_ok + $correos_ok;
         </div>
         <div class="pull-left info">
           <p>Menú principal</p>
-          <a href="#"><i class="fa fa-circle text-success"></i> <?php echo $services_ok ?>servicios Ok</a>
+          <a href="#"><i class="fa fa-circle text-success"></i> <?php echo $services_ok ?> servicios Ok</a>
         </div>
       </div>
 
@@ -198,27 +198,14 @@ $services_ok = $hawkeye_ok + $correos_ok;
         <li class="<?php if ($_GET["o1"]=='c') echo 'active' ?> treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Correos</span>
-            <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
-              <small class="label pull-right bg-red"><?php
-    $file = fopen("./data/counters/correos_red.txt", "r");
-    while(!feof($file)) {
-    echo fgets($file);
-    }
-    ?></small>
-              <small class="label pull-right bg-yellow"><?php
-    $file = fopen("./data/counters/correos_yellow.txt", "r");
-    while(!feof($file)) {
-    echo fgets($file);
-    }
-    ?></small>
-              <small class="label pull-right bg-green"><?php
-    $file = fopen("./data/counters/correos_green.txt", "r");
-    while(!feof($file)) {
-    echo fgets($file);
-    }
-    ?></small>
+                <span class="pull-right-container">
+              <small class="label pull-right bg-red"><?php  if ($correos_error>0) echo $correos_error; ?></small>
+              <small class="label pull-right bg-yellow"><?php if ($correos_warning>0) echo $correos_warning; ?></small>
+              <small class="label pull-right bg-green"><?php echo $correos_ok ?></small>
+              <i class="fa fa-angle-left pull-right"></i>
             </span>
+        </span>
           </a>
           <ul class="treeview-menu">
             <li><a href="./correos_map.php"><i class="fa fa-circle-o"></i>Mapa</a></li>

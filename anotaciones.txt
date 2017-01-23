@@ -1,1 +1,1 @@
-rsync -avr /Users/Carlos/Workspace/plataformas/* root@192.168.29.4:/home/kyros/www/files/plataformas
+rsync -avr /Users/Carlos/Workspace/plataformas/* root@172.26.30.11:/var/www/html
