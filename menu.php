@@ -5,8 +5,17 @@ header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
 header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 
+// Recargar cada 60 segundos
+$secondsWait = 60;
+header("Refresh:$secondsWait");
+
+
 $csvHawkeyeFile = file('./data/counters/hawkeye.csv');
 $csvCorreosFile = file('./data/counters/correos.csv');
+$csvCorreospreFile = file('./data/counters/correospre.csv');
+$csvKyrospreFile = file('./data/counters/kyrospre.csv');
+$csvSumoFile = file('./data/counters/sumo.csv');
+$csvKyrosFile = file('./data/counters/kyros.csv');
 
 $dataHawkeye = [];
 foreach ($csvHawkeyeFile as $line) {
@@ -15,6 +24,22 @@ foreach ($csvHawkeyeFile as $line) {
 $dataCorreos = [];
 foreach ($csvCorreosFile as $line) {
   $dataCorreos[] = str_getcsv($line, $delimiter = ";" );              
+}
+$dataCorreospre = [];
+foreach ($csvCorreospreFile as $line) {
+  $dataCorreospre[] = str_getcsv($line, $delimiter = ";" );              
+}
+$dataKyrospre = [];
+foreach ($csvKyrospreFile as $line) {
+  $dataKyrospre[] = str_getcsv($line, $delimiter = ";" );              
+}
+$dataSumo = [];
+foreach ($csvSumoFile as $line) {
+  $dataSumo[] = str_getcsv($line, $delimiter = ";" );              
+}
+$dataKyros = [];
+foreach ($csvKyrosFile as $line) {
+  $dataKyros[] = str_getcsv($line, $delimiter = ";" );              
 }
 
 $hawkeye_ok = $dataHawkeye[0][0];
@@ -25,7 +50,24 @@ $correos_ok = $dataCorreos[0][0];
 $correos_warning = $dataCorreos[0][1]; 
 $correos_error = $dataCorreos[0][2];
 
-$services_ok = $hawkeye_ok + $correos_ok;
+$correospre_ok = $dataCorreospre[0][0];
+$correospre_warning = $dataCorreospre[0][1]; 
+$correospre_error = $dataCorreospre[0][2];
+
+$kyrospre_ok = $dataKyrospre[0][0];
+$kyrospre_warning = $dataKyrospre[0][1]; 
+$kyrospre_error = $dataKyrospre[0][2];
+
+$sumo_ok = $dataSumo[0][0];
+$sumo_warning = $dataSumo[0][1]; 
+$sumo_error = $dataSumo[0][2];
+
+$kyros_ok = $dataKyros[0][0];
+$kyros_warning = $dataKyros[0][1]; 
+$kyros_error = $dataKyros[0][2];
+
+
+$services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyros_ok  + $sumo_ok;
 ?>
 
 
@@ -170,14 +212,17 @@ $services_ok = $hawkeye_ok + $correos_ok;
         <li class="<?php if ($_GET["o1"]=='k') echo 'active' ?> treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Kyros</span>
-            <span class="pull-right-container">
+              <span class="pull-right-container">
+              <small class="label pull-right bg-red"><?php  if ($kyros_error>0) echo $kyros_error; ?></small>
+              <small class="label pull-right bg-yellow"><?php if ($kyros_warning>0) echo $kyros_warning; ?></small>
+              <small class="label pull-right bg-green"><?php echo $kyros_ok ?></small>
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
             <li><a href="./kyros_map.php"><i class="fa fa-circle-o"></i>Mapa</a></li>
             <li><a href="./kyros_urls.php"><i class="fa fa-circle-o"></i>URLs</a></li>
-            <li><a href="./kyros_estado.php"><i class="fa fa-circle-o"></i>Estado</a></li>
+            <li><a href="./estado.php<?php echo '?o1=k&02=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
           </ul>
         </li>
 
@@ -185,6 +230,9 @@ $services_ok = $hawkeye_ok + $correos_ok;
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Kyros Pre</span>
             <span class="pull-right-container">
+              <small class="label pull-right bg-red"><?php  if ($kyrospre_error>0) echo $kyrospre_error; ?></small>
+              <small class="label pull-right bg-yellow"><?php if ($kyrospre_warning>0) echo $kyrospre_warning; ?></small>
+              <small class="label pull-right bg-green"><?php echo $kyrospre_ok ?></small>
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
@@ -198,8 +246,8 @@ $services_ok = $hawkeye_ok + $correos_ok;
         <li class="<?php if ($_GET["o1"]=='c') echo 'active' ?> treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Correos</span>
-              <i class="fa fa-angle-left pull-right"></i>
-                <span class="pull-right-container">
+              <span class="pull-right-container">
+
               <small class="label pull-right bg-red"><?php  if ($correos_error>0) echo $correos_error; ?></small>
               <small class="label pull-right bg-yellow"><?php if ($correos_warning>0) echo $correos_warning; ?></small>
               <small class="label pull-right bg-green"><?php echo $correos_ok ?></small>
@@ -210,19 +258,21 @@ $services_ok = $hawkeye_ok + $correos_ok;
           <ul class="treeview-menu">
             <li><a href="./correos_map.php"><i class="fa fa-circle-o"></i>Mapa</a></li>
             <li><a href="./correos_urls.php"><i class="fa fa-circle-o"></i>URLs</a></li>
-            <li><a href="./correos_estado.php"><i class="fa fa-circle-o"></i>Estado</a></li>
+            <li><a href="./estado.php<?php echo '?o1=s&02=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
           </ul>
         </li>
 
         <li class="<?php if ($_GET["o1"]=='cp') echo 'active' ?> treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Correos Pre</span>
+
             <span class="pull-right-container">
+              <small class="label pull-right bg-red"><?php  if ($correospre_error>0) echo $correospre_error; ?></small>
+              <small class="label pull-right bg-yellow"><?php if ($correospre_warning>0) echo $correospre_warning; ?></small>
+              <small class="label pull-right bg-green"><?php echo $correospre_ok ?></small>
               <i class="fa fa-angle-left pull-right"></i>
-              <!--small class="label pull-right bg-red">0</small>
-              <small class="label pull-right bg-yellow">0</small>
-              <small class="label pull-right bg-green">0</small-->
             </span>
+
           </a>
           <ul class="treeview-menu">
             <li><a href="./correospre_map.php"><i class="fa fa-circle-o"></i>Mapa</a></li>
@@ -234,14 +284,14 @@ $services_ok = $hawkeye_ok + $correos_ok;
         <li class=" <?php if ($_GET["o1"]=='w') echo 'active' ?> treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>WRC</span>
-            <span class="pull-right-container">
+              <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
             <li><a href="./wrc_map.php"><i class="fa fa-circle-o"></i>Mapa</a></li>
             <li><a href="./wrc_urls.php"><i class="fa fa-circle-o"></i>URLs</a></li>
-            <li><a href="./wrc_estado.php"><i class="fa fa-circle-o"></i>Estado</a></li>
+            <li><a href="./estadosit.php<?php echo '?o1=w&02=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
           </ul>
         </li>
 
@@ -266,14 +316,17 @@ $services_ok = $hawkeye_ok + $correos_ok;
         <li class="<?php if ($_GET["o1"]=='s') echo 'active' ?> treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>SUMO</span>
-            <span class="pull-right-container">
+              <span class="pull-right-container">
+              <small class="label pull-right bg-red"><?php  if ($sumo_error>0) echo $sumo_error; ?></small>
+              <small class="label pull-right bg-yellow"><?php if ($sumo_warning>0) echo $sumo_warning; ?></small>
+              <small class="label pull-right bg-green"><?php echo $sumo_ok ?></small>
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
             <li><a href="./sumo_map.php"><i class="fa fa-circle-o"></i>Mapa</a></li>
             <li><a href="./sumo_urls.php"><i class="fa fa-circle-o"></i>URLs</a></li>
-            <li><a href="./sumo_estado.php"><i class="fa fa-circle-o"></i>Estado</a></li>
+            <li><a href="./estado.php<?php echo '?o1=s&02=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
           </ul>
         </li>
 

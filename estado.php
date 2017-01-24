@@ -77,6 +77,18 @@
         else if ($_GET["o1"]=='cp') {
           echo 'CORREOS Pre-producción';
         } 
+        else if ($_GET["o1"]=='k') {
+          echo 'KYROS Producción';
+        } 
+        else if ($_GET["o1"]=='c') {
+          echo 'CORREOS Producción';
+        } 
+        else if ($_GET["o1"]=='s') {
+          echo 'SUMO Producción';
+        } 
+        else if ($_GET["o1"]=='s') {
+          echo 'WRC Producción';
+        } 
         else if ($_GET["o1"]=='kp') {
           echo 'KYROS Pre-producción';
         } 
@@ -94,7 +106,7 @@
         }
         ?>
         <small>    
-        Estado de maquinas y servicios
+        Estado de máquinas y servicios
         </small>
       </h1>
       <!--ol class="breadcrumb">
@@ -125,6 +137,15 @@
       } 
       else if ($_GET["o1"]=='kp') {
         echo 'hawkeye.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=KYROS-Pre-production&style=overview';
+      } 
+      else if ($_GET["o1"]=='k') {
+        echo 'kyros.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=KYROS-Production&style=overview';
+      } 
+      else if ($_GET["o1"]=='s') {
+        echo 'kyros.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=SUMO-Production&style=overview';
+      } 
+      else if ($_GET["o1"]=='c') {
+        echo 'correos.kyroslbs.com/nagios3';
       } 
       else if ($_GET["o1"]=='uva') {
         echo 'correos.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=all&style=overview';
