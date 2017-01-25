@@ -365,14 +365,14 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="./wrc_map.php"><i class="fa fa-circle-o"></i>Mapa</a></li>
-            <li><a href="./estadosit.php?o1=w&o2=e"><i class="fa fa-circle-o"></i>Estado</a></li>
+            <li <?php if ($_GET["o2"]=='m') echo 'class="active"' ?> ><a href="./wrc_map.php"><i class="fa fa-circle-o"></i>Mapa</a></li>
+            <li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> ><a href="./estadosit.php?o1=w&o2=e"><i class="fa fa-circle-o"></i>Estado</a></li>
           </ul>
         </li>
 
-        <li>
-          <a href="./otros/calendario.php">
-            <i class="fa fa-calendar"></i> <span>Calendar</span>
+        <li <?php if ($_GET["o1"]=='calendario') echo 'class="active"' ?>>
+          <a href="./calendario.php">
+            <i class="fa fa-calendar"></i> <span>Calendario</span>
           </a>
         </li>
         

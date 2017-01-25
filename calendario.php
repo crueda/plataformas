@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="./dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="./dist/css/others.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="./dist/css/skins/_all-skins.min.css">
@@ -61,8 +62,8 @@
   </header>
     <!-- MENU-->
 
-    <iframe src="./menu.php<?php echo '?o1='.$_GET["o1"].'&o2='.$_GET["o2"]?>" frameborder="0" style="overflow: hidden; height: 100%;
-        width: 100%; position: absolute;" height="100%" width="100%"></iframe>
+    <iframe src="./menu.php?o1=calendario" frameborder="0" style="overflow: hidden; height: 90%;
+        width: 100%; position: absolute;"></iframe>
 
 
   <!-- Content Wrapper. Contains page content -->
@@ -71,23 +72,21 @@
     <section class="content-header">
       <h1>
         Calendario
-        <small>    
-        LBS
-        </small>
+        <small>LBS</small>
       </h1>
       <!--ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Menú</a></li>
-        <li class="active">Hawkeye</li>
+        <li class="active">CPD Rally</li>
       </ol-->
     </section>
 
     <!-- Main content -->
     <section class="content">
 
+<div class="holds-the-iframe">
 <iframe src="https://calendar.google.com/calendar/embed?src=deimos-space.com_mei3jofjs13o73qe27f7i3m3vc%40group.calendar.google.com&ctz=Europe/Madrid" frameborder="0" style="overflow: hidden; height: 100%;
         width: 100%; position: absolute;" height="100%" width="100%"></iframe>
-
-
+</div>
 
     </section>
     <!-- /.content -->
