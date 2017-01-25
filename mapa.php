@@ -114,11 +114,17 @@
       if ($_GET["o1"]=='h') {
         echo '172.26.30.252/nagvis/frontend/nagvis-js/index.php?mod=Map&act=view&show=Hawkeye&header_menu=0';
       } 
-      else if ($_GET["o1"]=='cp') {
-        echo 'hawkeye.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=CORREOS-Pre-production&style=overview';
+      else if ($_GET["o1"]=='k') {
+        echo '72.26.30.252/nagvis/frontend/nagvis-js/index.php?mod=Map&act=view&show=Kyros&header_menu=0';
       } 
       else if ($_GET["o1"]=='kp') {
-        echo 'hawkeye.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=KYROS-Pre-production&style=overview';
+        echo '72.26.30.252/nagvis/frontend/nagvis-js/index.php?mod=Map&act=view&show=KyrosPre&header_menu=0';
+      } 
+      else if ($_GET["o1"]=='c') {
+        echo '72.26.30.252/nagvis/frontend/nagvis-js/index.php?mod=Map&act=view&show=Correos&header_menu=0';
+      } 
+      else if ($_GET["o1"]=='cp') {
+        echo '72.26.30.252/nagvis/frontend/nagvis-js/index.php?mod=Map&act=view&show=CorreosPre&header_menu=0';
       } 
       else if ($_GET["o1"]=='uva') {
         echo 'correos.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=all&style=overview';

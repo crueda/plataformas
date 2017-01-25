@@ -263,7 +263,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
             </span>
           </a>
           <ul class="treeview-menu">
-            <li <?php if ($_GET["o2"]=='m') echo 'class="active"' ?> ><a href="./kyros_map.php"><i class="fa fa-circle-o"></i>Mapa</a></li>
+           <li <?php if ($_GET["o2"]=='m') echo 'class="active"' ?> ><a href="./mapa.php?o1=k&o2=m"><i class="fa fa-circle-o"></i>Mapa</a></li>
             <li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=k&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
             <li  <?php if ($_GET["o2"]=='sw') echo 'class="active"' ?>><a href="./info.php<?php echo '?o1=k&o2=sw'?>"><i class="fa fa-circle-o"></i>Sesiones Web</a></li>
             <li  <?php if ($_GET["o2"]=='tr') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=k&o2=tr'?>"><i class="fa fa-circle-o"></i>Tiempo de respuesta HTTPS</a></li>
@@ -286,7 +286,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="./kyrospre_map.php"><i class="fa fa-circle-o"></i>Mapa</a></li>
+           <li <?php if ($_GET["o2"]=='m') echo 'class="active"' ?> ><a href="./mapa.php?o1=kp&o2=m"><i class="fa fa-circle-o"></i>Mapa</a></li>
             <li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> active><a href="./estado.php<?php echo '?o1=kp'.'&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
           </ul>
         </li>
@@ -321,7 +321,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
         </span>
           </a>
           <ul class="treeview-menu">
-            <li <?php if ($_GET["o2"]=='m') echo 'class="active"' ?> ><a href="./correos_map.php"><i class="fa fa-circle-o"></i>Mapa</a></li>
+           <li <?php if ($_GET["o2"]=='m') echo 'class="active"' ?> ><a href="./mapa.php?o1=c&o2=m"><i class="fa fa-circle-o"></i>Mapa</a></li>
             <li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=s&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
             <li  <?php if ($_GET["o2"]=='sw') echo 'class="active"' ?>><a href="./info.php<?php echo '?o1=c&o2=sw'?>"><i class="fa fa-circle-o"></i>Sesiones Web</a></li>
             <li  <?php if ($_GET["o2"]=='tr') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=c&o2=tr'?>"><i class="fa fa-circle-o"></i>Tiempo de respuesta HTTPS</a></li>
@@ -345,7 +345,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
 
           </a>
           <ul class="treeview-menu">
-            <li <?php if ($_GET["o2"]=='m') echo 'class="active"' ?> ><a href="./correospre_map.php"><i class="fa fa-circle-o"></i>Mapa</a></li>
+           <li <?php if ($_GET["o2"]=='m') echo 'class="active"' ?> ><a href="./mapa.php?o1=cp&o2=m"><i class="fa fa-circle-o"></i>Mapa</a></li>
             <li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=cp'.'&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
           </ul>
         </li>
@@ -362,7 +362,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
             </span>
           </a>
           <ul class="treeview-menu">
-           <li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> ><a href="./mapa.php<?php echo '?o1=h'.'&o2=m'?>"><i class="fa fa-circle-o"></i>Mapa</a></li>
+           <li <?php if ($_GET["o2"]=='m') echo 'class="active"' ?> ><a href="./mapa.php?o1=h&o2=m"><i class="fa fa-circle-o"></i>Mapa</a></li>
             <li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=h'.'&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
             <li  <?php if ($_GET["o2"]=='sw') echo 'class="active"' ?>><a href="./info.php<?php echo '?o1=h&o2=sw'?>"><i class="fa fa-circle-o"></i>Sesiones Web</a></li>
             <li  <?php if ($_GET["o2"]=='tr') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=h&o2=tr'?>"><i class="fa fa-circle-o"></i>Tiempo de respuesta HTTPS</a></li>
@@ -397,7 +397,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
             </span>
           </a>
           <ul class="treeview-menu">
-            <li <?php if ($_GET["o2"]=='m') echo 'class="active"' ?> ><a href="./wrc_map.php"><i class="fa fa-circle-o"></i>Mapa</a></li>
+           <li <?php if ($_GET["o2"]=='m') echo 'class="active"' ?> ><a href="./mapa.php?o1=w&o2=m"><i class="fa fa-circle-o"></i>Mapa</a></li>
             <li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> ><a href="./estadosit.php?o1=w&o2=e"><i class="fa fa-circle-o"></i>Estado</a></li>
           </ul>
         </li>
