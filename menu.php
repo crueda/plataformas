@@ -8,15 +8,16 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 // Recargar cada 60 segundos
 //$secondsWait = 60;
 //header("Refresh:$secondsWait");
-$url = 'menu.php?o1'.$_GET["o1"].'&02'.$_GET["o2"];
-header( "refresh:60;url=$url"); 
 
-$csvHawkeyeFile = file('./data/counters/hawkeye.csv');
-$csvCorreosFile = file('./data/counters/correos.csv');
-$csvCorreospreFile = file('./data/counters/correospre.csv');
-$csvKyrospreFile = file('./data/counters/kyrospre.csv');
-$csvSumoFile = file('./data/counters/sumo.csv');
-$csvKyrosFile = file('./data/counters/kyros.csv');
+//$url = 'menu.php?o1'.$_GET["o1"].'&02'.$_GET["o2"];
+//header( "refresh:5;url=$url"); 
+
+$csvHawkeyeFile = file('../counters/hawkeye.csv');
+$csvCorreosFile = file('../counters/correos.csv');
+$csvCorreospreFile = file('../counters/correospre.csv');
+$csvKyrospreFile = file('../counters/kyrospre.csv');
+$csvSumoFile = file('../counters/sumo.csv');
+$csvKyrosFile = file('../counters/kyros.csv');
 
 $dataHawkeye = [];
 foreach ($csvHawkeyeFile as $line) {
@@ -222,18 +223,18 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
           </a>
           <ul class="treeview-menu">
             <li><a href="./kyros_map.php"><i class="fa fa-circle-o"></i>Mapa</a></li>
-            <li><a href="./kyros_urls.php"><i class="fa fa-circle-o"></i>URLs</a></li>
             <li><a href="./estado.php<?php echo '?o1=k&02=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
             <li  <?php if ($_GET["o2"]=='sw') echo 'class="active"' ?>><a href="./info.php<?php echo '?o1=k&o2=sw'?>"><i class="fa fa-circle-o"></i>Sesiones Web</a></li>
             <li  <?php if ($_GET["o2"]=='tr') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=k&o2=tr'?>"><i class="fa fa-circle-o"></i>Tiempo de respuesta HTTPS</a></li>
-            <li  <?php if ($_GET["o2"]=='tr') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=k&o2=gprs5000'?>"><i class="fa fa-circle-o"></i>Sesiones GPRS 5000</a></li>
-            <li  <?php if ($_GET["o2"]=='tr') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=k&o2=gprs5002'?>"><i class="fa fa-circle-o"></i>Sesiones GPRS 5002</a></li>
-            <li  <?php if ($_GET["o2"]=='tr') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=k&o2=bd'?>"><i class="fa fa-circle-o"></i>BD estadisticas</a></li>
+            <li  <?php if ($_GET["o2"]=='gprs5000') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=k&o2=gprs5000'?>"><i class="fa fa-circle-o"></i>Sesiones GPRS 5000</a></li>
+            <li  <?php if ($_GET["o2"]=='gprs5002') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=k&o2=gprs5002'?>"><i class="fa fa-circle-o"></i>Sesiones GPRS 5002</a></li>
+            <li  <?php if ($_GET["o2"]=='bd') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=k&o2=bd'?>"><i class="fa fa-circle-o"></i>BD estadisticas</a></li>
+            <li  <?php if ($_GET["o2"]=='logs') echo 'class="active"' ?> ><a href="./logs.php<?php echo '?o1=k&o2=logs'?>"><i class="fa fa-circle-o"></i>Logs</a></li>
 
           </ul>
         </li>
 
-        <li class="<?php if ($_GET["o1"]=='kp') echo 'active' ?> treeview">
+        <li class="<?php if ($_GET["o1"]=='kp') echo 'active' ?>  treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Kyros Pre</span>
             <span class="pull-right-container">
@@ -245,8 +246,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
           </a>
           <ul class="treeview-menu">
             <li><a href="./kyrospre_map.php"><i class="fa fa-circle-o"></i>Mapa</a></li>
-            <li><a href="./kyrospre_urls.php"><i class="fa fa-circle-o"></i>URLs</a></li>
-            <li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=kp'.'&02=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
+            <li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> active><a href="./estado.php<?php echo '?o1=kp'.'&02=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
           </ul>
         </li>
 
@@ -264,7 +264,6 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
           </a>
           <ul class="treeview-menu">
             <li><a href="./correos_map.php"><i class="fa fa-circle-o"></i>Mapa</a></li>
-            <li><a href="./correos_urls.php"><i class="fa fa-circle-o"></i>URLs</a></li>
             <li><a href="./estado.php<?php echo '?o1=s&02=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
           </ul>
         </li>
@@ -283,7 +282,6 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
           </a>
           <ul class="treeview-menu">
             <li><a href="./correospre_map.php"><i class="fa fa-circle-o"></i>Mapa</a></li>
-            <li><a href="./correospre_urls.php"><i class="fa fa-circle-o"></i>URLs</a></li>
             <li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=cp'.'&02=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
           </ul>
         </li>
@@ -291,7 +289,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
 
         <li class=" <?php if ($_GET["o1"]=='h') echo 'active' ?> treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Hawkeye</span>
+            <i class="fa fa-dashboard"></i> <span>Hawkeye2 <?php echo ($_GET["o2"]);?></span>
             <span class="pull-right-container">
               <small class="label pull-right bg-red"><?php  if ($hawkeye_error>0) echo $hawkeye_error; ?></small>
               <small class="label pull-right bg-yellow"><?php if ($hawkeye_warning>0) echo $hawkeye_warning; ?></small>
@@ -301,8 +299,6 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
           </a>
           <ul class="treeview-menu">
            <li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> ><a href="./mapa.php<?php echo '?o1=h'.'&02=m'?>"><i class="fa fa-circle-o"></i>Mapa</a></li>
-            <li <?php if ($_GET["o2"]=='u') echo 'class="active"' ?> ><a href="./hawkeye_urls.php"><i class="fa fa-circle-o"></i>URLs</a></li>
-            <!--li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> ><a href="./hawkeye_estado.php"><i class="fa fa-circle-o"></i>Estado</a></li-->
             <li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=h'.'&02=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
           </ul>
         </li>
@@ -319,7 +315,6 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
           </a>
           <ul class="treeview-menu">
             <li><a href="./sumo_map.php"><i class="fa fa-circle-o"></i>Mapa</a></li>
-            <li><a href="./sumo_urls.php"><i class="fa fa-circle-o"></i>URLs</a></li>
             <li><a href="./estado.php<?php echo '?o1=s&02=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
           </ul>
         </li>
@@ -333,7 +328,6 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
           </a>
           <ul class="treeview-menu">
             <li><a href="./wrc_map.php"><i class="fa fa-circle-o"></i>Mapa</a></li>
-            <li><a href="./wrc_urls.php"><i class="fa fa-circle-o"></i>URLs</a></li>
             <li><a href="./estadosit.php<?php echo '?o1=w&02=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
           </ul>
         </li>
