@@ -61,8 +61,8 @@
   </header>
     <!-- MENU-->
 
-    <iframe src="./menu.php<?php echo '?o1'.$_GET["o1"].'&02'.$_GET["o2"]?>" frameborder="0" style="overflow: hidden; height: 100%;
-        width: 100%; position: absolute;" height="100%" width="100%"></iframe>
+    <iframe src="./menu.php<?php echo '?o1='.$_GET["o1"].'&o2='.$_GET["o2"]?>" frameborder="0" style="overflow: hidden; height: 100%;
+        width: 100%; position: absolute;"></iframe>
 
 
   <!-- Content Wrapper. Contains page content -->
@@ -82,12 +82,6 @@
         } 
         else if ($_GET["o1"]=='oficina') {
           echo 'CPD oficina';
-        } 
-        else if ($_GET["o1"]=='sf') {
-          echo 'Sensor frontal';
-        } 
-        else if ($_GET["o1"]=='st') {
-          echo 'Sensor trasero';
         } 
         else {
           echo '';
@@ -118,7 +112,7 @@
     }
     ?>@<?php 
       if ($_GET["o1"]=='h') {
-        echo '172.26.30.252/nagvis/frontend/nagvis-js/index.php?mod=Map&act=view&show=Hawkeye#';
+        echo '172.26.30.252/nagvis/frontend/nagvis-js/index.php?mod=Map&act=view&show=Hawkeye&header_menu=0';
       } 
       else if ($_GET["o1"]=='cp') {
         echo 'hawkeye.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=CORREOS-Pre-production&style=overview';
@@ -131,12 +125,6 @@
       } 
       else if ($_GET["o1"]=='oficina') {
         echo 'hawkeye.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=all&style=overview';
-      } 
-      else if ($_GET["o1"]=='sf') {
-        echo 'hawkeye.kyroslbs.com/pnp4nagios/index.php/graph?host=raspberry&srv=Sensor-frontal';
-      } 
-      else if ($_GET["o1"]=='st') {
-        echo 'hawkeye.kyroslbs.com/pnp4nagios/index.php/graph?host=raspberry&srv=Sensor-trasero';
       } 
       else {
         echo 'hawkeye.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=all';
