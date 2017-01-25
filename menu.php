@@ -9,7 +9,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 //$secondsWait = 60;
 //header("Refresh:$secondsWait");
 
-$url = 'menu.php?o1='.$_GET["o1"].'&o2='.$_GET["o2"];
+$url = 'menu.php?o='.$_GET["o"].'&o1='.$_GET["o1"].'&o2='.$_GET["o2"];
 header( "refresh:60;url=$url"); 
 
 $csvHawkeyeFile = file('../counters/hawkeye.csv');
@@ -366,7 +366,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
           </a>
           <ul class="treeview-menu">
             <li><a href="./wrc_map.php"><i class="fa fa-circle-o"></i>Mapa</a></li>
-            <li><a href="./estadosit.php<?php echo '?o1=w&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
+            <li><a href="./estadosit.php?o1=w&o2=e"><i class="fa fa-circle-o"></i>Estado</a></li>
           </ul>
         </li>
 

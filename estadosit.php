@@ -103,13 +103,12 @@
     }
     ?>@<?php 
       if ($_GET["o1"]=='w') {
-        echo 'mykyros.es/nagios3';
+        echo 'mykyros.es/cgi-bin/nagios3/status.cgi?hostgroup=all&style=overview';
       } 
       else {
-        echo 'mykyros.es/nagios3';
-      }?>" frameborder="0" style="overflow: hidden; height: 100%;
-        width: 100%; position: absolute;" height="100%" width="100%"></iframe>
-
+        echo '';
+      }?>" frameborder="0" style="overflow: hidden; height: 90%;
+        width: 100%; position: absolute;"></iframe>
 
     </section>
     <!-- /.content -->
