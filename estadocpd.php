@@ -101,6 +101,9 @@
         else if ($_GET["o1"]=='st') {
           echo 'Sensor trasero';
         } 
+        else if ($_GET["o1"]=='it') {
+          echo 'Servicios IT';
+        } 
         else if ($_GET["o1"]=='d') {
           echo 'DEMOS';
         } 
@@ -132,38 +135,20 @@
     echo fgets($file);
     }
     ?>@<?php 
-      if ($_GET["o1"]=='h') {
-        echo 'hawkeye.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=Hawkeye-production&style=overview';
+      if ($_GET["o2"]=='sf') {
+        echo 'hawkeye.kyroslbs.com/pnp4nagios/index.php/graph?host=raspberry&srv=Sensor-frontal';
       } 
-      else if ($_GET["o1"]=='cp') {
-        echo 'hawkeye.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=CORREOS-Pre-production&style=overview';
+      else if ($_GET["o2"]=='st') {
+        echo 'hawkeye.kyroslbs.com/pnp4nagios/index.php/graph?host=raspberry&srv=Sensor-trasero';
       } 
-      else if ($_GET["o1"]=='kp') {
-        echo 'hawkeye.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=KYROS-Pre-production&style=overview';
-      } 
-      else if ($_GET["o1"]=='k') {
-        echo 'kyros.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=KYROS-Production&style=overview';
-      } 
-      else if ($_GET["o1"]=='d') {
-        echo 'kyros.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=KYROS-Demos&style=detail';
-      } 
-      else if ($_GET["o1"]=='s') {
-        echo 'kyros.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=SUMO-Production&style=overview';
-      } 
-      else if ($_GET["o1"]=='c') {
-        echo 'correos.kyroslbs.com/nagios3';
+      else if ($_GET["o2"]=='it') {
+        echo 'hawkeye.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=IT-services&style=detail';
       } 
       else if ($_GET["o1"]=='uva') {
         echo 'correos.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=all&style=overview';
       } 
       else if ($_GET["o1"]=='oficina') {
         echo 'hawkeye.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=all&style=overview';
-      } 
-      else if ($_GET["o1"]=='sf') {
-        echo 'hawkeye.kyroslbs.com/pnp4nagios/index.php/graph?host=raspberry&srv=Sensor-frontal';
-      } 
-      else if ($_GET["o1"]=='st') {
-        echo 'hawkeye.kyroslbs.com/pnp4nagios/index.php/graph?host=raspberry&srv=Sensor-trasero';
       } 
       else {
         echo 'hawkeye.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=all';

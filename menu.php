@@ -19,6 +19,7 @@ $csvKyrospreFile = file('../counters/kyrospre.csv');
 $csvSumoFile = file('../counters/sumo.csv');
 $csvKyrosFile = file('../counters/kyros.csv');
 $csvDemosFile = file('../counters/demos.csv');
+$csvItFile = file('../counters/it.csv');
 
 $dataHawkeye = [];
 foreach ($csvHawkeyeFile as $line) {
@@ -44,9 +45,13 @@ $dataKyros = [];
 foreach ($csvKyrosFile as $line) {
   $dataKyros[] = str_getcsv($line, $delimiter = ";" );              
 }
-$dataDemos = [];
+$dataDemos = [];  
 foreach ($csvDemosFile as $line) {
   $dataDemos[] = str_getcsv($line, $delimiter = ";" );              
+}
+$dataIt = [];  
+foreach ($csvItFile as $line) {
+  $dataIt[] = str_getcsv($line, $delimiter = ";" );              
 }
 
 $hawkeye_ok = $dataHawkeye[0][0];
@@ -77,8 +82,12 @@ $demos_ok = $dataDemos[0][0];
 $demos_warning = $dataDemos[0][1]; 
 $demos_error = $dataDemos[0][2];
 
+$it_ok = $dataIt[0][0];
+$it_warning = $dataIt[0][1]; 
+$it_error = $dataIt[0][2];
 
-$services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyros_ok  + $sumo_ok + $demos_ok;
+
+$services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyros_ok  + $sumo_ok + $demos_ok + $it_ok;
 ?>
 
 
@@ -160,9 +169,13 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
         <li class="<?php if ($_GET["o"]=='cpd') echo 'active' ?> treeview">
           <a href="#">
             <i class="fa fa-share"></i> <span>CPDs</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+              <span class="pull-right-container">
+               <small class="label pull-right bg-red"><?php  if ($it_error>0) echo $it_error; ?></small>
+                <small class="label pull-right bg-yellow"><?php if ($it_warning>0) echo $it_warning; ?></small>
+                <small class="label pull-right bg-green"><?php echo $it_ok ?></small>
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+
           </a>
           <ul class="treeview-menu">
             <li <?php if ($_GET["o1"]=='uva') echo 'class="active"' ?>>
@@ -183,9 +196,13 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
             </li>
             <li <?php if ($_GET["o1"]=='oficina') echo 'class="active"' ?>>
               <a href="#"><i class="fa fa-circle-o"></i>Oficina
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
+              <span class="pull-right-container">
+               <small class="label pull-right bg-red"><?php  if ($it_error>0) echo $it_error; ?></small>
+                <small class="label pull-right bg-yellow"><?php if ($it_warning>0) echo $it_warning; ?></small>
+                <small class="label pull-right bg-green"><?php echo $it_ok ?></small>
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+
               </a>
               <ul class="treeview-menu">
                 <li <?php if ($_GET["o2"]=='traficooficina') echo 'class="active"' ?>><a href="./cpd_oficina_trafico.php"><i class="fa fa-circle-o"></i>Tráfico</a></li>
@@ -199,6 +216,21 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
               </ul>
               <ul class="treeview-menu">
                 <li <?php if ($_GET["o2"]=='st') echo 'class="active"' ?> ><a href="./estadocpd.php<?php echo '?o1=oficina'.'&o2=st'?>"><i class="fa fa-circle-o"></i>Sensor trasero</a></li>
+              </ul>
+              <ul class="treeview-menu">
+                <li <?php if ($_GET["o2"]=='it') echo 'class="active"' ?> ><a href="./estadocpd.php<?php echo '?o1=oficina'.'&o2=it'?>"><i class="fa fa-circle-o"></i>Servicios IT
+
+                <span class="pull-right-container">
+               <small class="label pull-right bg-red"><?php  if ($it_error>0) echo $it_error; ?></small>
+                <small class="label pull-right bg-yellow"><?php if ($it_warning>0) echo $it_warning; ?></small>
+                <small class="label pull-right bg-green"><?php echo $it_ok ?></small>
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+
+            </a>
+                </li>
+
+
               </ul>
             </li>
             <li <?php if ($_GET["o1"]=='rally') echo 'class="active"' ?>>
