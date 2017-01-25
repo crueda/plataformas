@@ -61,8 +61,8 @@
   </header>
     <!-- MENU-->
 
-    <iframe src="./menu.php<?php echo '?o1'.$_GET["o1"].'&02'.$_GET["o2"]?>" frameborder="0" style="overflow: hidden; height: 100%;
-        width: 100%; position: absolute;" height="100%" width="100%"></iframe>
+    <iframe src="./menu.php<?php echo '?o1='.$_GET["o1"].'&o2='.$_GET["o2"]?>" frameborder="0" style="overflow: hidden; height: 100%;
+        width: 100%; position: absolute;"></iframe>
 
 
   <!-- Content Wrapper. Contains page content -->
@@ -73,6 +73,18 @@
         <?php 
         if ($_GET["o1"]=='k') {
           echo 'KYROS Producción';
+        } 
+        else if ($_GET["o1"]=='c') {
+          echo 'CORREOS';
+        } 
+        else if ($_GET["o1"]=='s') {
+          echo 'SUMO';
+        } 
+        else if ($_GET["o1"]=='h') {
+          echo 'HAWKEYE';
+        } 
+        else if ($_GET["o1"]=='d') {
+          echo 'DEMOS';
         } 
         else {
           echo '';
@@ -101,10 +113,19 @@
       else if ($_GET["o1"]=='c') {
         echo 'CORREOS';
       } 
+      else if ($_GET["o1"]=='s') {
+        echo 'SUMO';
+      } 
+      else if ($_GET["o1"]=='h') {
+        echo 'HAWKEYE';
+      } 
+      else if ($_GET["o1"]=='d') {
+        echo 'DEMOS';
+      } 
       else {
         echo '';
-      }?>" frameborder="0" style="overflow: hidden; height: 100%;
-        width: 100%; position: absolute;" height="100%" width="100%"></iframe>
+      }?>" frameborder="0" style="height: 90%;
+        width: 100%; position: absolute;"  scrolling="yes"></iframe>
 
 
 

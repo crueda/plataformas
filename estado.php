@@ -61,7 +61,7 @@
   </header>
     <!-- MENU-->
 
-    <iframe src="./menu.php<?php echo '?o1'.$_GET["o1"].'&02'.$_GET["o2"]?>" frameborder="0" style="overflow: hidden; height: 100%;
+    <iframe src="./menu.php<?php echo '?o1='.$_GET["o1"].'&o2='.$_GET["o2"]?>" frameborder="0" style="overflow: hidden; height: 100%;
         width: 100%; position: absolute;" height="100%" width="100%"></iframe>
 
 
@@ -100,6 +100,9 @@
         } 
         else if ($_GET["o1"]=='st') {
           echo 'Sensor trasero';
+        } 
+        else if ($_GET["o1"]=='d') {
+          echo 'DEMOS';
         } 
         else {
           echo '';
@@ -140,6 +143,9 @@
       } 
       else if ($_GET["o1"]=='k') {
         echo 'kyros.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=KYROS-Production&style=overview';
+      } 
+      else if ($_GET["o1"]=='d') {
+        echo 'kyros.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=KYROS-Demos&style=detail';
       } 
       else if ($_GET["o1"]=='s') {
         echo 'kyros.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=SUMO-Production&style=overview';

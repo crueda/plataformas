@@ -61,7 +61,7 @@
   </header>
     <!-- MENU-->
 
-    <iframe src="./menu.php<?php echo '?o1'.$_GET["o1"].'&02'.$_GET["o2"]?>" frameborder="0" style="overflow: hidden; height: 100%;
+    <iframe src="./menu.php<?php echo '?o1='.$_GET["o1"].'&o2='.$_GET["o2"]?>" frameborder="0" style="overflow: hidden; height: 100%;
         width: 100%; position: absolute;" height="100%" width="100%"></iframe>
 
 
@@ -73,6 +73,12 @@
         <?php 
         if ($_GET["o1"]=='k') {
           echo 'KYROS Producción';
+        } 
+        else if ($_GET["o1"]=='c') {
+          echo 'CORREOS';
+        } 
+        else if ($_GET["o1"]=='h') {
+          echo 'HAWKEYE';
         } 
         else {
           echo '';
@@ -121,27 +127,62 @@
     echo fgets($file);
     }
     ?>@<?php 
-      if ($_GET["o2"]=='sw') {
-        echo 'kyros.kyroslbs.com/pnp4nagios/index.php/graph?host=dmz-proxy-Virtual&srv=https%20sessions';
-      } 
-      else if ($_GET["o2"]=='tr') {
-        echo 'hawkeye.kyroslbs.com/pnp4nagios/index.php/graph?host=kyros.es&srv=HTTPs%20health';
-      } 
-      else if ($_GET["o2"]=='gprs5000') {
-        echo 'kyros.kyroslbs.com/pnp4nagios/index.php/graph?host=dmz-proxy-Virtual&srv=GPRS%205000%20sessions';
-      } 
-      else if ($_GET["o2"]=='gprs5002') {
-        echo 'kyros.kyroslbs.com/pnp4nagios/index.php/graph?host=dmz-proxy-Virtual&srv=GPRS%205002%20sessions';
-      } 
-      else if ($_GET["o2"]=='bd') {
-        echo 'kyros.kyroslbs.com/pnp4nagios/index.php/graph?host=DB-stats&srv=Queries%20average';
-      } 
+      if ($_GET["o1"]=='k') {
+        if ($_GET["o2"]=='sw') {
+          echo 'kyros.kyroslbs.com/pnp4nagios/index.php/graph?host=dmz-proxy-Virtual&srv=https%20sessions';
+        } 
+        else if ($_GET["o2"]=='tr') {
+          echo 'hawkeye.kyroslbs.com/pnp4nagios/index.php/graph?host=kyros.es&srv=HTTPs%20health';
+        } 
+        else if ($_GET["o2"]=='gprs5000') {
+          echo 'kyros.kyroslbs.com/pnp4nagios/index.php/graph?host=dmz-proxy-Virtual&srv=GPRS%205000%20sessions';
+        } 
+        else if ($_GET["o2"]=='gprs5002') {
+          echo 'kyros.kyroslbs.com/pnp4nagios/index.php/graph?host=dmz-proxy-Virtual&srv=GPRS%205002%20sessions';
+        } 
+        else if ($_GET["o2"]=='bd') {
+          echo 'kyros.kyroslbs.com/pnp4nagios/index.php/graph?host=DB-stats&srv=Queries%20average';
+        } 
+        else {
+          echo 'kyros.kyroslbs.com/nagios3';
+        }
+      } else if ($_GET["o1"]=='c') {
+        if ($_GET["o2"]=='sw') {
+          echo 'correos.kyros.es/pnp4nagios/index.php/graph?host=dmz-proxy-Virtual&srv=https%20sessions';
+        } 
+        else if ($_GET["o2"]=='tr') {
+          echo 'hawkeye.kyroslbs.com/pnp4nagios/index.php/graph?host=correos.kyros.es&srv=HTTPs%20service';
+        } 
+        else if ($_GET["o2"]=='gprs5000') {
+          echo 'correos.kyros.es/pnp4nagios/index.php/graph?host=dmz-proxy-Virtual&srv=GPRS%205000%20sessions';
+        } 
+        else if ($_GET["o2"]=='bd') {
+          echo 'correos.kyros.es/pnp4nagios/index.php/graph?host=DB-stats&srv=Queries%20average';
+        } 
+        else {
+          echo 'kyros.kyroslbs.com/nagios3';
+        }
+      } else if ($_GET["o1"]=='h') {
+        if ($_GET["o2"]=='sw') {
+          echo 'hawkeye.kyroslbs.com/pnp4nagios/index.php/graph?host=hawkeye-dmz-proxy&srv=https%20sessions';
+        } 
+        else if ($_GET["o2"]=='tr') {
+          echo 'hawkeye.kyroslbs.com/pnp4nagios/index.php/graph?host=correos.kyros.es&srv=HTTPs%20service';
+        } 
+        else if ($_GET["o2"]=='gprs5002') {
+          echo 'hawkeye.kyroslbs.com/pnp4nagios/index.php/graph?host=hawkeye-dmz-proxy&srv=GPRS%205002%20sessions';
+        }         
+        else if ($_GET["o2"]=='bd') {
+          echo 'correos.kyros.es/pnp4nagios/index.php/graph?host=DB-stats&srv=Queries%20average';
+        } 
+        else {
+          echo 'kyros.kyroslbs.com/nagios3';
+        }
+      }
 
 
 
-      else {
-        echo 'kyros.kyroslbs.com/nagios3';
-      }?>" frameborder="0" style="overflow: hidden; height: 100%;
+      ?>" frameborder="0" style="overflow: hidden; height: 100%;
         width: 100%; position: absolute;" height="100%" width="100%"></iframe>
 
 
