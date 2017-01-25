@@ -62,8 +62,8 @@
   </header>
     <!-- MENU-->
 
-    <iframe src="./menu.php?o1=h&o2=e" frameborder="0" style="overflow: hidden; height: 100%;
-        width: 100%; position: absolute;" height="100%" width="100%"></iframe>
+    <iframe src="./menu.php?o=cpd&o1=rally&o2=traficocamionhttps" frameborder="0" style="overflow: hidden; height: 90%;
+        width: 100%; position: absolute;"></iframe>
 
 
   <!-- Content Wrapper. Contains page content -->
@@ -94,8 +94,8 @@
     while(!feof($file)) {
     echo fgets($file);
     }
-    ?>@mykyros.es/pnp4nagios/index.php/graph?host=trafico-web-camion&srv=https%20sessions" frameborder="0" style="overflow: hidden; height: 100%;
-        width: 100%; position: absolute;" height="100%" width="100%"></iframe>
+    ?>@mykyros.es/pnp4nagios/index.php/graph?host=trafico-web-camion&srv=https%20sessions" frameborder="0" style="overflow: hidden; height: 85%;
+        width: 100%; position: absolute;" scrolling="yes"></iframe>
 </div>
 
     </section>

@@ -167,8 +167,8 @@
       } 
       else {
         echo 'hawkeye.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=all';
-      }?>" frameborder="0" style="overflow: hidden; height: 100%;
-        width: 100%; position: absolute;" height="100%" width="100%"></iframe>
+      }?>" frameborder="0" style="overflow: hidden; height: 90%;
+        width: 100%; position: absolute;"></iframe>
 
 
     </section>

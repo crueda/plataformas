@@ -93,7 +93,7 @@
         <small>    
         <?php
         if ($_GET["o2"]=='logs') {
-          echo 'Ficheros de log';
+          echo 'Fichero de log';
         } 
         else {
           echo '';
@@ -106,27 +106,24 @@
     <!-- Main content -->
     <section class="content">
 
-<iframe src="../cabina/<?php 
-      if ($_GET["o1"]=='k') {
-        echo 'KYROS';
-      } 
-      else if ($_GET["o1"]=='c') {
-        echo 'CORREOS';
-      } 
-      else if ($_GET["o1"]=='s') {
-        echo 'SUMO';
-      } 
-      else if ($_GET["o1"]=='h') {
-        echo 'HAWKEYE';
-      } 
-      else if ($_GET["o1"]=='d') {
-        echo 'DEMOS';
-      } 
+<iframe src="https://<?php
+    $file = fopen('./credentials/user_logs.txt', 'r');
+    while(!feof($file)) {
+    echo fgets($file);
+    }
+    ?>:<?php
+    $file = fopen('./credentials/pass_logs.txt', 'r');
+    while(!feof($file)) {
+    echo fgets($file);
+    }
+    ?>@<?php 
+      if ($_GET["o1"]=='c') {
+        echo 'correos.kyros.es/logs/';
+      }       
       else {
         echo '';
-      }?>" frameborder="0" style="height: 90%;
-        width: 100%; position: absolute;"  scrolling="yes"></iframe>
-
+      }?>" frameborder="0" style="overflow: hidden; height: 90%;
+        width: 100%; position: absolute;" scrolling="yes"></iframe>
 
 
     </section>

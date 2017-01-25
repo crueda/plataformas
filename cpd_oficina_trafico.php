@@ -61,8 +61,8 @@
   </header>
     <!-- MENU-->
 
-    <iframe src="./menu.php?o1=h&o2=e" frameborder="0" style="overflow: hidden; height: 100%;
-        width: 100%; position: absolute;" height="100%" width="100%"></iframe>
+    <iframe src="./menu.php?o=cpd&o1=oficina&o2=traficooficina" frameborder="0" style="overflow: hidden; height: 90%;
+        width: 100%; position: absolute;"></iframe>
 
 
   <!-- Content Wrapper. Contains page content -->
@@ -92,8 +92,8 @@
     while(!feof($file)) {
     echo fgets($file);
     }
-    ?>@hawkeye.kyroslbs.com/mrtg/" frameborder="0" style="overflow: hidden; height: 100%;
-        width: 100%; position: absolute;" height="100%" width="100%"></iframe>
+    ?>@hawkeye.kyroslbs.com/mrtg/" frameborder="0" style="overflow: hidden; height: 85%;
+        width: 100%; position: absolute;" ></iframe>
 
 
     </section>
