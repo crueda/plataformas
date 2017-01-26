@@ -112,30 +112,24 @@
     }
     ?>@<?php 
       if ($_GET["o1"]=='h') {
-        echo '172.26.30.252/nagvis/frontend/nagvis-js/index.php?mod=Map&act=view&show=Hawkeye&header_menu=0';
+        echo '172.26.30.252/nagvis/frontend/nagvis-js/index.php?mod=Map&act=view&show=Hawkeye&header_menu=0&zoombar=1';
       } 
       else if ($_GET["o1"]=='k') {
-        echo '72.26.30.252/nagvis/frontend/nagvis-js/index.php?mod=Map&act=view&show=Kyros&header_menu=0';
+        echo '172.26.30.252/nagvis/frontend/nagvis-js/index.php?mod=Map&act=view&show=Kyros&header_menu=0&zoombar=1';
       } 
       else if ($_GET["o1"]=='kp') {
-        echo '72.26.30.252/nagvis/frontend/nagvis-js/index.php?mod=Map&act=view&show=KyrosPre&header_menu=0';
+        echo '172.26.30.252/nagvis/frontend/nagvis-js/index.php?mod=Map&act=view&show=KyrosPre&header_menu=0&zoombar=1';
       } 
       else if ($_GET["o1"]=='c') {
-        echo '72.26.30.252/nagvis/frontend/nagvis-js/index.php?mod=Map&act=view&show=Correos&header_menu=0';
+        echo '172.26.30.252/nagvis/frontend/nagvis-js/index.php?mod=Map&act=view&show=Correos&header_menu=0&zoombar=1';
       } 
       else if ($_GET["o1"]=='cp') {
-        echo '72.26.30.252/nagvis/frontend/nagvis-js/index.php?mod=Map&act=view&show=CorreosPre&header_menu=0';
-      } 
-      else if ($_GET["o1"]=='uva') {
-        echo 'correos.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=all&style=overview';
-      } 
-      else if ($_GET["o1"]=='oficina') {
-        echo 'hawkeye.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=all&style=overview';
+        echo '172.26.30.252/nagvis/frontend/nagvis-js/index.php?mod=Map&act=view&show=CorreosPre&header_menu=0&zoombar=1';
       } 
       else {
-        echo 'hawkeye.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=all';
-      }?>" frameborder="0" style="overflow: hidden; height: 100%;
-        width: 100%; position: absolute;" height="100%" width="100%"></iframe>
+        echo '';
+      }?>" frameborder="0" style="overflow: hidden; height: 95%;
+        width: 100%; position: absolute;" ></iframe>
 
 
     </section>

@@ -408,6 +408,12 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
           </a>
         </li>
         
+        <li>
+          <a href="./urls.php">
+            <i class="fa fa-laptop"></i> <span>URLs</span>
+          </a>
+        </li>
+        
        
         
         <li><a href="https://wiki.kyroslbs.com"><i class="fa fa-book"></i> <span>Documentación</span></a></li>
