@@ -188,7 +188,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
                 <li <?php if ($_GET["o2"]=='traficouva') echo 'class="active"' ?>><a href="./cpd_uva_trafico.php"><i class="fa fa-circle-o"></i>Tráfico</a></li>
               </ul>
               <ul class="treeview-menu">
-                <li><a href="https://drive.google.com/a/deimos-space.com/file/d/0B6b11tK_Z5aSZlNEa2lNMk5XQU0/edit" target="_blank"><i class="fa fa-circle-o"></i>IPs</a></li>
+                <li><a href="https://docs.google.com/a/deimos-space.com/spreadsheets/d/1MN-UwZkIZv5jih2hYJoftQg1jv_c6cUAib_8f8NaKDs/edit?usp=sharing" target="_blank"><i class="fa fa-circle-o"></i>IPs</a></li>
               </ul>
               <ul class="treeview-menu">
                 <li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> ><a href="./estadocpd.php<?php echo '?o=cpd&o1=uva'.'&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
@@ -421,6 +421,17 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
         <li class="header">Herramientas</li>
         <li><a href="https://jira.kyroslbs.com" target="_blank"><i class="fa fa-circle-o text-red"></i> <span>Jira</span></a></li>
         <li><a href="https://cloud.kyroslbs.com" target="_blank"><i class="fa fa-circle-o text-yellow"></i> <span>Cloud</span></a></li>
+        <li><a href="https://<?php
+    $file = fopen('./credentials/user_repo.txt', 'r');
+    while(!feof($file)) {
+    echo fgets($file);
+    }
+    ?>:<?php
+    $file = fopen('./credentials/pass_repo.txt', 'r');
+    while(!feof($file)) {
+    echo fgets($file);
+    }
+    ?>@files.kyroslbs.com/app" target="_blank"><i class="fa fa-circle-o text-blue"></i> <span>Repositorio Apps</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->
