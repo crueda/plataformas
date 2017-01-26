@@ -114,6 +114,12 @@
                     <td><span class="label label-success">Ok</span></td>
               </tr>
               <tr>
+                <td><a href="http://kyros.kyroslbs.com">kyros.kyroslbs.com</a>
+                </td>
+                <td>Entorno de producción (acceso alternativo)</td>
+                <td><span class="label label-success">Ok</span></td>
+              </tr>
+              <tr>
                 <td><a href="http://pre.kyroslbs.com">pre.kyroslbs.com</a></td>
                     <td>Entorno de pre-producción</td>
                     <td><span class="label label-success">Ok</span></td>
@@ -158,9 +164,15 @@
           </thead>
             <tbody>
               <tr>
-                <td><a href="http://correos.kyroslbs.com">correos.kyroslbs.com</a>
+                <td><a href="http://correos.kyros.es">correos.kyros.es</a>
                 </td>
                 <td>Entorno de producción</td>
+                <td><span class="label label-success">Ok</span></td>
+              </tr>
+              <tr>
+                <td><a href="http://correos.kyroslbs.com">correos.kyroslbs.com</a>
+                </td>
+                <td>Entorno de producción (acceso alternativo)</td>
                 <td><span class="label label-success">Ok</span></td>
               </tr>
               <tr>
@@ -296,6 +308,60 @@
         </div>
     </div>
   </div>
+
+<!-- SUMO -->
+  <div class="box box-info collapsed-box">
+    <div class="box-header with-border">
+      <h3 class="box-title">WRC</h3>
+
+      <div class="box-tools pull-right">
+        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="box-body">
+      <div class="table-responsive">
+        <table class="table no-margin">
+          <thead>
+            <tr>
+              <th width="25%">URL</th>
+              <th  width="65%">Descriptión</th>
+              <th  width="10%">Estado</th>
+            </tr>
+          </thead>
+            <tbody>
+              <tr>
+                <td><a href="http://mykyros.es">mykyros.es</a>
+                </td>
+                <td>Entorno de producción</td>
+                <td><span class="label label-success">Ok</span></td>
+              </tr>
+              <tr>
+                <td><a href="http://race-control.mykyros.es">race-control.mykyros.es</a>
+                </td>
+                <td>Entorno de administración (va a FIA3)</td>
+                <td><span class="label label-success">Ok</span></td>
+              </tr>
+              <tr>
+                <td><a href="http://pimuc.mykyros.es">view.mykyros.es</a>
+                </td>
+                <td>Entorno con Kyros View</td>
+                <td><span class="label label-success">Ok</span></td>
+              </tr>
+              <tr>
+                <td><a href="http://pimuc.mykyros.es">pimuc.mykyros.es</a>
+                </td>
+                <td>Acceso para Pimuc (solo permitido al servlet de posiciones)</td>
+                <td><span class="label label-success">Ok</span></td>
+              </tr>
+                                                     
+              </tbody>
+          </table>
+        </div>
+    </div>
+  </div>
+
 
 </div>
 
