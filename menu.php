@@ -321,8 +321,8 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
         </span>
           </a>
           <ul class="treeview-menu">
-           <!--li <?php if ($_GET["o2"]=='m') echo 'class="active"' ?> ><a href="./mapa.php?o1=c&o2=m"><i class="fa fa-circle-o"></i>Mapa</a></li-->
-            <li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=s&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
+           <!--li <?php if ($_GET["o2"]=='c') echo 'class="active"' ?> ><a href="./mapa.php?o1=c&o2=m"><i class="fa fa-circle-o"></i>Mapa</a></li-->
+            <li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=c&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
             <li  <?php if ($_GET["o2"]=='sw') echo 'class="active"' ?>><a href="./info.php<?php echo '?o1=c&o2=sw'?>"><i class="fa fa-circle-o"></i>Sesiones Web</a></li>
             <li  <?php if ($_GET["o2"]=='tr') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=c&o2=tr'?>"><i class="fa fa-circle-o"></i>Tiempo de respuesta HTTPS</a></li>
             <li  <?php if ($_GET["o2"]=='gprs5000') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=c&o2=gprs5000'?>"><i class="fa fa-circle-o"></i>Sesiones GPRS 5000</a></li>
