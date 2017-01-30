@@ -108,7 +108,7 @@
 
 <iframe src="../cabina/<?php 
       if ($_GET["o1"]=='k') {
-        echo 'kyros-historico';
+        echo 'KYROS';
       } 
       else if ($_GET["o1"]=='c') {
         echo 'CORREOS';
