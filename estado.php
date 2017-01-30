@@ -147,7 +147,7 @@
         echo 'hawkeye.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=KYROS-Pre-production&style=overview';
       } 
       else if ($_GET["o1"]=='k') {
-        echo 'kyros.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=KYROS-Production&style=overview';
+        echo 'kyros.es/cgi-bin/nagios3/status.cgi?hostgroup=KYROS-Production&style=overview';
       } 
       else if ($_GET["o1"]=='d') {
         echo 'kyros.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=KYROS-Demos&style=detail';
@@ -156,7 +156,7 @@
         echo 'kyros.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=SUMO-Production&style=overview';
       } 
       else if ($_GET["o1"]=='c') {
-        echo 'correos.kyroslbs.com/nagios3';
+        echo 'correos.kyros.es/nagios3';
       } 
       else if ($_GET["o1"]=='uva') {
         echo 'correos.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=all&style=overview';
