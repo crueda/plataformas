@@ -169,13 +169,13 @@
         } 
         else if ($_GET["o2"]=='tr') {
           echo 'kyros.es/pnp4nagios/index.php/graph?host=hawkeye.kyroslbs.com&srv=HTTPs%20service';
-          
+
         } 
         else if ($_GET["o2"]=='gprs5002') {
           echo 'hawkeye.kyroslbs.com/pnp4nagios/index.php/graph?host=hawkeye-dmz-proxy&srv=GPRS%205002%20sessions';
         }         
         else if ($_GET["o2"]=='bd') {
-          echo 'correos.kyros.es/pnp4nagios/index.php/graph?host=DB-stats&srv=Queries%20average';
+          echo 'hawkeye.kyroslbs.com/pnp4nagios/index.php/graph?host=DB-stats&srv=Queries%20average';
         } 
         else {
           echo 'kyros.kyroslbs.com/nagios3';

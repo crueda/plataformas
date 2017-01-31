@@ -402,7 +402,18 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
           </a>
           <ul class="treeview-menu">
            <!--li <?php if ($_GET["o2"]=='m') echo 'class="active"' ?> ><a href="./mapa.php?o1=w&o2=m"><i class="fa fa-circle-o"></i>Mapa</a></li-->
-            <li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> ><a href="./estadosit.php?o1=w&o2=e"><i class="fa fa-circle-o"></i>Estado</a></li>
+            <!--li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> ><a href="./estadosit.php?o1=w&o2=e"><i class="fa fa-circle-o"></i>Estado</a></li-->
+            <li><a href="http://<?php
+    $file = fopen('./credentials/user_nagios_sit.txt', 'r');
+    while(!feof($file)) {
+    echo fgets($file);
+    }
+    ?>:<?php
+    $file = fopen('./credentials/pass_nagios_sit.txt', 'r');
+    while(!feof($file)) {
+    echo fgets($file);
+    }
+    ?>@mykyros.es/cgi-bin/nagios3/status.cgi?hostgroup=all&style=overview" target="_blank"><i class="fa fa-book"></i> <span>Estado</span></a></li>
             <li><a href="https://wiki.kyroslbs.com/wiki/index.php/FIA" target="_blank"><i class="fa fa-book"></i> <span>Documentación</span></a></li>
           </ul>
         </li>
