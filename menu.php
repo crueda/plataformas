@@ -190,9 +190,9 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
               <ul class="treeview-menu">
                 <li><a href="https://docs.google.com/a/deimos-space.com/spreadsheets/d/1MN-UwZkIZv5jih2hYJoftQg1jv_c6cUAib_8f8NaKDs/edit?usp=sharing" target="_blank"><i class="fa fa-circle-o"></i>IPs</a></li>
               </ul>
-              <ul class="treeview-menu">
+              <!--ul class="treeview-menu">
                 <li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> ><a href="./estadocpd.php<?php echo '?o=cpd&o1=uva'.'&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
-              </ul>              
+              </ul-->              
             </li>
             <li <?php if ($_GET["o1"]=='oficina') echo 'class="active"' ?>>
               <a href="#"><i class="fa fa-circle-o"></i>Oficina
@@ -212,10 +212,10 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
               </ul>
 
               <ul class="treeview-menu">
-                <li <?php if ($_GET["o2"]=='sf') echo 'class="active"' ?> ><a href="./estadocpd.php<?php echo '?o1=oficina'.'&o2=sf'?>"><i class="fa fa-circle-o"></i>Sensor frontal</a></li>
+                <li <?php if ($_GET["o2"]=='sf') echo 'class="active"' ?> ><a href="./estadocpd.php<?php echo '?o1=oficina'.'&o2=sf'?>"><i class="fa fa-circle-o"></i>Tº y humedad frontal</a></li>
               </ul>
               <ul class="treeview-menu">
-                <li <?php if ($_GET["o2"]=='st') echo 'class="active"' ?> ><a href="./estadocpd.php<?php echo '?o1=oficina'.'&o2=st'?>"><i class="fa fa-circle-o"></i>Sensor trasero</a></li>
+                <li <?php if ($_GET["o2"]=='st') echo 'class="active"' ?> ><a href="./estadocpd.php<?php echo '?o1=oficina'.'&o2=st'?>"><i class="fa fa-circle-o"></i>Tº y humedad trasera</a></li>
               </ul>
               <ul class="treeview-menu">
                 <li <?php if ($_GET["o2"]=='it') echo 'class="active"' ?> ><a href="./estadocpd.php<?php echo '?o1=oficina'.'&o2=it'?>"><i class="fa fa-circle-o"></i>Servicios IT
@@ -242,12 +242,25 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
               <ul class="treeview-menu">
                 <li <?php if ($_GET["o2"]=='traficosit') echo 'class="active"' ?>><a href="./cpd_sit_trafico.php"><i class="fa fa-circle-o"></i>Tráfico SIT</a></li>
               </ul>
-              <ul class="treeview-menu">
+              <!--ul class="treeview-menu">
                 <li <?php if ($_GET["o2"]=='traficocamionhttp') echo 'class="active"' ?>><a href="./cpd_sit_trafico_http_camion.php"><i class="fa fa-circle-o"></i>Tráfico Camión (http)</a></li>
               </ul>
               <ul class="treeview-menu">
                 <li  <?php if ($_GET["o2"]=='traficocamionhttps') echo 'class="active"' ?>><a href="./cpd_sit_trafico_https_camion.php"><i class="fa fa-circle-o"></i>Tráfico Camión (https)</a></li>
-              </ul>
+              </ul-->
+<ul class="treeview-menu">
+<li><a href="http://<?php
+    $file = fopen('./credentials/user_nagios_sit.txt', 'r');
+    while(!feof($file)) {
+    echo fgets($file);
+    }
+    ?>:<?php
+    $file = fopen('./credentials/pass_nagios_sit.txt', 'r');
+    while(!feof($file)) {
+    echo fgets($file);
+    }
+    ?>@mykyros.es/cgi-bin/nagios3/status.cgi?hostgroup=all&style=overview" target="_blank"><i class="fa fa-circle-o"></i> <span>Estado</span></a></li>
+</ul>                  
             </li>
           </ul>
         </li>
@@ -393,30 +406,6 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
           </ul>
         </li>
 
-        <li class=" <?php if ($_GET["o1"]=='w') echo 'active' ?> treeview">
-          <a href="#">
-            <i class="fa fa-dashboard"></i> <span>WRC</span>
-              <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-           <!--li <?php if ($_GET["o2"]=='m') echo 'class="active"' ?> ><a href="./mapa.php?o1=w&o2=m"><i class="fa fa-circle-o"></i>Mapa</a></li-->
-            <!--li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> ><a href="./estadosit.php?o1=w&o2=e"><i class="fa fa-circle-o"></i>Estado</a></li-->
-            <li><a href="http://<?php
-    $file = fopen('./credentials/user_nagios_sit.txt', 'r');
-    while(!feof($file)) {
-    echo fgets($file);
-    }
-    ?>:<?php
-    $file = fopen('./credentials/pass_nagios_sit.txt', 'r');
-    while(!feof($file)) {
-    echo fgets($file);
-    }
-    ?>@mykyros.es/cgi-bin/nagios3/status.cgi?hostgroup=all&style=overview" target="_blank"><i class="fa fa-book"></i> <span>Estado</span></a></li>
-            <li><a href="https://wiki.kyroslbs.com/wiki/index.php/FIA" target="_blank"><i class="fa fa-book"></i> <span>Documentación</span></a></li>
-          </ul>
-        </li>
 
         <li <?php if ($_GET["o1"]=='calendario') echo 'class="active"' ?>>
           <a href="./calendario.php">
