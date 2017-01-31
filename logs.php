@@ -120,6 +120,12 @@
       if ($_GET["o1"]=='c') {
         echo 'correos.kyros.es/logs/';
       }       
+      else if ($_GET["o1"]=='k') {
+        echo 'kyros.es/logs/';
+      }       
+      else if ($_GET["o1"]=='h') {
+        echo 'kyros.es/logs/';
+      }       
       else {
         echo '';
       }?>" frameborder="0" style="overflow: hidden; height: 90%;

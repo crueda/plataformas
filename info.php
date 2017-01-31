@@ -168,7 +168,8 @@
           echo 'hawkeye.kyroslbs.com/pnp4nagios/index.php/graph?host=hawkeye-dmz-proxy&srv=https%20sessions';
         } 
         else if ($_GET["o2"]=='tr') {
-          echo 'hawkeye.kyroslbs.com/pnp4nagios/index.php/graph?host=correos.kyros.es&srv=HTTPs%20service';
+          echo 'kyros.es/pnp4nagios/index.php/graph?host=hawkeye.kyroslbs.com&srv=HTTPs%20service';
+          
         } 
         else if ($_GET["o2"]=='gprs5002') {
           echo 'hawkeye.kyroslbs.com/pnp4nagios/index.php/graph?host=hawkeye-dmz-proxy&srv=GPRS%205002%20sessions';
