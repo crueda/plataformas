@@ -436,7 +436,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
     echo fgets($file);
     }
     ?>@files.kyroslbs.com/app" target="_blank"><i class="fa fa-circle-o text-blue"></i> <span>Repositorio Apps</span></a></li>
-        <li><a href="../dockyrosapi/index.html" target="_blank"><i class="fa fa-circle-o text-white"></i> <span>Kyros API</span></a></li>
+        <li><a href="https://api-doc.kyroslbs.com/" target="_blank"><i class="fa fa-circle-o text-white"></i> <span>Kyros API</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->
