@@ -106,7 +106,7 @@
     <!-- Main content -->
     <section class="content">
 
-<iframe src="../cabina/<?php 
+<iframe src="./cabina/<?php 
       if ($_GET["o1"]=='k') {
         echo 'KYROS';
       } 

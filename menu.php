@@ -12,14 +12,14 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 $url = 'menu.php?o='.$_GET["o"].'&o1='.$_GET["o1"].'&o2='.$_GET["o2"];
 header( "refresh:60;url=$url"); 
 
-$csvHawkeyeFile = file('../counters/hawkeye.csv');
-$csvCorreosFile = file('../counters/correos.csv');
-$csvCorreospreFile = file('../counters/correospre.csv');
-$csvKyrospreFile = file('../counters/kyrospre.csv');
-$csvSumoFile = file('../counters/sumo.csv');
-$csvKyrosFile = file('../counters/kyros.csv');
-$csvDemosFile = file('../counters/demos.csv');
-$csvItFile = file('../counters/it.csv');
+$csvHawkeyeFile = file('./counters/hawkeye.csv');
+$csvCorreosFile = file('./counters/correos.csv');
+$csvCorreospreFile = file('./counters/correospre.csv');
+$csvKyrospreFile = file('./counters/kyrospre.csv');
+$csvSumoFile = file('./counters/sumo.csv');
+$csvKyrosFile = file('./counters/kyros.csv');
+$csvDemosFile = file('./counters/demos.csv');
+$csvItFile = file('./counters/it.csv');
 
 $dataHawkeye = [];
 foreach ($csvHawkeyeFile as $line) {

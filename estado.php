@@ -156,7 +156,7 @@
         echo 'kyros.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=SUMO-Production&style=overview';
       } 
       else if ($_GET["o1"]=='c') {
-        echo 'correos.kyros.es/nagios3';
+        echo 'correos.kyros.es/cgi-bin/nagios3/status.cgi?hostgroup=all&style=overview';
       } 
       else if ($_GET["o1"]=='uva') {
         echo 'correos.kyros.es/cgi-bin/nagios3/status.cgi?hostgroup=all&style=overview';
