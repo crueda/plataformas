@@ -50,7 +50,7 @@ $(function () {
 
   //jvectormap data
   var visitorsData = {
-    "US": 398, //USA
+    "US": 3980, //USA
     "SA": 400, //Saudi Arabia
     "CA": 1000, //Canada
     "DE": 500, //Germany
@@ -78,7 +78,7 @@ $(function () {
     series: {
       regions: [{
         values: visitorsData,
-        scale: ["#92c1dc", "#ebf4f9"],
+        scale: ["#ebf4f9", "#92c1dc"],
         normalizeFunction: 'polynomial'
       }]
     },

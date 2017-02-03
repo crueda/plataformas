@@ -406,6 +406,47 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
           </ul>
         </li>
 
+        <li class="<?php if ($_GET["o1"]=='s') echo 'active' ?> treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Kyros API</span>
+              <span class="pull-right-container">
+              <small class="label pull-right bg-red"><?php
+$xml=simplexml_load_file("./counters/test-api-report.xml");
+$api_errors = $xml->testsuite[0]['errors'];
+$api_failures = $xml->testsuite[0]['failures'];
+$api_ok = $xml->testsuite[0]['tests'];
+if ($api_errors!='0') echo $api_errors;
+?></small>
+              <small class="label pull-right bg-yellow"><?php
+if ($api_failures!='0') echo $api_failures;
+?></small>
+              <small class="label pull-right bg-green"><?php
+ echo $api_ok;
+?></small>
+
+
+              <i class="fa fa-angle-left pull-right"></i>
+
+
+
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li <?php if ($_GET["o2"]=='test') echo 'class="active"' ?> ><a href="./test.php?o1=api&o2=test'"><i class="fa fa-circle-o"></i>Tests</a></li>
+            <li><a href="https://<?php
+    $file = fopen('./credentials/user_plataformas.txt', 'r');
+    while(!feof($file)) {
+    echo fgets($file);
+    }
+    ?>:<?php
+    $file = fopen('./credentials/pass_plataformas.txt', 'r');
+    while(!feof($file)) {
+    echo fgets($file);
+    }
+    ?>@api-doc.kyroslbs.com/" target="_blank"><i class="fa fa-book"></i> <span>Documentación</span></a></li>
+          </ul>
+        </li>
+
 
         <li <?php if ($_GET["o1"]=='calendario') echo 'class="active"' ?>>
           <a href="./calendario.php">
@@ -436,7 +477,6 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
     echo fgets($file);
     }
     ?>@files.kyroslbs.com/app" target="_blank"><i class="fa fa-circle-o text-blue"></i> <span>Repositorio Apps</span></a></li>
-        <li><a href="https://api-doc.kyroslbs.com/" target="_blank"><i class="fa fa-circle-o text-white"></i> <span>Kyros API</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->
