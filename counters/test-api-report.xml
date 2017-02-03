@@ -1,0 +1,11 @@
+<a>
+	<testsuite name="Mocha Tests" tests="6" failures="0" errors="0" skipped="0" timestamp="Fri, 03 Feb 2017 13:15:58 GMT" time="0.929">
+
+<testcase classname="Area API REST test" name="[POST]    Get all areas" time="0.225"/>
+<testcase classname="Area API REST test" name="[POST]    Add area" time="0.161"/>
+<testcase classname="Area API REST test" name="[GET]    Get area" time="0.103"/>
+<testcase classname="Area API REST test" name="[PUT]     Update area" time="0.15"/>
+<testcase classname="Area API REST test" name="[DELETE]  Remove area" time="0.142"/>
+<testcase classname="Tracking API REST test" name="[POST]    Get all areas" time="0.139"/>
+</testsuite>
+</a>
