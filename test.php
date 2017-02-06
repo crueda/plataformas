@@ -62,7 +62,7 @@
     <!-- MENU-->
 
     <iframe src="./menu.php<?php echo '?o1='.$_GET["o1"].'&o2='.$_GET["o2"]?>" frameborder="0" style="overflow: hidden; height: 100%;
-        width: 100%; position: absolute;" height="100%" width="100%"></iframe>
+        width: 100%; position: absolute;" ></iframe>
 
 
   <!-- Content Wrapper. Contains page content -->
@@ -93,7 +93,7 @@
     <!-- Main content -->
     <section class="content">
 
-<iframe src="https://api-test.kyroslbs.com" frameborder="0" style="overflow: hidden; height: 100%;width: 100%; position: absolute;"></iframe>
+<iframe src="https://api-test.kyroslbs.com" frameborder="0" style="overflow: hidden; height: 90%;width: 100%; position: absolute;"></iframe>
 
 
 

@@ -9,7 +9,12 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 //$secondsWait = 60;
 //header("Refresh:$secondsWait");
 
-$url = 'menu.php?o='.$_GET["o"].'&o1='.$_GET["o1"].'&o2='.$_GET["o2"];
+$o = isset($_GET['o']) ? $_GET['o'] : 1;
+$o1 = isset($_GET['o1']) ? $_GET['o1'] : 1;
+$o2 = isset($_GET['o2']) ? $_GET['o2'] : 1;
+
+//$url = 'menu.php?o='.$_GET["o"].'&o1='.$_GET["o1"].'&o2='.$_GET["o2"];
+$url = 'menu.php?o='.$o1.'&o1='.$o2.'&o2='.$o2;
 header( "refresh:60;url=$url"); 
 
 $csvHawkeyeFile = file('./counters/hawkeye.csv');
@@ -166,7 +171,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
       <ul class="sidebar-menu">
         <!--li class="header">Menú principal</li-->
 
-        <li class="<?php if ($_GET["o"]=='cpd') echo 'active' ?> treeview">
+        <li class="<?php if ($o=='cpd') echo 'active' ?> treeview">
           <a href="#">
             <i class="fa fa-share"></i> <span>CPDs</span>
               <span class="pull-right-container">
@@ -178,23 +183,23 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
 
           </a>
           <ul class="treeview-menu">
-            <li <?php if ($_GET["o1"]=='uva') echo 'class="active"' ?>>
+            <li <?php if ($o1=='uva') echo 'class="active"' ?>>
               <a href="#"><i class="fa fa-circle-o"></i>UVA
                 <span class="pull-right-container">
                   <i class="fa fa-angle-left pull-right"></i>
                 </span>
               </a>
               <ul class="treeview-menu">
-                <li <?php if ($_GET["o2"]=='traficouva') echo 'class="active"' ?>><a href="./cpd_uva_trafico.php"><i class="fa fa-circle-o"></i>Tráfico</a></li>
+                <li <?php if ($o2=='traficouva') echo 'class="active"' ?>><a href="./cpd_uva_trafico.php"><i class="fa fa-circle-o"></i>Tráfico</a></li>
               </ul>
               <ul class="treeview-menu">
                 <li><a href="https://docs.google.com/a/deimos-space.com/spreadsheets/d/1MN-UwZkIZv5jih2hYJoftQg1jv_c6cUAib_8f8NaKDs/edit?usp=sharing" target="_blank"><i class="fa fa-circle-o"></i>IPs</a></li>
               </ul>
               <!--ul class="treeview-menu">
-                <li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> ><a href="./estadocpd.php<?php echo '?o=cpd&o1=uva'.'&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
+                <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estadocpd.php<?php echo '?o=cpd&o1=uva'.'&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
               </ul-->              
             </li>
-            <li <?php if ($_GET["o1"]=='oficina') echo 'class="active"' ?>>
+            <li <?php if ($o1=='oficina') echo 'class="active"' ?>>
               <a href="#"><i class="fa fa-circle-o"></i>Oficina
               <span class="pull-right-container">
                <small class="label pull-right bg-red"><?php  if ($it_error>0) echo $it_error; ?></small>
@@ -205,20 +210,20 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
 
               </a>
               <ul class="treeview-menu">
-                <li <?php if ($_GET["o2"]=='traficooficina') echo 'class="active"' ?>><a href="./cpd_oficina_trafico.php"><i class="fa fa-circle-o"></i>Tráfico</a></li>
+                <li <?php if ($o2=='traficooficina') echo 'class="active"' ?>><a href="./cpd_oficina_trafico.php"><i class="fa fa-circle-o"></i>Tráfico</a></li>
               </ul>
               <ul class="treeview-menu">
-                <li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> ><a href="./estadocpd.php<?php echo '?o=cpd&o1=oficina'.'&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
+                <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estadocpd.php<?php echo '?o=cpd&o1=oficina'.'&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
               </ul>
 
               <ul class="treeview-menu">
-                <li <?php if ($_GET["o2"]=='sf') echo 'class="active"' ?> ><a href="./estadocpd.php<?php echo '?o1=oficina'.'&o2=sf'?>"><i class="fa fa-circle-o"></i>Tº y humedad frontal</a></li>
+                <li <?php if ($o2=='sf') echo 'class="active"' ?> ><a href="./estadocpd.php<?php echo '?o1=oficina'.'&o2=sf'?>"><i class="fa fa-circle-o"></i>Tº y humedad frontal</a></li>
               </ul>
               <ul class="treeview-menu">
-                <li <?php if ($_GET["o2"]=='st') echo 'class="active"' ?> ><a href="./estadocpd.php<?php echo '?o1=oficina'.'&o2=st'?>"><i class="fa fa-circle-o"></i>Tº y humedad trasera</a></li>
+                <li <?php if ($o2=='st') echo 'class="active"' ?> ><a href="./estadocpd.php<?php echo '?o1=oficina'.'&o2=st'?>"><i class="fa fa-circle-o"></i>Tº y humedad trasera</a></li>
               </ul>
               <ul class="treeview-menu">
-                <li <?php if ($_GET["o2"]=='it') echo 'class="active"' ?> ><a href="./estadocpd.php<?php echo '?o1=oficina'.'&o2=it'?>"><i class="fa fa-circle-o"></i>Servicios IT
+                <li <?php if ($o2=='it') echo 'class="active"' ?> ><a href="./estadocpd.php<?php echo '?o1=oficina'.'&o2=it'?>"><i class="fa fa-circle-o"></i>Servicios IT
 
                 <span class="pull-right-container">
                <small class="label pull-right bg-red"><?php  if ($it_error>0) echo $it_error; ?></small>
@@ -233,20 +238,20 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
 
               </ul>
             </li>
-            <li <?php if ($_GET["o1"]=='rally') echo 'class="active"' ?>>
+            <li <?php if ($o1=='rally') echo 'class="active"' ?>>
               <a href="#"><i class="fa fa-circle-o"></i>Rally
                 <span class="pull-right-container">
                   <i class="fa fa-angle-left pull-right"></i>
                 </span>
               </a>
               <ul class="treeview-menu">
-                <li <?php if ($_GET["o2"]=='traficosit') echo 'class="active"' ?>><a href="./cpd_sit_trafico.php"><i class="fa fa-circle-o"></i>Tráfico SIT</a></li>
+                <li <?php if ($o2=='traficosit') echo 'class="active"' ?>><a href="./cpd_sit_trafico.php"><i class="fa fa-circle-o"></i>Tráfico SIT</a></li>
               </ul>
               <!--ul class="treeview-menu">
-                <li <?php if ($_GET["o2"]=='traficocamionhttp') echo 'class="active"' ?>><a href="./cpd_sit_trafico_http_camion.php"><i class="fa fa-circle-o"></i>Tráfico Camión (http)</a></li>
+                <li <?php if ($o2=='traficocamionhttp') echo 'class="active"' ?>><a href="./cpd_sit_trafico_http_camion.php"><i class="fa fa-circle-o"></i>Tráfico Camión (http)</a></li>
               </ul>
               <ul class="treeview-menu">
-                <li  <?php if ($_GET["o2"]=='traficocamionhttps') echo 'class="active"' ?>><a href="./cpd_sit_trafico_https_camion.php"><i class="fa fa-circle-o"></i>Tráfico Camión (https)</a></li>
+                <li  <?php if ($o2=='traficocamionhttps') echo 'class="active"' ?>><a href="./cpd_sit_trafico_https_camion.php"><i class="fa fa-circle-o"></i>Tráfico Camión (https)</a></li>
               </ul-->
 <ul class="treeview-menu">
 <li><a href="http://<?php
@@ -265,7 +270,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
           </ul>
         </li>
 
-        <li class="<?php if ($_GET["o1"]=='k') echo 'active' ?> treeview">
+        <li class="<?php if ($o1=='k') echo 'active' ?> treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Kyros</span>
               <span class="pull-right-container">
@@ -276,20 +281,20 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
             </span>
           </a>
           <ul class="treeview-menu">
-           <!--li <?php if ($_GET["o2"]=='m') echo 'class="active"' ?> ><a href="./mapa.php?o1=k&o2=m"><i class="fa fa-circle-o"></i>Mapa</a></li-->
-            <li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=k&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
-            <li  <?php if ($_GET["o2"]=='sw') echo 'class="active"' ?>><a href="./info.php<?php echo '?o1=k&o2=sw'?>"><i class="fa fa-circle-o"></i>Sesiones Web</a></li>
-            <li  <?php if ($_GET["o2"]=='tr') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=k&o2=tr'?>"><i class="fa fa-circle-o"></i>Tiempo de respuesta HTTPS</a></li>
-            <li  <?php if ($_GET["o2"]=='gprs5000') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=k&o2=gprs5000'?>"><i class="fa fa-circle-o"></i>Sesiones GPRS 5000</a></li>
-            <li  <?php if ($_GET["o2"]=='gprs5002') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=k&o2=gprs5002'?>"><i class="fa fa-circle-o"></i>Sesiones GPRS 5002</a></li>
-            <li  <?php if ($_GET["o2"]=='bd') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=k&o2=bd'?>"><i class="fa fa-circle-o"></i>BD estadisticas</a></li>
-            <li  <?php if ($_GET["o2"]=='backup') echo 'class="active"' ?> ><a href="./backups.php<?php echo '?o1=k&o2=backup'?>"><i class="fa fa-circle-o"></i>Backups</a></li>
-            <li  <?php if ($_GET["o2"]=='logs') echo 'class="active"' ?> ><a href="./logs.php<?php echo '?o1=k&o2=logs'?>"><i class="fa fa-circle-o"></i>Logs</a></li>
+           <!--li <?php if ($o2=='m') echo 'class="active"' ?> ><a href="./mapa.php?o1=k&o2=m"><i class="fa fa-circle-o"></i>Mapa</a></li-->
+            <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=k&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
+            <li  <?php if ($o2=='sw') echo 'class="active"' ?>><a href="./info.php<?php echo '?o1=k&o2=sw'?>"><i class="fa fa-circle-o"></i>Sesiones Web</a></li>
+            <li  <?php if ($o2=='tr') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=k&o2=tr'?>"><i class="fa fa-circle-o"></i>Tiempo de respuesta HTTPS</a></li>
+            <li  <?php if ($o2=='gprs5000') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=k&o2=gprs5000'?>"><i class="fa fa-circle-o"></i>Sesiones GPRS 5000</a></li>
+            <li  <?php if ($o2=='gprs5002') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=k&o2=gprs5002'?>"><i class="fa fa-circle-o"></i>Sesiones GPRS 5002</a></li>
+            <li  <?php if ($o2=='bd') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=k&o2=bd'?>"><i class="fa fa-circle-o"></i>BD estadisticas</a></li>
+            <li  <?php if ($o2=='backup') echo 'class="active"' ?> ><a href="./backups.php<?php echo '?o1=k&o2=backup'?>"><i class="fa fa-circle-o"></i>Backups</a></li>
+            <li  <?php if ($o2=='logs') echo 'class="active"' ?> ><a href="./logs.php<?php echo '?o1=k&o2=logs'?>"><i class="fa fa-circle-o"></i>Logs</a></li>
 
           </ul>
         </li>
 
-        <li class="<?php if ($_GET["o1"]=='kp') echo 'active' ?>  treeview">
+        <li class="<?php if ($o1=='kp') echo 'active' ?>  treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Kyros Pre</span>
             <span class="pull-right-container">
@@ -300,12 +305,12 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
             </span>
           </a>
           <ul class="treeview-menu">
-           <li <?php if ($_GET["o2"]=='m') echo 'class="active"' ?> ><a href="./mapa.php?o1=kp&o2=m"><i class="fa fa-circle-o"></i>Mapa</a></li>
-            <li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> active><a href="./estado.php<?php echo '?o1=kp'.'&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
+           <li <?php if ($o2=='m') echo 'class="active"' ?> ><a href="./mapa.php?o1=kp&o2=m"><i class="fa fa-circle-o"></i>Mapa</a></li>
+            <li <?php if ($o2=='e') echo 'class="active"' ?> active><a href="./estado.php<?php echo '?o1=kp'.'&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
           </ul>
         </li>
 
-        <li class="<?php if ($_GET["o1"]=='d') echo 'active' ?> treeview">
+        <li class="<?php if ($o1=='d') echo 'active' ?> treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Demos</span>
               <span class="pull-right-container">
@@ -316,13 +321,13 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
             </span>
           </a>
           <ul class="treeview-menu">
-            <li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=d&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
-            <li  <?php if ($_GET["o2"]=='backup') echo 'class="active"' ?> ><a href="./backups.php<?php echo '?o1=d&o2=backup'?>"><i class="fa fa-circle-o"></i>Backups</a></li>
+            <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=d&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
+            <li  <?php if ($o2=='backup') echo 'class="active"' ?> ><a href="./backups.php<?php echo '?o1=d&o2=backup'?>"><i class="fa fa-circle-o"></i>Backups</a></li>
 
           </ul>
         </li>        
 
-        <li class="<?php if ($_GET["o1"]=='c') echo 'active' ?> treeview">
+        <li class="<?php if ($o1=='c') echo 'active' ?> treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Correos</span>
               <span class="pull-right-container">
@@ -335,19 +340,19 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
         </span>
           </a>
           <ul class="treeview-menu">
-           <!--li <?php if ($_GET["o2"]=='c') echo 'class="active"' ?> ><a href="./mapa.php?o1=c&o2=m"><i class="fa fa-circle-o"></i>Mapa</a></li-->
-            <li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=c&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
-            <li  <?php if ($_GET["o2"]=='sw') echo 'class="active"' ?>><a href="./info.php<?php echo '?o1=c&o2=sw'?>"><i class="fa fa-circle-o"></i>Sesiones Web</a></li>
-            <li  <?php if ($_GET["o2"]=='tr') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=c&o2=tr'?>"><i class="fa fa-circle-o"></i>Tiempo de respuesta HTTPS</a></li>
-            <li  <?php if ($_GET["o2"]=='gprs5000') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=c&o2=gprs5000'?>"><i class="fa fa-circle-o"></i>Sesiones GPRS 5000</a></li>
-            <li  <?php if ($_GET["o2"]=='bd') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=c&o2=bd'?>"><i class="fa fa-circle-o"></i>BD estadisticas</a></li>
-            <li  <?php if ($_GET["o2"]=='backup') echo 'class="active"' ?> ><a href="./backups.php<?php echo '?o1=c&o2=backup'?>"><i class="fa fa-circle-o"></i>Backups</a></li>
-            <li  <?php if ($_GET["o2"]=='logs') echo 'class="active"' ?> ><a href="./logs.php<?php echo '?o1=c&o2=logs'?>"><i class="fa fa-circle-o"></i>Logs</a></li>
+           <!--li <?php if ($o2=='c') echo 'class="active"' ?> ><a href="./mapa.php?o1=c&o2=m"><i class="fa fa-circle-o"></i>Mapa</a></li-->
+            <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=c&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
+            <li  <?php if ($o2=='sw') echo 'class="active"' ?>><a href="./info.php<?php echo '?o1=c&o2=sw'?>"><i class="fa fa-circle-o"></i>Sesiones Web</a></li>
+            <li  <?php if ($o2=='tr') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=c&o2=tr'?>"><i class="fa fa-circle-o"></i>Tiempo de respuesta HTTPS</a></li>
+            <li  <?php if ($o2=='gprs5000') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=c&o2=gprs5000'?>"><i class="fa fa-circle-o"></i>Sesiones GPRS 5000</a></li>
+            <li  <?php if ($o2=='bd') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=c&o2=bd'?>"><i class="fa fa-circle-o"></i>BD estadisticas</a></li>
+            <li  <?php if ($o2=='backup') echo 'class="active"' ?> ><a href="./backups.php<?php echo '?o1=c&o2=backup'?>"><i class="fa fa-circle-o"></i>Backups</a></li>
+            <li  <?php if ($o2=='logs') echo 'class="active"' ?> ><a href="./logs.php<?php echo '?o1=c&o2=logs'?>"><i class="fa fa-circle-o"></i>Logs</a></li>
             <li><a href="https://wiki.kyroslbs.com/wiki/index.php/Correos" target="_blank"><i class="fa fa-book"></i> <span>Documentación</span></a></li>
           </ul>
         </li>
 
-        <li class="<?php if ($_GET["o1"]=='cp') echo 'active' ?> treeview">
+        <li class="<?php if ($o1=='cp') echo 'active' ?> treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Correos Pre</span>
 
@@ -360,13 +365,13 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
 
           </a>
           <ul class="treeview-menu">
-           <li <?php if ($_GET["o2"]=='m') echo 'class="active"' ?> ><a href="./mapa.php?o1=cp&o2=m"><i class="fa fa-circle-o"></i>Mapa</a></li>
-            <li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=cp'.'&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
+           <li <?php if ($o2=='m') echo 'class="active"' ?> ><a href="./mapa.php?o1=cp&o2=m"><i class="fa fa-circle-o"></i>Mapa</a></li>
+            <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=cp'.'&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
           </ul>
         </li>
 
 
-        <li class=" <?php if ($_GET["o1"]=='h') echo 'active' ?> treeview">
+        <li class=" <?php if ($o1=='h') echo 'active' ?> treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Hawkeye</span>
             <span class="pull-right-container">
@@ -377,19 +382,19 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
             </span>
           </a>
           <ul class="treeview-menu">
-           <li <?php if ($_GET["o2"]=='m') echo 'class="active"' ?> ><a href="./mapa.php?o1=h&o2=m"><i class="fa fa-circle-o"></i>Mapa</a></li>
-            <li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=h'.'&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
-            <li  <?php if ($_GET["o2"]=='sw') echo 'class="active"' ?>><a href="./info.php<?php echo '?o1=h&o2=sw'?>"><i class="fa fa-circle-o"></i>Sesiones Web</a></li>
-            <li  <?php if ($_GET["o2"]=='tr') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=h&o2=tr'?>"><i class="fa fa-circle-o"></i>Tiempo de respuesta HTTPS</a></li>
-            <li  <?php if ($_GET["o2"]=='gprs5002') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=h&o2=gprs5002'?>"><i class="fa fa-circle-o"></i>Sesiones GPRS 5002</a></li>
-            <li  <?php if ($_GET["o2"]=='bd') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=h&o2=bd'?>"><i class="fa fa-circle-o"></i>BD estadisticas</a></li>
-            <li  <?php if ($_GET["o2"]=='backup') echo 'class="active"' ?> ><a href="./backups.php<?php echo '?o1=h&o2=backup'?>"><i class="fa fa-circle-o"></i>Backups</a></li>
-            <li  <?php if ($_GET["o2"]=='logs') echo 'class="active"' ?> ><a href="./logs.php<?php echo '?o1=h&o2=logs'?>"><i class="fa fa-circle-o"></i>Logs</a></li>
+           <li <?php if ($o2=='m') echo 'class="active"' ?> ><a href="./mapa.php?o1=h&o2=m"><i class="fa fa-circle-o"></i>Mapa</a></li>
+            <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=h'.'&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
+            <li  <?php if ($o2=='sw') echo 'class="active"' ?>><a href="./info.php<?php echo '?o1=h&o2=sw'?>"><i class="fa fa-circle-o"></i>Sesiones Web</a></li>
+            <li  <?php if ($o2=='tr') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=h&o2=tr'?>"><i class="fa fa-circle-o"></i>Tiempo de respuesta HTTPS</a></li>
+            <li  <?php if ($o2=='gprs5002') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=h&o2=gprs5002'?>"><i class="fa fa-circle-o"></i>Sesiones GPRS 5002</a></li>
+            <li  <?php if ($o2=='bd') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=h&o2=bd'?>"><i class="fa fa-circle-o"></i>BD estadisticas</a></li>
+            <li  <?php if ($o2=='backup') echo 'class="active"' ?> ><a href="./backups.php<?php echo '?o1=h&o2=backup'?>"><i class="fa fa-circle-o"></i>Backups</a></li>
+            <li  <?php if ($o2=='logs') echo 'class="active"' ?> ><a href="./logs.php<?php echo '?o1=h&o2=logs'?>"><i class="fa fa-circle-o"></i>Logs</a></li>
             <li><a href="https://wiki.kyroslbs.com/wiki/index.php/Hawkeye" target="_blank"><i class="fa fa-book"></i> <span>Documentación</span></a></li>
           </ul>
         </li>
 
-        <li class="<?php if ($_GET["o1"]=='s') echo 'active' ?> treeview">
+        <li class="<?php if ($o1=='s') echo 'active' ?> treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>SUMO</span>
               <span class="pull-right-container">
@@ -400,29 +405,29 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
             </span>
           </a>
           <ul class="treeview-menu">
-            <li <?php if ($_GET["o2"]=='m') echo 'class="active"' ?> ><a href="./sumo_map.php"><i class="fa fa-circle-o"></i>Mapa</a></li>
-            <li <?php if ($_GET["o2"]=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=s&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
-            <li  <?php if ($_GET["o2"]=='backup') echo 'class="active"' ?> ><a href="./backups.php<?php echo '?o1=s&o2=backup'?>"><i class="fa fa-circle-o"></i>Backups</a></li>
+            <li <?php if ($o2=='m') echo 'class="active"' ?> ><a href="./sumo_map.php"><i class="fa fa-circle-o"></i>Mapa</a></li>
+            <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=s&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
+            <li  <?php if ($o2=='backup') echo 'class="active"' ?> ><a href="./backups.php<?php echo '?o1=s&o2=backup'?>"><i class="fa fa-circle-o"></i>Backups</a></li>
           </ul>
         </li>
 
-        <li class="<?php if ($_GET["o1"]=='s') echo 'active' ?> treeview">
+        <li class="<?php if ($o1=='api') echo 'active' ?> treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Kyros API</span>
               <span class="pull-right-container">
               <small class="label pull-right bg-red"><?php
-$xml=simplexml_load_file("./counters/test-api-report.xml");
-$api_errors = $xml->testsuite[0]['errors'];
-$api_failures = $xml->testsuite[0]['failures'];
-$api_ok = $xml->testsuite[0]['tests'];
-if ($api_errors!='0') echo $api_errors;
-?></small>
+              $xml=simplexml_load_file("./counters/test-api-report.xml");
+              $api_errors = $xml->testsuite[0]['errors'];
+              $api_failures = $xml->testsuite[0]['failures'];
+              $api_ok = $xml->testsuite[0]['tests'];
+              if ($api_errors!='0') echo $api_errors;
+              ?></small>
               <small class="label pull-right bg-yellow"><?php
-if ($api_failures!='0') echo $api_failures;
-?></small>
-              <small class="label pull-right bg-green"><?php
- echo $api_ok;
-?></small>
+              if ($api_failures!='0') echo $api_failures;
+              ?></small>
+              <small class="label pull-right bg-blue"><?php
+              echo $api_ok;
+              ?></small>
 
 
               <i class="fa fa-angle-left pull-right"></i>
@@ -432,7 +437,7 @@ if ($api_failures!='0') echo $api_failures;
             </span>
           </a>
           <ul class="treeview-menu">
-            <li <?php if ($_GET["o2"]=='test') echo 'class="active"' ?> ><a href="./test.php?o1=api&o2=test'"><i class="fa fa-circle-o"></i>Tests</a></li>
+            <li <?php if ($o2=='test') echo 'class="active"' ?> ><a href="./test.php?o1=api&o2=test'"><i class="fa fa-circle-o"></i>Tests</a></li>
             <li><a href="https://<?php
     $file = fopen('./credentials/user_plataformas.txt', 'r');
     while(!feof($file)) {
@@ -448,7 +453,7 @@ if ($api_failures!='0') echo $api_failures;
         </li>
 
 
-        <li <?php if ($_GET["o1"]=='calendario') echo 'class="active"' ?>>
+        <li <?php if ($o1=='calendario') echo 'class="active"' ?>>
           <a href="./calendario.php">
             <i class="fa fa-calendar"></i> <span>Calendario</span>
           </a>
