@@ -438,6 +438,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
           </a>
           <ul class="treeview-menu">
             <li <?php if ($o2=='test') echo 'class="active"' ?> ><a href="./test.php?o1=api&o2=test'"><i class="fa fa-circle-o"></i>Tests</a></li>
+            <li  <?php if ($o2=='logs') echo 'class="active"' ?> ><a href="./logs.php<?php echo '?o1=api&o2=logs'?>"><i class="fa fa-circle-o"></i>Logs de accesos</a></li>
             <li><a href="https://<?php
     $file = fopen('./credentials/user_plataformas.txt', 'r');
     while(!feof($file)) {

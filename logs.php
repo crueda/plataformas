@@ -125,7 +125,10 @@
       }       
       else if ($_GET["o1"]=='h') {
         echo 'hawkeye.kyroslbs.com/logs/';
-      }       
+      }     
+      else if ($_GET["o1"]=='api') {
+        echo 'api.kyroslbs.com/logs/';
+      }           
       else {
         echo '';
       }?>" frameborder="0" style="overflow: hidden; height: 90%;

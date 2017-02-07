@@ -107,31 +107,36 @@
           </thead>
             <tbody>
               <tr>
-                <td><a href="http://kyros.kyroslbs.com">kyros.es</a>
+                <td><a href="https://kyros.es">kyros.es</a>
                 <!--br><a href="http://kyros.kyroslbs.com">kyros.kyroslbs.com</a-->
                 </td>
                     <td>Entorno de producción</td>
                     <td><span class="label label-success">Ok</span></td>
               </tr>
               <tr>
-                <td><a href="http://kyros.kyroslbs.com">kyros.kyroslbs.com</a>
+                <td><a href="https://kyros.kyroslbs.com">kyros.kyroslbs.com</a>
                 </td>
                 <td>Entorno de producción (acceso alternativo)</td>
                 <td><span class="label label-success">Ok</span></td>
               </tr>
               <tr>
-                <td><a href="http://pre.kyroslbs.com">pre.kyroslbs.com</a></td>
+                <td><a href="https://pre.kyroslbs.com">pre.kyroslbs.com</a></td>
                     <td>Entorno de pre-producción</td>
                     <td><span class="label label-success">Ok</span></td>
               </tr>
               <tr>
-                <td><a href="http://demos.kyroslbs.com">demos.kyroslbs.com</a></td>
+                <td><a href="https://demos.kyroslbs.com">demos.kyroslbs.com</a></td>
                     <td>Entorno de demos</td>
                     <td><span class="label label-success">Ok</span></td>
               </tr>
               <tr>
-                <td><a href="http://view.kyroslbs.com">view.kyroslbs.com</a></td>
+                <td><a href="https://view.kyroslbs.com">view.kyroslbs.com</a></td>
                     <td>Kyros View</td>
+                    <td><span class="label label-success">Ok</span></td>
+              </tr>
+              <tr>
+                <td><a href="https://api.kyroslbs.com">api.kyroslbs.com</a></td>
+                    <td>Kyros API REST</td>
                     <td><span class="label label-success">Ok</span></td>
               </tr>
                                                      
@@ -164,19 +169,19 @@
           </thead>
             <tbody>
               <tr>
-                <td><a href="http://correos.kyros.es">correos.kyros.es</a>
+                <td><a href="https://correos.kyros.es">correos.kyros.es</a>
                 </td>
                 <td>Entorno de producción</td>
                 <td><span class="label label-success">Ok</span></td>
               </tr>
               <tr>
-                <td><a href="http://correos.kyroslbs.com">correos.kyroslbs.com</a>
+                <td><a href="https://correos.kyroslbs.com">correos.kyroslbs.com</a>
                 </td>
                 <td>Entorno de producción (acceso alternativo)</td>
                 <td><span class="label label-success">Ok</span></td>
               </tr>
               <tr>
-                <td><a href="http://correos-pre.kyroslbs.com">correos-pre.kyroslbs.com</a>
+                <td><a href="https://correos-pre.kyroslbs.com">correos-pre.kyroslbs.com</a>
                 </td>
                 <td>Entorno de pre-producción</td>
                 <td><span class="label label-success">Ok</span></td>
