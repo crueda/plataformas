@@ -349,6 +349,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
             <li  <?php if ($o2=='backup') echo 'class="active"' ?> ><a href="./backups.php<?php echo '?o1=c&o2=backup'?>"><i class="fa fa-circle-o"></i>Backups</a></li>
             <li  <?php if ($o2=='logs') echo 'class="active"' ?> ><a href="./logs.php<?php echo '?o1=c&o2=logs'?>"><i class="fa fa-circle-o"></i>Logs</a></li>
             <li><a href="https://wiki.kyroslbs.com/wiki/index.php/Correos" target="_blank"><i class="fa fa-book"></i> <span>Documentación</span></a></li>
+            
           </ul>
         </li>
 
@@ -418,7 +419,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
               <small class="label pull-right bg-red"><?php
               $xml=simplexml_load_file("./counters/test-api-report.xml");
               $api_errors = $xml->testsuite[0]['errors'];
-              $api_failures = $xml->testsuite[0]['failures'];
+              $api_failures = $xml->testsuite[0]['skipped'];
               $api_ok = $xml->testsuite[0]['tests'];
               if ($api_errors!='0') echo $api_errors;
               ?></small>
@@ -469,6 +470,12 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
        
         
         <li><a href="https://wiki.kyroslbs.com" target="_blank"><i class="fa fa-book"></i> <span>Documentación</span></a></li>
+        <li>
+          <a href="./servidor_correo.php">
+            <i class="fa fa-envelope"></i> <span>Servidor de email</span>
+          </a>
+        </li>
+
         <li class="header">Herramientas</li>
         <li><a href="https://jira.kyroslbs.com" target="_blank"><i class="fa fa-circle-o text-red"></i> <span>Jira</span></a></li>
         <li><a href="https://cloud.kyroslbs.com" target="_blank"><i class="fa fa-circle-o text-yellow"></i> <span>Cloud</span></a></li>
