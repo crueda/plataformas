@@ -73,14 +73,200 @@
     <section class="content-header">
       <h1>
         Plataformas
-        <small></small>
+        <small>Datos resumen</small>
       </h1>
     </section>
 
     <!-- Main content -->
     <section class="content">
 
+<div class="row">
+        <div class="col-md-3">
+          <!-- small box -->
+          <div class="small-box bg-aqua">
+            <div class="inner">
+              <p><b>Kyros</b> - Sesiones GPRS 5000</p>
+              <img width="100%" src="https://admin:m0rt4d3l0@kyros.es/pnp4nagios/image?host=dmz-proxy-Virtual&srv=GPRS_5000_sessions&view=0&source=0&amp;start=<?php echo time()-7800 ?>&amp;end=<?php echo time() ?>"/>
+            </div>
+            <a href="./info.php?o1=k&o2=gprs5000" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
 
+        </div>
+
+        <div class="col-md-3">
+          <!-- small box -->
+          <div class="small-box bg-aqua">
+            <div class="inner">
+              <p><b>Kyros</b> - Sesiones GPRS 5002</p>
+              <img width="100%" src="https://admin:m0rt4d3l0@kyros.es/pnp4nagios/image?host=dmz-proxy-Virtual&srv=GPRS_5002_sessions&view=0&source=0&amp;start=<?php echo time()-7800 ?>&amp;end=<?php echo time() ?>"/>
+            </div>
+            <a href="./info.php?o1=k&o2=gprs5002" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+
+        </div>
+
+        <!-- ./col -->
+        <div class="col-md-3 ">
+          <!-- small box -->
+          <div class="small-box bg-yellow">
+            <div class="inner">
+              <p><b>Correos</b> - Sesiones GPRS 5000</p>
+              <img width="100%" src="https://admin:m0rt4d3l0@correos.kyros.es/pnp4nagios/image?host=dmz-proxy-Virtual&srv=GPRS_5000_sessions&view=0&source=0&amp;start=<?php echo time()-7800 ?>&amp;end=<?php echo time() ?>"/>
+            </div>            
+            <a href="./info.php?o1=c&o2=gprs5000" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+       
+        <!-- ./col -->
+        <div class="col-md-3 ">
+          <!-- small box -->
+          <div class="small-box bg-green">
+            <div class="inner">
+              <p><b>Hawkeye</b> - Sesiones GPRS 5002</p>
+              <img width="100%" src="https://admin:m0rt4d3l0@hawkeye.kyroslbs.com/pnp4nagios/image?host=hawkeye-dmz-proxy&srv=GPRS_5002_sessions&amp;view=0&amp;source=0&amp;start=<?php echo time()-7800 ?>&amp;end=<?php echo time() ?>"/>
+            </div>
+            <a href="./info.php?o1=h&o2=gprs5002" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+       
+      </div>
+      <!-- /.row -->
+
+
+  <!--div class="box box-info">
+    <div class="box-header with-border">
+      <h3 class="box-title">Sesiones Web</h3>
+
+      <div class="box-tools pull-right">
+        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="box-body">
+      <div class="table-responsive"-->
+      
+      <div class="row">
+        <div class="col-md-4">
+          <!-- small box -->
+          <div class="small-box bg-aqua">
+            <div class="inner">
+              <p><b>Kyros</b> - Sesiones Web</p>
+              <img width="100%" src="https://admin:m0rt4d3l0@kyros.es/pnp4nagios/image?host=dmz-proxy-Virtual&amp;srv=https_sessions&amp;view=0&amp;source=0&amp;start=<?php echo time()-7800 ?>&amp;end=<?php echo time() ?>"/>
+            </div>
+            <a href="./info.php?o1=k&o2=sw" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-md-4 ">
+          <!-- small box -->
+          <div class="small-box bg-yellow">
+            <div class="inner">
+              <p><b>Correos</b> - Sesiones Web</p>
+              <img width="100%" src="https://admin:m0rt4d3l0@correos.kyros.es/pnp4nagios/image?host=dmz-proxy-Virtual&amp;srv=https_sessions&amp;view=0&amp;source=0&amp;start=<?php echo time()-7800 ?>&amp;end=<?php echo time() ?>"/>
+            </div>
+            <a href="./info.php?o1=c&o2=sw" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+       
+        <!-- ./col -->
+        <div class="col-md-4 ">
+          <!-- small box -->
+          <div class="small-box bg-green">
+            <div class="inner">
+              <p><b>Hawkeye</b> - Sesiones Web</p>
+              <img width="100%" src="https://admin:m0rt4d3l0@hawkeye.kyroslbs.com/pnp4nagios/image?host=hawkeye-dmz-proxy&amp;srv=https_sessions&amp;view=0&amp;source=0&amp;start=<?php echo time()-7800 ?>&amp;end=<?php echo time() ?>"/>
+            </div>
+            <a href="./info.php?o1=h&o2=sw" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+       
+      </div>
+      <!-- /.row -->
+        <!--/div>
+    </div>
+  </div-->
+
+      
+      <div class="row">
+        <div class="col-md-4">
+          <!-- small box -->
+          <div class="small-box bg-aqua">
+            <div class="inner">
+              <p><b>Kyros</b> - Base de datos</p>
+              <img width="100%" src="https://admin:m0rt4d3l0@kyros.es/pnp4nagios/image?host=DB-stats&srv=Queries_average&amp;view=0&amp;source=0&amp;start=<?php echo time()-7800 ?>&amp;end=<?php echo time() ?>"/>
+            </div>
+            <a href="./info.php?o1=c&o2=bd" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-md-4 ">
+          <!-- small box -->
+          <div class="small-box bg-yellow">
+            <div class="inner">
+              <p><b>Correos</b> - Base de datos</p>
+              <img width="100%" src="https://admin:m0rt4d3l0@correos.kyros.es/pnp4nagios/image?host=DB-stats&srv=Queries_average&amp;view=0&amp;source=0&amp;start=<?php echo time()-7800 ?>&amp;end=<?php echo time() ?>"/>
+            </div>
+            <a href="./info.php?o1=c&o2=bd" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+       
+        <!-- ./col -->
+        <div class="col-md-4 ">
+          <!-- small box -->
+          <div class="small-box bg-green">
+            <div class="inner">
+              <p><b>Hawkeye</b> - Base de datos</p>
+              <img width="100%" src="https://admin:m0rt4d3l0@hawkeye.kyroslbs.com/pnp4nagios/image?host=DB-stats&srv=Queries_average&amp;view=0&amp;source=0&amp;start=<?php echo time()-7800 ?>&amp;end=<?php echo time() ?>"/>
+            </div>
+            <a href="./info.php?o1=h&o2=bd" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+       
+      </div>
+      <!-- /.row -->
+
+
+      <div class="row">
+        <div class="col-md-4">
+          <!-- small box -->
+          <div class="small-box bg-red">
+            <div class="inner">
+              <p><b>UVA</b> - Tráfico de red</p>
+              <img width="100%" src="https://admin:m0rt4d3l0@hawkeye.kyroslbs.com/mrtg/89.140.174.193_1-day.png"/>
+
+            </div>
+            <a href="./cpd_oficina_trafico.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-md-4 ">
+          <!-- small box -->
+          <div class="small-box bg-red">
+            <div class="inner">
+              <p><b>Oficina</b> - Tráfico de red</p>
+              <img width="100%" src="https://admin:m0rt4d3l0@hawkeye.kyroslbs.com/mrtg/89.140.174.193_1-day.png"/>
+            </div>
+            <a href="./cpd_oficina_trafico.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+       
+        <!-- ./col -->
+        <div class="col-md-4 ">
+          <!-- small box -->
+          <div class="small-box bg-red">
+            <div class="inner">
+              <p><b>SIT</b> - Tráfico de red</p>
+              <img width="100%" src="http://nagiosadmin:p4j4r0@mykyros.es/traffic/192.168.24.1_3-day.png"/>              
+            </div>
+            <a href="./cpd_sit_trafico.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+       
+
+       
+      </div>
+      <!-- /.row -->
 
 
     </section>
@@ -108,6 +294,8 @@
   <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
+
+
 </div>
 <!-- ./wrapper -->
 
