@@ -1,3 +1,7 @@
+<?php $url = 'index.php';
+header( "refresh:60;url=$url"); 
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,6 +23,7 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="./dist/css/skins/_all-skins.min.css">
+
   <!-- iCheck -->
   <link rel="stylesheet" href="./plugins/iCheck/flat/blue.css">
   <!-- Morris chart -->
@@ -32,14 +37,52 @@
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="./plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+  
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
+
+<script type="text/javascript">
+            var timerStart = Date.now();
+            var loadingImage;
+        </script>
+
+  <script language = "JavaScript">
+         function preloader() 
+         {
+         loadingImage = new Image(); 
+         loadingImage.src = "https://admin:m0rt4d3l0@correos.kyros.es/traffic/internet-day.png";
+         }
+         function loader() 
+         {
+         document.getElementById('pic').src = loadingImage.src
+          }
+  </script>
+
+
 </head>
+<!--body class="hold-transition skin-blue sidebar-mini" onLoad="javascript:preloader()"-->
 <body class="hold-transition skin-blue sidebar-mini">
+
+<!--script type="text/javascript">
+             $(document).ready(function() {
+                 console.log("Time until DOMready: ", Date.now()-timerStart);
+             });
+             $(window).load(function() {
+                 console.log("Time until everything loaded: ", Date.now()-timerStart);
+             });
+        </script-->
+
+<script>setTimeout(loader(),5000);</script>
+
 <div class="wrapper">
 
   <header class="main-header">
@@ -86,7 +129,7 @@
           <div class="small-box bg-aqua">
             <div class="inner">
               <p><b>Kyros</b> - Sesiones GPRS 5000</p>
-              <img width="100%" src="https://admin:m0rt4d3l0@kyros.es/pnp4nagios/image?host=dmz-proxy-Virtual&srv=GPRS_5000_sessions&view=0&source=0&amp;start=<?php echo time()-7800 ?>&amp;end=<?php echo time() ?>"/>
+              <img width="100%" src="./graphs/graphKyrosSesiones5000.png"/>
             </div>
             <a href="./info.php?o1=k&o2=gprs5000" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
@@ -98,7 +141,7 @@
           <div class="small-box bg-aqua">
             <div class="inner">
               <p><b>Kyros</b> - Sesiones GPRS 5002</p>
-              <img width="100%" src="https://admin:m0rt4d3l0@kyros.es/pnp4nagios/image?host=dmz-proxy-Virtual&srv=GPRS_5002_sessions&view=0&source=0&amp;start=<?php echo time()-7800 ?>&amp;end=<?php echo time() ?>"/>
+              <img width="100%" src="./graphs/graphKyrosSesiones5002.png"/>
             </div>
             <a href="./info.php?o1=k&o2=gprs5002" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
@@ -111,7 +154,7 @@
           <div class="small-box bg-yellow">
             <div class="inner">
               <p><b>Correos</b> - Sesiones GPRS 5000</p>
-              <img width="100%" src="https://admin:m0rt4d3l0@correos.kyros.es/pnp4nagios/image?host=dmz-proxy-Virtual&srv=GPRS_5000_sessions&view=0&source=0&amp;start=<?php echo time()-7800 ?>&amp;end=<?php echo time() ?>"/>
+              <img width="100%" src="./graphs/graphCorreosSesiones5000.png"/>
             </div>            
             <a href="./info.php?o1=c&o2=gprs5000" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
@@ -123,7 +166,7 @@
           <div class="small-box bg-green">
             <div class="inner">
               <p><b>Hawkeye</b> - Sesiones GPRS 5002</p>
-              <img width="100%" src="https://admin:m0rt4d3l0@hawkeye.kyroslbs.com/pnp4nagios/image?host=hawkeye-dmz-proxy&srv=GPRS_5002_sessions&amp;view=0&amp;source=0&amp;start=<?php echo time()-7800 ?>&amp;end=<?php echo time() ?>"/>
+              <img width="100%" src="./graphs/graphHawkeyeSesiones5002.png"/>
             </div>
             <a href="./info.php?o1=h&o2=gprs5002" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
@@ -152,7 +195,7 @@
           <div class="small-box bg-aqua">
             <div class="inner">
               <p><b>Kyros</b> - Sesiones Web</p>
-              <img width="100%" src="https://admin:m0rt4d3l0@kyros.es/pnp4nagios/image?host=dmz-proxy-Virtual&amp;srv=https_sessions&amp;view=0&amp;source=0&amp;start=<?php echo time()-7800 ?>&amp;end=<?php echo time() ?>"/>
+              <img width="100%" src="./graphs/graphKyrosSesiones.png"/>
             </div>
             <a href="./info.php?o1=k&o2=sw" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
@@ -163,7 +206,7 @@
           <div class="small-box bg-yellow">
             <div class="inner">
               <p><b>Correos</b> - Sesiones Web</p>
-              <img width="100%" src="https://admin:m0rt4d3l0@correos.kyros.es/pnp4nagios/image?host=dmz-proxy-Virtual&amp;srv=https_sessions&amp;view=0&amp;source=0&amp;start=<?php echo time()-7800 ?>&amp;end=<?php echo time() ?>"/>
+              <img width="100%" src="./graphs/graphCorreosSesiones.png"/>
             </div>
             <a href="./info.php?o1=c&o2=sw" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
@@ -175,7 +218,7 @@
           <div class="small-box bg-green">
             <div class="inner">
               <p><b>Hawkeye</b> - Sesiones Web</p>
-              <img width="100%" src="https://admin:m0rt4d3l0@hawkeye.kyroslbs.com/pnp4nagios/image?host=hawkeye-dmz-proxy&amp;srv=https_sessions&amp;view=0&amp;source=0&amp;start=<?php echo time()-7800 ?>&amp;end=<?php echo time() ?>"/>
+              <img width="100%" src="./graphs/graphHawkeyeSesiones.png"/>
             </div>
             <a href="./info.php?o1=h&o2=sw" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
@@ -194,7 +237,7 @@
           <div class="small-box bg-aqua">
             <div class="inner">
               <p><b>Kyros</b> - Base de datos</p>
-              <img width="100%" src="https://admin:m0rt4d3l0@kyros.es/pnp4nagios/image?host=DB-stats&srv=Queries_average&amp;view=0&amp;source=0&amp;start=<?php echo time()-7800 ?>&amp;end=<?php echo time() ?>"/>
+              <img width="100%" src="./graphs/graphKyrosBD.png"/>
             </div>
             <a href="./info.php?o1=c&o2=bd" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
@@ -205,7 +248,7 @@
           <div class="small-box bg-yellow">
             <div class="inner">
               <p><b>Correos</b> - Base de datos</p>
-              <img width="100%" src="https://admin:m0rt4d3l0@correos.kyros.es/pnp4nagios/image?host=DB-stats&srv=Queries_average&amp;view=0&amp;source=0&amp;start=<?php echo time()-7800 ?>&amp;end=<?php echo time() ?>"/>
+              <img width="100%" src="./graphs/graphCorreosBD.png"/>
             </div>
             <a href="./info.php?o1=c&o2=bd" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
@@ -217,7 +260,7 @@
           <div class="small-box bg-green">
             <div class="inner">
               <p><b>Hawkeye</b> - Base de datos</p>
-              <img width="100%" src="https://admin:m0rt4d3l0@hawkeye.kyroslbs.com/pnp4nagios/image?host=DB-stats&srv=Queries_average&amp;view=0&amp;source=0&amp;start=<?php echo time()-7800 ?>&amp;end=<?php echo time() ?>"/>
+              <img width="100%" src="./graphs/graphHawkeyeBD.png"/>
             </div>
             <a href="./info.php?o1=h&o2=bd" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
@@ -233,8 +276,7 @@
           <div class="small-box bg-red">
             <div class="inner">
               <p><b>UVA</b> - Tráfico de red</p>
-              <img width="100%" src="https://admin:m0rt4d3l0@hawkeye.kyroslbs.com/mrtg/89.140.174.193_1-day.png"/>
-
+              <img id="pic" width="100%" src="./graphs/graphUvaRed.png" alt="Generando el gráfico..." title="Generando el gráfico..."/>              
             </div>
             <a href="./cpd_oficina_trafico.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
@@ -245,7 +287,7 @@
           <div class="small-box bg-red">
             <div class="inner">
               <p><b>Oficina</b> - Tráfico de red</p>
-              <img width="100%" src="https://admin:m0rt4d3l0@hawkeye.kyroslbs.com/mrtg/89.140.174.193_1-day.png"/>
+              <img width="100%" src="./graphs/graphOficinaRed.png"/>
             </div>
             <a href="./cpd_oficina_trafico.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
@@ -253,11 +295,10 @@
        
         <!-- ./col -->
         <div class="col-md-4 ">
-          <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
               <p><b>SIT</b> - Tráfico de red</p>
-              <img width="100%" src="http://nagiosadmin:p4j4r0@mykyros.es/traffic/192.168.24.1_3-day.png"/>              
+              <img width="100%" src="./graphs/graphSitRed.png"/>              
             </div>
             <a href="./cpd_sit_trafico.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
