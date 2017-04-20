@@ -109,6 +109,9 @@
         else if ($_GET["o1"]=='d') {
           echo 'DEMOS';
         } 
+        else if ($_GET["o1"]=='mongo') {
+          echo 'MongoDB';
+        } 
         else {
           echo '';
         }
@@ -169,6 +172,9 @@
       } 
       else if ($_GET["o1"]=='st') {
         echo 'hawkeye.kyroslbs.com/pnp4nagios/index.php/graph?host=raspberry&srv=Sensor-trasero';
+      } 
+      else if ($_GET["o1"]=='mongo') {
+        echo 'hawkeye.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=Kyros-mongoDB&style=detail';
       } 
       else {
         echo 'hawkeye.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=all';

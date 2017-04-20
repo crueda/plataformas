@@ -278,7 +278,7 @@ header( "refresh:60;url=$url");
               <p><b>UVA</b> - Tráfico de red</p>
               <img id="pic" width="100%" src="./graphs/graphUvaRed.png" alt="Generando el gráfico..." title="Generando el gráfico..."/>              
             </div>
-            <a href="./cpd_oficina_trafico.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="./cpd_uva_trafico.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->

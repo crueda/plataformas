@@ -21,7 +21,7 @@ $csvHawkeyeFile = file('./counters/hawkeye.csv');
 $csvCorreosFile = file('./counters/correos.csv');
 $csvCorreospreFile = file('./counters/correospre.csv');
 $csvKyrospreFile = file('./counters/kyrospre.csv');
-$csvSumoFile = file('./counters/sumo.csv');
+$csvMongoFile = file('./counters/mongo.csv');
 $csvKyrosFile = file('./counters/kyros.csv');
 $csvDemosFile = file('./counters/demos.csv');
 $csvItFile = file('./counters/it.csv');
@@ -42,9 +42,9 @@ $dataKyrospre = [];
 foreach ($csvKyrospreFile as $line) {
   $dataKyrospre[] = str_getcsv($line, $delimiter = ";" );              
 }
-$dataSumo = [];
-foreach ($csvSumoFile as $line) {
-  $dataSumo[] = str_getcsv($line, $delimiter = ";" );              
+$dataMongo = [];
+foreach ($csvMongoFile as $line) {
+  $dataMongo[] = str_getcsv($line, $delimiter = ";" );              
 }
 $dataKyros = [];
 foreach ($csvKyrosFile as $line) {
@@ -75,9 +75,9 @@ $kyrospre_ok = $dataKyrospre[0][0];
 $kyrospre_warning = $dataKyrospre[0][1]; 
 $kyrospre_error = $dataKyrospre[0][2];
 
-$sumo_ok = $dataSumo[0][0];
-$sumo_warning = $dataSumo[0][1]; 
-$sumo_error = $dataSumo[0][2];
+$mongo_ok = $dataMongo[0][0];
+$mongo_warning = $dataMongo[0][1]; 
+$mongo_error = $dataMongo[0][2];
 
 $kyros_ok = $dataKyros[0][0];
 $kyros_warning = $dataKyros[0][1]; 
@@ -92,7 +92,7 @@ $it_warning = $dataIt[0][1];
 $it_error = $dataIt[0][2];
 
 
-$services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyros_ok  + $sumo_ok + $demos_ok + $it_ok;
+$services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyros_ok  + $mongo_ok + $demos_ok + $it_ok;
 ?>
 
 
@@ -290,6 +290,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
             <li  <?php if ($o2=='bd') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=k&o2=bd'?>"><i class="fa fa-circle-o"></i>BD estadisticas</a></li>
             <li  <?php if ($o2=='backup') echo 'class="active"' ?> ><a href="./backups.php<?php echo '?o1=k&o2=backup'?>"><i class="fa fa-circle-o"></i>Backups</a></li>
             <li  <?php if ($o2=='logs') echo 'class="active"' ?> ><a href="./logs.php<?php echo '?o1=k&o2=logs'?>"><i class="fa fa-circle-o"></i>Logs</a></li>
+            <li  <?php if ($o2=='tracking') echo 'class="active"' ?> ><a href="./tracking_stats.php<?php echo '?o1=k&o2=tracking'?>"><i class="fa fa-circle-o"></i>Estadísticas de tracking</a></li>
 
           </ul>
         </li>
@@ -399,7 +400,8 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
     while(!feof($file)) {
     echo fgets($file);
     }
-    ?>@172.26.30.252/nagvis/frontend/nagvis-js/index.php?mod=Map&act=view&show=CorreosPre&header_menu=0&zoombar=1" target="_blank"><i class="fa fa-circle-o"></i>Mapa</a></li>
+    ?>@172.26.30.252/nagvis/frontend/nagvis-js/index.php?mod=Map&act=view&show=CorreosPreç
+    &header_menu=0&zoombar=1" target="_blank"><i class="fa fa-circle-o"></i>Mapa</a></li>
             <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=cp'.'&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
           </ul>
         </li>
@@ -439,22 +441,22 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
           </ul>
         </li>
 
-        <li class="<?php if ($o1=='s') echo 'active' ?> treeview">
+        <li class="<?php if ($o1=='mongo') echo 'active' ?> treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i> <span>SUMO</span>
+            <i class="fa fa-dashboard"></i> <span>MongoDB</span>
               <span class="pull-right-container">
-              <small class="label pull-right bg-red"><?php  if ($sumo_error>0) echo $sumo_error; ?></small>
-              <small class="label pull-right bg-yellow"><?php if ($sumo_warning>0) echo $sumo_warning; ?></small>
-              <small class="label pull-right bg-green"><?php echo $sumo_ok ?></small>
+              <small class="label pull-right bg-red"><?php  if ($mongo_error>0) echo $mongo_error; ?></small>
+              <small class="label pull-right bg-yellow"><?php if ($mongo_warning>0) echo $mongo_warning; ?></small>
+              <small class="label pull-right bg-green"><?php echo $mongo_ok ?></small>
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li <?php if ($o2=='m') echo 'class="active"' ?> ><a href="./sumo_map.php"><i class="fa fa-circle-o"></i>Mapa</a></li>
-            <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=s&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
-            <li  <?php if ($o2=='backup') echo 'class="active"' ?> ><a href="./backups.php<?php echo '?o1=s&o2=backup'?>"><i class="fa fa-circle-o"></i>Backups</a></li>
+            <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=mongo&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
+            <li  <?php if ($o2=='stats') echo 'class="active"' ?> ><a href="./mongo_stats.php<?php echo '?o1=mongo&o2=stats'?>"><i class="fa fa-circle-o"></i>Estadísticas</a></li>
           </ul>
         </li>
+
 
         <li class="<?php if ($o1=='api') echo 'active' ?> treeview">
           <a href="#">
@@ -514,11 +516,27 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
        
         
         <li><a href="https://wiki.kyroslbs.com" target="_blank"><i class="fa fa-book"></i> <span>Documentación</span></a></li>
-        <li>
+
+
+          <li class="<?php if ($o1=='mail') echo 'active' ?> treeview">
+          <a href="#">
+            <i class="fa fa-envelope"></i> <span>Servidor de email</span>
+              <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li <?php if ($o2=='envios') echo 'class="active"' ?> ><a href="./servidor_correo.php?o1=mail&o2=envios"><i class="fa fa-circle-o"></i>Envíos</a></li>
+            <li <?php if ($o2=='stats') echo 'class="active"' ?> ><a href="./servidor_correo_stats.php<?php echo '?o1=mail&o2=stats'?>"><i class="fa fa-circle-o"></i>Estadísticas</a></li>
+          </ul>
+        </li>
+
+
+        <!--li>
           <a href="./servidor_correo.php">
             <i class="fa fa-envelope"></i> <span>Servidor de email</span>
           </a>
-        </li>
+        </li-->
 
         <li class="header">Herramientas</li>
         <li><a href="https://jira.kyroslbs.com" target="_blank"><i class="fa fa-circle-o text-red"></i> <span>Jira</span></a></li>

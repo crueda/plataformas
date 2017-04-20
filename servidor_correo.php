@@ -62,7 +62,7 @@
     <!-- MENU-->
 
 
-    <iframe src="./menu.php" frameborder="0" style="overflow: hidden; height: 100%;
+    <iframe src="./menu.php<?php echo '?o1='.$_GET["o1"].'&o2='.$_GET["o2"]?>" frameborder="0" style="overflow: hidden; height: 100%;
         width: 100%; position: absolute;"></iframe>
 
   <!-- Content Wrapper. Contains page content -->
@@ -91,7 +91,7 @@
     echo fgets($file);
     }
     ?>@<?php 
-        echo 'kyros.es/pnp4nagios/index.php/graph?host=mail-server&srv=mails%20sent';
+        echo 'kyros.es:8443/pnp4nagios/index.php/graph?host=mail-server&srv=mails%20sent';
       ?>" frameborder="0" style="overflow: hidden; height: 90%;
         width: 100%; position: absolute;"></iframe>
 
