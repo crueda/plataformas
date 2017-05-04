@@ -501,6 +501,22 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
         </li>
 
 
+<li class="<?php if ($o1=='carto') echo 'active' ?> treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Carto</span>
+              <span class="pull-right-container">
+              
+
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li <?php if ($o2=='torque10dias') echo 'class="active"' ?> ><a href="./carto.php?o1=carto&o2=torque10dias"><i class="fa fa-circle-o"></i>Tracking 10 días</a></li>
+            <li <?php if ($o2=='provincias') echo 'class="active"' ?> ><a href="./carto.php?o1=carto&o2=provincias"><i class="fa fa-circle-o"></i>Tracking provincias</a></li>
+            <li <?php if ($o2=='municipios') echo 'class="active"' ?> ><a href="./carto.php?o1=carto&o2=municipios"><i class="fa fa-circle-o"></i>Tracking municipios</a></li>
+            <li <?php if ($o2=='pois_provincias') echo 'class="active"' ?> ><a href="./carto.php?o1=carto&o2=pois_provincias"><i class="fa fa-circle-o"></i>POIs provincias</a></li>
+          </ul>
+        </li>
+
         <li <?php if ($o1=='calendario') echo 'class="active"' ?>>
           <a href="./calendario.php">
             <i class="fa fa-calendar"></i> <span>Calendario</span>
@@ -551,7 +567,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
     while(!feof($file)) {
     echo fgets($file);
     }
-    ?>@files.kyroslbs.com/app" target="_blank"><i class="fa fa-circle-o text-blue"></i> <span>Repositorio Apps</span></a></li>
+    ?>@files.kyroslbs.com/downloads" target="_blank"><i class="fa fa-circle-o text-blue"></i> <span>Repositorio Apps</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->

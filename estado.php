@@ -153,7 +153,7 @@
         echo 'kyros.es:8443/cgi-bin/nagios3/status.cgi?hostgroup=KYROS-Production&style=overview';
       } 
       else if ($_GET["o1"]=='d') {
-        echo 'kyros.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=KYROS-Demos&style=detail';
+        echo 'kyros.es:8443/cgi-bin/nagios3/status.cgi?hostgroup=KYROS-Demos&style=detail';
       } 
       else if ($_GET["o1"]=='s') {
         echo 'kyros.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=SUMO-Production&style=overview';
