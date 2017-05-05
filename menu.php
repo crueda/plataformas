@@ -510,10 +510,13 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
             </span>
           </a>
           <ul class="treeview-menu">
-            <li <?php if ($o2=='torque10dias') echo 'class="active"' ?> ><a href="./carto.php?o1=carto&o2=torque10dias"><i class="fa fa-circle-o"></i>Tracking 10 días</a></li>
-            <li <?php if ($o2=='provincias') echo 'class="active"' ?> ><a href="./carto.php?o1=carto&o2=provincias"><i class="fa fa-circle-o"></i>Tracking provincias</a></li>
-            <li <?php if ($o2=='municipios') echo 'class="active"' ?> ><a href="./carto.php?o1=carto&o2=municipios"><i class="fa fa-circle-o"></i>Tracking municipios</a></li>
+            <li <?php if ($o2=='posiciones1dia') echo 'class="active"' ?> ><a href="./carto.php?o1=carto&o2=posiciones1dia"><i class="fa fa-circle-o"></i>Tracking 1 día</a></li>
+            <li <?php if ($o2=='torque10dias') echo 'class="active"' ?> ><a href="./carto.php?o1=carto&o2=torque10dias"><i class="fa fa-circle-o"></i>Tracking de 5 días</a></li>
+            <li <?php if ($o2=='provincias') echo 'class="active"' ?> ><a href="./carto.php?o1=carto&o2=provincias"><i class="fa fa-circle-o"></i>Tracking en provincias</a></li>
+            <li <?php if ($o2=='municipios') echo 'class="active"' ?> ><a href="./carto.php?o1=carto&o2=municipios"><i class="fa fa-circle-o"></i>Tracking en municipios</a></li>
             <li <?php if ($o2=='pois_provincias') echo 'class="active"' ?> ><a href="./carto.php?o1=carto&o2=pois_provincias"><i class="fa fa-circle-o"></i>POIs provincias</a></li>
+            <li <?php if ($o2=='influencia') echo 'class="active"' ?> ><a href="./carto.php?o1=carto&o2=influencia"><i class="fa fa-circle-o"></i>Áreas de influencia</a></li>
+            <li <?php if ($o2=='cercania_pois') echo 'class="active"' ?> ><a href="./carto.php?o1=carto&o2=cercania_pois"><i class="fa fa-circle-o"></i>Cercanía a POIs</a></li>
           </ul>
         </li>
 

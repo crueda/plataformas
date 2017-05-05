@@ -97,6 +97,9 @@
     <section class="content">
 
 <iframe src="<?php 
+      if ($_GET["o2"]=='posiciones1dia') {
+        echo 'https://deimos-space.carto.com/u/kyros-lbs/builder/227662b8-3100-11e7-a172-0ecd1babdde5/embed';
+      }       
       if ($_GET["o2"]=='torque10dias') {
         echo 'https://deimos-space.carto.com/u/kyros-lbs/builder/41fb2490-3090-11e7-8700-0e3ff518bd15/embed';
       }       
@@ -108,6 +111,12 @@
       }     
       else if ($_GET["o2"]=='pois_provincias') {
         echo 'https://deimos-space.carto.com/u/kyros-lbs/builder/dbe31fe2-6357-4413-9bea-3a0bd0d13fd4/embed';
+      }     
+      else if ($_GET["o2"]=='influencia') {
+        echo 'https://deimos-space.carto.com/u/kyros-lbs/builder/5f2f1fcc-6ca3-4c09-b876-4955dc374192/embed';
+      }     
+      else if ($_GET["o2"]=='cercania_pois') {
+        echo 'https://deimos-space.carto.com/u/kyros-lbs/builder/4091c00e-3109-11e7-a172-0ecd1babdde5/embed';
       }     
       else {
         echo '';
