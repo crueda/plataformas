@@ -62,7 +62,7 @@
   </header>
     <!-- MENU-->
 
-    <iframe src="./menu.php" frameborder="0" style="overflow: hidden; height: 100%;
+    <iframe src="./menu.php?o1=urls" frameborder="0" style="overflow: hidden; height: 100%;
         width: 100%; position: absolute;"></iframe>
 
 

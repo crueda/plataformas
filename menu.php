@@ -501,23 +501,12 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
         </li>
 
 
-<li class="<?php if ($o1=='carto') echo 'active' ?> treeview">
-          <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Carto</span>
-              <span class="pull-right-container">
-              
 
-            </span>
+        
+        <li <?php if ($o1=='incidencias') echo 'class="active"' ?>>
+          <a href="./incidencias.php">
+            <i class="fa fa-edit"></i> <span>Incidencias</span>
           </a>
-          <ul class="treeview-menu">
-            <li <?php if ($o2=='posiciones1dia') echo 'class="active"' ?> ><a href="./carto.php?o1=carto&o2=posiciones1dia"><i class="fa fa-circle-o"></i>Tracking 1 día</a></li>
-            <li <?php if ($o2=='torque10dias') echo 'class="active"' ?> ><a href="./carto.php?o1=carto&o2=torque10dias"><i class="fa fa-circle-o"></i>Tracking de 5 días</a></li>
-            <li <?php if ($o2=='provincias') echo 'class="active"' ?> ><a href="./carto.php?o1=carto&o2=provincias"><i class="fa fa-circle-o"></i>Tracking en provincias</a></li>
-            <li <?php if ($o2=='municipios') echo 'class="active"' ?> ><a href="./carto.php?o1=carto&o2=municipios"><i class="fa fa-circle-o"></i>Tracking en municipios</a></li>
-            <li <?php if ($o2=='pois_provincias') echo 'class="active"' ?> ><a href="./carto.php?o1=carto&o2=pois_provincias"><i class="fa fa-circle-o"></i>POIs provincias</a></li>
-            <li <?php if ($o2=='influencia') echo 'class="active"' ?> ><a href="./carto.php?o1=carto&o2=influencia"><i class="fa fa-circle-o"></i>Áreas de influencia</a></li>
-            <li <?php if ($o2=='cercania_pois') echo 'class="active"' ?> ><a href="./carto.php?o1=carto&o2=cercania_pois"><i class="fa fa-circle-o"></i>Cercanía a POIs</a></li>
-          </ul>
         </li>
 
         <li <?php if ($o1=='calendario') echo 'class="active"' ?>>
@@ -525,8 +514,8 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
             <i class="fa fa-calendar"></i> <span>Calendario</span>
           </a>
         </li>
-        
-        <li>
+
+        <li <?php if ($o1=='urls') echo 'class="active"' ?>>
           <a href="./urls.php">
             <i class="fa fa-laptop"></i> <span>URLs</span>
           </a>
@@ -550,6 +539,25 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
           </ul>
         </li>
 
+
+<li class="<?php if ($o1=='carto') echo 'active' ?> treeview">
+          <a href="#">
+            <i class="fa fa-folder"></i> <span>Ejemplos Carto</span>
+              <span class="pull-right-container">
+              
+
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li <?php if ($o2=='posiciones1dia') echo 'class="active"' ?> ><a href="./carto.php?o1=carto&o2=posiciones1dia"><i class="fa fa-circle-o"></i>Tracking 1 día</a></li>
+            <li <?php if ($o2=='torque10dias') echo 'class="active"' ?> ><a href="./carto.php?o1=carto&o2=torque10dias"><i class="fa fa-circle-o"></i>Tracking de 5 días</a></li>
+            <li <?php if ($o2=='provincias') echo 'class="active"' ?> ><a href="./carto.php?o1=carto&o2=provincias"><i class="fa fa-circle-o"></i>Tracking en provincias</a></li>
+            <li <?php if ($o2=='municipios') echo 'class="active"' ?> ><a href="./carto.php?o1=carto&o2=municipios"><i class="fa fa-circle-o"></i>Tracking en municipios</a></li>
+            <li <?php if ($o2=='pois_provincias') echo 'class="active"' ?> ><a href="./carto.php?o1=carto&o2=pois_provincias"><i class="fa fa-circle-o"></i>POIs provincias</a></li>
+            <li <?php if ($o2=='influencia') echo 'class="active"' ?> ><a href="./carto.php?o1=carto&o2=influencia"><i class="fa fa-circle-o"></i>Áreas de influencia</a></li>
+            <li <?php if ($o2=='cercania_pois') echo 'class="active"' ?> ><a href="./carto.php?o1=carto&o2=cercania_pois"><i class="fa fa-circle-o"></i>Cercanía a POIs</a></li>
+          </ul>
+        </li>
 
         <!--li>
           <a href="./servidor_correo.php">
