@@ -139,6 +139,11 @@
                     <td>Kyros API REST</td>
                     <td><span class="label label-success">Ok</span></td>
               </tr>
+              <tr>
+                <td><a href="https://api.kyroslbs.com">mypush.kyroslbs.com</a></td>
+                    <td>Kyros MyPush</td>
+                    <td><span class="label label-success">Ok</span></td>
+              </tr>
                                                      
               </tbody>
           </table>

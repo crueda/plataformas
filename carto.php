@@ -118,10 +118,15 @@
       else if ($_GET["o2"]=='cercania_pois') {
         echo 'https://deimos-space.carto.com/u/kyros-lbs/builder/4091c00e-3109-11e7-a172-0ecd1babdde5/embed';
       }     
+      else if ($_GET["o2"]=='wrc1') {
+        echo 'https://deimos-space.carto.com/u/kyros-lbs/builder/c82900af-61fc-4741-9e5f-8bbfba5077aa/embed';
+      }     
+      
+
       else {
         echo '';
       }?>" frameborder="0" style="overflow: hidden; height: 90%;
-        width: 100%; position: absolute;" scrolling="yes"></iframe>
+        width: 100%; position: absolute;" scrolling="yes" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
 
 
     </section>

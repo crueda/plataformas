@@ -112,6 +112,9 @@
         else if ($_GET["o1"]=='mongo') {
           echo 'MongoDB';
         } 
+        else if ($_GET["o1"]=='indra') {
+          echo 'Indra';
+        } 
         else {
           echo '';
         }
@@ -174,6 +177,9 @@
         echo 'hawkeye.kyroslbs.com/pnp4nagios/index.php/graph?host=raspberry&srv=Sensor-trasero';
       } 
       else if ($_GET["o1"]=='mongo') {
+        echo 'kyros.es:8443/cgi-bin/nagios3/status.cgi?hostgroup=KYROSVIEW-Production&style=detail';
+      } 
+      else if ($_GET["o1"]=='indra') {
         echo 'kyros.es:8443/cgi-bin/nagios3/status.cgi?hostgroup=KYROSVIEW-Production&style=detail';
       } 
       else {

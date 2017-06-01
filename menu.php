@@ -25,6 +25,7 @@ $csvMongoFile = file('./counters/mongo.csv');
 $csvKyrosFile = file('./counters/kyros.csv');
 $csvDemosFile = file('./counters/demos.csv');
 $csvItFile = file('./counters/it.csv');
+$csvIndraFile = file('./counters/indra.csv');
 
 $dataHawkeye = [];
 foreach ($csvHawkeyeFile as $line) {
@@ -57,6 +58,10 @@ foreach ($csvDemosFile as $line) {
 $dataIt = [];  
 foreach ($csvItFile as $line) {
   $dataIt[] = str_getcsv($line, $delimiter = ";" );              
+}
+$dataIndra = [];  
+foreach ($csvIndraFile as $line) {
+  $dataIndra[] = str_getcsv($line, $delimiter = ";" );              
 }
 
 $hawkeye_ok = $dataHawkeye[0][0];
@@ -91,8 +96,12 @@ $it_ok = $dataIt[0][0];
 $it_warning = $dataIt[0][1]; 
 $it_error = $dataIt[0][2];
 
+$indra_ok = $dataIt[0][0];
+$indra_warning = $dataIt[0][1]; 
+$indra_error = $dataIt[0][2];
 
-$services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyros_ok  + $mongo_ok + $demos_ok + $it_ok;
+
+$services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyros_ok  + $mongo_ok + $demos_ok + $it_ok + $indra_ok;
 ?>
 
 
@@ -441,9 +450,24 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
           </ul>
         </li>
 
+        <li class="<?php if ($o1=='indra') echo 'active' ?> treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Indra</span>
+              <span class="pull-right-container">
+              <small class="label pull-right bg-red"><?php  if ($indra_error>0) echo $indra_error; ?></small>
+              <small class="label pull-right bg-yellow"><?php if ($indra_warning>0) echo $indra_warning; ?></small>
+              <small class="label pull-right bg-green"><?php echo $indra_ok ?></small>
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado_indra.php<?php echo '?o1=indra&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
+          </ul>
+        </li>
+        
         <li class="<?php if ($o1=='mongo') echo 'active' ?> treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i> <span>MongoDB</span>
+            <i class="fa fa-dashboard"></i> <span>KyrosView</span>
               <span class="pull-right-container">
               <small class="label pull-right bg-red"><?php  if ($mongo_error>0) echo $mongo_error; ?></small>
               <small class="label pull-right bg-yellow"><?php if ($mongo_warning>0) echo $mongo_warning; ?></small>
@@ -556,6 +580,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
             <li <?php if ($o2=='pois_provincias') echo 'class="active"' ?> ><a href="./carto.php?o1=carto&o2=pois_provincias"><i class="fa fa-circle-o"></i>POIs provincias</a></li>
             <li <?php if ($o2=='influencia') echo 'class="active"' ?> ><a href="./carto.php?o1=carto&o2=influencia"><i class="fa fa-circle-o"></i>Áreas de influencia</a></li>
             <li <?php if ($o2=='cercania_pois') echo 'class="active"' ?> ><a href="./carto.php?o1=carto&o2=cercania_pois"><i class="fa fa-circle-o"></i>Cercanía a POIs</a></li>
+            <li <?php if ($o2=='wrc1') echo 'class="active"' ?> ><a href="./carto.php?o1=carto&o2=wrc1"><i class="fa fa-circle-o"></i>WRC compara velocidades</a></li>
           </ul>
         </li>
 

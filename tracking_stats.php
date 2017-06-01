@@ -31,8 +31,8 @@
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="./plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/highcharts-3d.js"></script>
+<script src="./highcharts.js"></script>
+<script src="./highcharts-3d.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -74,7 +74,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Posiciones de tracking
+        Estadísticas de tracking y eventos
         <small>    
 
         </small>
@@ -84,7 +84,19 @@
     <!-- Main content -->
     <section class="content">
 
-<div id="container" style="height: 400px"></div>
+<div id="container" style="height: 280px"></div>
+<div id="container2" style="height: 520px"></div>
+<div id="container3" style="height: 520px"></div>
+<div> 
+<table border="0">
+<tr>
+<td><div id="container6" style="height: 350px"></div></td>
+<td><div id="container4" style="height: 350px"></div></td>
+<td align="left"><div id="container5" style="height: 350px"></div>
+</td>
+</tr>
+</table>
+</div>
         
     </section>
     <!-- /.content -->
@@ -98,7 +110,7 @@ Highcharts.chart('container', {
         type: 'column'
     },
     title: {
-        text: 'Número de posiciones por mes'
+        text: 'Número de posiciones por mes en Kyros'
     },
     subtitle: {
         text: ''
@@ -120,63 +132,71 @@ Highcharts.chart('container', {
             borderWidth: 0,
             dataLabels: {
                 enabled: true,
-                format: '{point.y:.0f}'
+                format: '{point.y:,.0f}'
             }
         }
     },
 
     tooltip: {
         headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
-        pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.0f}</b> trackings<br/>'
+        pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:,.0f}</b> trackings<br/>'
     },
 
     series: [{
         name: 'Mes',
         colorByPoint: true,
         data: [{
-            name: 'Mayo 2016',
+            name: '05/16',
             y: 7533184,
             drilldown: 'Mayo 2016'
         }, {
-            name: 'Junio 2016',
+            name: '06/16',
             y: 10433139,
             drilldown: 'Junio 2016'
         }, {
-            name: 'Julio 2016',
+            name: '07/16',
             y: 10011762,
             drilldown: 'Julio 2016'
         }, {
-            name: 'Agosto 2016',
+            name: '08/16',
             y: 10177170,
             drilldown: 'Agosto 2016'
         }, {
-            name: 'Septiembre 2016',
+            name: '09/16',
             y: 10748039,
             drilldown: 'Septiembre 2016'
         }, {
-            name: 'Octubre 2016',
+            name: '10/16',
             y: 11393009,
             drilldown: 'Octubre 2016'
         }, {
-            name: 'Noviembre 2016',
+            name: '11/16',
             y: 11902102,
             drilldown: 'Noviembre 2016'
         }, {
-            name: 'Diciembre 2016',
+            name: '12/16',
             y: 11049988,
             drilldown: 'Diciembre 2016'
         }, {
-            name: 'Enero 2017',
+            name: '01/17',
             y: 9365529,
-            drilldown: 'Enero 2016'
+            drilldown: 'Enero 2017'
         }, {
-            name: 'Febrero 2017',
+            name: '02/17',
             y: 8936243,
             drilldown: 'Febrero 2017'
         }, {
-            name: 'Marzo 2017',
-            y: 5772366,
+            name: '03/17',
+            y: 8932990,
             drilldown: 'Marzo 2017'
+        }, {
+            name: '04/17',
+            y: 7356874,
+            drilldown: 'Abril 2017'
+        }, {
+            name: '05/17',
+            y: 8582359,
+            drilldown: 'Mayo 2017'
         }
 
         ]
@@ -184,8 +204,434 @@ Highcharts.chart('container', {
  
 });
 
+Highcharts.chart('container2', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Número de posiciones por mes'
+    },
+    xAxis: {
+        categories: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo']
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Número de trackings'
+        },
+        stackLabels: {
+            enabled: true,
+            style: {
+                fontWeight: 'bold',
+                color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+            }
+        }
+    },
+    legend: {
+        align: 'right',
+        x: -30,
+        verticalAlign: 'top',
+        y: 25,
+        floating: true,
+        backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+        borderColor: '#CCC',
+        borderWidth: 1,
+        shadow: false
+    },
+    tooltip: {
+        headerFormat: '<b>{point.x}</b><br/>',
+        pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
+    },
+    plotOptions: {
+        column: {
+            stacking: 'normal',
+            dataLabels: {
+                enabled: true,
+                color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+            }
+        }
+    },
+    series: [{
+        name: 'Kyros',
+        data: [9365529, 8936243, 8932990, 7356874, 8582359],
+        stack: 'tracking'
+    }, {
+        name: 'Demos',
+        data: [173145, 151432, 272744, 1085654, 232095],
+        stack: 'tracking'
+    }, {
+        name: 'Hawkeye',
+        data: [1678262, 1547549, 2069944, 1859005, 2039095],
+        stack: 'tracking'
+    }, {
+        name: 'Correos 1',
+        data: [2137390, 2076611, 2304516, 1846246, 2233172],
+        stack: 'tracking'
+    }, {
+        name: 'Correos 2',
+        data: [1957136, 1870474, 2216982, 1734732, 2087210],
+        stack: 'tracking'
+    }, {
+        name: 'Correos 3',
+        data: [2185789, 2044604, 2358187, 1862033, 2246849],
+        stack: 'tracking'
+    }, {
+        name: 'Indra',
+        data: [0, 0, 0, 0, 6114],
+        stack: 'tracking'
+    }]
+});
+
+Highcharts.chart('container3', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Número de eventos por mes'
+    },
+    xAxis: {
+        categories: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo']
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Número de eventos de tracking y vehículo'
+        },
+        stackLabels: {
+            enabled: true,
+            style: {
+                fontWeight: 'bold',
+                color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+            }
+        }
+    },
+    
+    tooltip: {
+        headerFormat: '<b>{point.x}</b><br/>',
+        pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
+    },
+    plotOptions: {
+        column: {
+            stacking: 'normal',
+            dataLabels: {
+                enabled: true,
+                color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+            }
+        }
+    },
+    series: [
+    {
+        name: 'Kyros',
+        data: [654803, 645010, 638039, 547299, 588260],
+        stack: 'eventos de tracking'
+    }, {
+        name: 'Demos',
+        data: [16568, 26303, 38759, 28163, 49580],
+        stack: 'eventos de tracking'
+    }, {
+        name: 'Hawkeye',
+        data: [15015, 11312, 14444, 14704, 14506],
+        stack: 'eventos de tracking'
+    }, {
+        name: 'Correos 1',
+        data: [229997, 218949, 250128, 210956, 261147],
+        stack: 'eventos de tracking'
+    }, {
+        name: 'Correos 2',
+        data: [222854, 215379, 258050, 205201, 248313],
+        stack: 'eventos de tracking'
+    }, {
+        name: 'Correos 3',
+        data: [263858, 233745, 278812, 227047, 278012],
+        stack: 'eventos de tracking'
+    }, {
+        name: 'Indra',
+        data: [0, 0, 0, 0, 85],
+        stack: 'eventos de tracking'
+    },
+
+    {
+        name: 'Kyros',
+        data: [857783, 887523, 899012, 769510, 852183],
+        stack: 'eventos de vehiculo'
+    }, {
+        name: 'Demos',
+        data: [17393, 14673, 22214, 11648, 23554],
+        stack: 'eventos de vehiculo'
+    }, {
+        name: 'Hawkeye',
+        data: [144936, 133622, 157565, 168499, 184856],
+        stack: 'eventos de vehiculo'
+    }, {
+        name: 'Correos 1',
+        data: [222972, 214769, 242445, 199604, 242842],
+        stack: 'eventos de vehiculo'
+    }, {
+        name: 'Correos 2',
+        data: [224623, 206498, 247625, 201879, 239714],
+        stack: 'eventos de vehiculo'
+    }, {
+        name: 'Correos 3',
+        data: [247772, 228997, 255607, 211316, 258459],
+        stack: 'eventos de vehiculo'
+    }, {
+        name: 'Indra',
+        data: [0, 0, 0, 0, 1333],
+        stack: 'eventos de vehiculo'
+    }]
+});
+
+Highcharts.chart('container4', {
+    chart: {
+        type: 'pie',
+        options3d: {
+            enabled: true,
+            alpha: 45
+        }
+    },
+    exporting: {
+        buttons: {
+            contextButton: {
+                enabled: false
+            }
+        }
+    },
+    title: {
+        text: 'Eventos de tracking en Kyros (mes de Mayo)'
+    },
+    subtitle: {
+        text: 'Datos por vehículo (más de 2k eventos)'
+    },
+    plotOptions: {
+        pie: {
+            innerSize: 100,
+            depth: 45
+        }
+    },
+    series: [{
+        name: 'Eventos',
+        data: [
+        ['5175',56060],
+['6038',13043],
+['1867',9530],
+['909',9196],
+['931',8462],
+['5998',7478],
+['5988',7282],
+['5990',7043],
+['2745',5922],
+['5992',5908],
+['5283',5886],
+['2209',5877],
+['5968',5728],
+['2515',5570],
+['447',5340],
+['3593',4894],
+['2447',4360],
+['4461',4244],
+['2779',4099],
+['2449',4092],
+['801',3923],
+['4739',3886],
+['651',3836],
+['2077',3717],
+['1403',3544],
+['83',3523],
+['2451',3500],
+['73',3465],
+['2659',3465],
+['2401',3367],
+['2455',3279],
+['5517',3276],
+['1813',3235],
+['1471',3209],
+['5025',3161],
+['795',2975],
+['2759',2908],
+['1333',2882],
+['407',2840],
+['5936',2811],
+['2387',2781],
+['1075',2756],
+['5277',2730],
+['5938',2632],
+['933',2627],
+['2723',2554],
+['1857',2554],
+['5351',2550],
+['1577',2514],
+['1211',2490],
+['1621',2481],
+['1535',2433],
+['1337',2409],
+['77',2380],
+['2423',2380],
+['2677',2284],
+['2653',2262],
+['5273',2234],
+['5994',2220],
+['2853',2212],
+['2755',2205],
+['3',2172],
+['1871',2151],
+['2529',2132],
+['5923',2125],
+['2327',2116],
+['59',2114],
+['5637',2085],
+
+
+        ]
+    }]
+});
+
+Highcharts.chart('container5', {
+    chart: {
+        type: 'pie',
+        options3d: {
+            enabled: true,
+            alpha: 45
+        }
+    },
+    exporting: {
+        buttons: {
+            contextButton: {
+                enabled: false
+            }
+        }
+    },
+    title: {
+        text: 'Eventos de vehículo en Kyros (mes de Mayo)'
+    },
+    subtitle: {
+        text: 'Datos por vehículo (más de 2k eventos)'
+    },
+    plotOptions: {
+        pie: {
+            innerSize: 100,
+            depth: 45
+        }
+    },
+    series: [{
+        name: 'Eventos',
+        data: [
+       ['1025',7850],
+['1733',5185],
+['1729',4214],
+['5553',4180],
+['1731',3955],
+['927',3951],
+['1075',3938],
+['5547',3780],
+['6298',3734],
+['3073',3683],
+['2221',3505],
+['1273',3393],
+['5051',3305],
+['3269',3279],
+['6348',3206],
+['951',3186],
+['2515',3183],
+['2075',2973],
+['3489',2972],
+['6346',2839],
+['5175',2825],
+['2407',2820],
+['3411',2754],
+['2331',2692],
+['6184',2673],
+['669',2653],
+['1105',2493],
+['2521',2434],
+['2303',2413],
+['5467',2396],
+['6374',2343],
+['6376',2343],
+['2811',2273],
+['1177',2266],
+['5459',2230],
+['495',2218],
+['2449',2177],
+['1503',2163],
+['1893',2131],
+['5',2120],
+['1071',2102],
+['1783',2057],
+['31',2036],
+['3545',2001],
+
+
+        ]
+    }]
+});
+
+
+Highcharts.chart('container6', {
+    chart: {
+        type: 'pie',
+        options3d: {
+            enabled: true,
+            alpha: 45
+        }
+    },
+    exporting: {
+        buttons: {
+            contextButton: {
+                enabled: false
+            }
+        }
+    },
+    title: {
+        text: 'Tracking en Kyros (mes de Mayo)'
+    },
+    subtitle: {
+        text: 'Datos por vehículo (25 top)'
+    },
+    plotOptions: {
+        pie: {
+            innerSize: 100,
+            depth: 45
+        }
+    },
+    series: [{
+        name: 'Eventos',
+        data: [
+       ['5175',131569],
+['3191',93391],
+['6038',85536],
+['5998',72976],
+['5543',66238],
+['5559',63735],
+['6304',62769],
+['5992',58430],
+['5988',55889],
+['6044',52338],
+['6330',50446],
+['5990',46732],
+['5077',45198],
+['3247',43790],
+['5547',43279],
+['5984',42574],
+['1247',41771],
+['6026',41268],
+['6144',41211],
+['1563',40753],
+['6326',40680],
+['5553',40468],
+['1867',40366],
+['6206',39836],
+['6182',39422],
+
+
+        ]
+    }]
+});
+
+
 
 </script>
+
+
    <!-- footer-->
     <?php
     $file = fopen("./footer.php", "r");
