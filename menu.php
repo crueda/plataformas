@@ -96,9 +96,9 @@ $it_ok = $dataIt[0][0];
 $it_warning = $dataIt[0][1]; 
 $it_error = $dataIt[0][2];
 
-$indra_ok = $dataIt[0][0];
-$indra_warning = $dataIt[0][1]; 
-$indra_error = $dataIt[0][2];
+$indra_ok = $dataIndra[0][0];
+$indra_warning = $dataIndra[0][1]; 
+$indra_error = $dataIndra[0][2];
 
 
 $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyros_ok  + $mongo_ok + $demos_ok + $it_ok + $indra_ok;

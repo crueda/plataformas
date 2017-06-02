@@ -180,7 +180,7 @@
         echo 'kyros.es:8443/cgi-bin/nagios3/status.cgi?hostgroup=KYROSVIEW-Production&style=detail';
       } 
       else if ($_GET["o1"]=='indra') {
-        echo 'kyros.es:8443/cgi-bin/nagios3/status.cgi?hostgroup=KYROSVIEW-Production&style=detail';
+        echo 'indra.kyroslbs.com/nagios3/';
       } 
       else {
         echo 'indra.kyroslbs.com/nagios';
