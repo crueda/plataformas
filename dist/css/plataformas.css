@@ -1,0 +1,15 @@
+.red {
+	color:red;
+}
+
+div.tip{
+  position: absolute;
+  top: 100px;
+  left: 100px;
+    width:100px;
+
+  border: 2px solid #FF0000; 
+  background-color: #FF9999;
+  display: none;
+  padding: 3px;
+}
