@@ -106,17 +106,7 @@
     <!-- Main content -->
     <section class="content">
 
-<iframe src="https://<?php
-    $file = fopen('./credentials/user_logs.txt', 'r');
-    while(!feof($file)) {
-    echo fgets($file);
-    }
-    ?>:<?php
-    $file = fopen('./credentials/pass_logs.txt', 'r');
-    while(!feof($file)) {
-    echo fgets($file);
-    }
-    ?>@<?php 
+<iframe src="https://<?php 
       if ($_GET["o1"]=='c') {
         echo 'correos.kyros.es/logs/';
       }       

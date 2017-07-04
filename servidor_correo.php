@@ -80,17 +80,7 @@
     <!-- Main content -->
     <section class="content">
 
-<iframe src="https://<?php
-    $file = fopen('./credentials/user_nagios.txt', 'r');
-    while(!feof($file)) {
-    echo fgets($file);
-    }
-    ?>:<?php
-    $file = fopen('./credentials/pass_nagios.txt', 'r');
-    while(!feof($file)) {
-    echo fgets($file);
-    }
-    ?>@<?php 
+<iframe src="https://<?php 
         echo 'kyros.es:8443/pnp4nagios/index.php/graph?host=mail-server&srv=mails%20sent';
       ?>" frameborder="0" style="overflow: hidden; height: 90%;
         width: 100%; position: absolute;"></iframe>

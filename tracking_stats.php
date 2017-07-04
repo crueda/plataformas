@@ -197,6 +197,10 @@ Highcharts.chart('container', {
             name: '05/17',
             y: 8582359,
             drilldown: 'Mayo 2017'
+        }, {
+            name: '06/17',
+            y: 7848548,
+            drilldown: 'Junio 2017'
         }
 
         ]
@@ -212,7 +216,7 @@ Highcharts.chart('container2', {
         text: 'Número de posiciones por mes'
     },
     xAxis: {
-        categories: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo']
+        categories: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio']
     },
     yAxis: {
         min: 0,
@@ -253,31 +257,31 @@ Highcharts.chart('container2', {
     },
     series: [{
         name: 'Kyros',
-        data: [9365529, 8936243, 8932990, 7356874, 8582359],
+        data: [9365529, 8936243, 8932990, 7356874, 8582359, 7848548],
         stack: 'tracking'
     }, {
         name: 'Demos',
-        data: [173145, 151432, 272744, 1085654, 232095],
+        data: [173145, 151432, 272744, 1085654, 232095, 356648],
         stack: 'tracking'
     }, {
         name: 'Hawkeye',
-        data: [1678262, 1547549, 2069944, 1859005, 2039095],
+        data: [1678262, 1547549, 2069944, 1859005, 2039095, 1988308],
         stack: 'tracking'
     }, {
         name: 'Correos 1',
-        data: [2137390, 2076611, 2304516, 1846246, 2233172],
+        data: [2137390, 2076611, 2304516, 1846246, 2233172, 2244962],
         stack: 'tracking'
     }, {
         name: 'Correos 2',
-        data: [1957136, 1870474, 2216982, 1734732, 2087210],
+        data: [1957136, 1870474, 2216982, 1734732, 2087210, 2059063],
         stack: 'tracking'
     }, {
         name: 'Correos 3',
-        data: [2185789, 2044604, 2358187, 1862033, 2246849],
+        data: [2185789, 2044604, 2358187, 1862033, 2246849, 2234393],
         stack: 'tracking'
     }, {
         name: 'Indra',
-        data: [0, 0, 0, 0, 6114],
+        data: [0, 0, 0, 0, 6114, 10300],
         stack: 'tracking'
     }]
 });
@@ -322,61 +326,61 @@ Highcharts.chart('container3', {
     series: [
     {
         name: 'Kyros',
-        data: [654803, 645010, 638039, 547299, 588260],
+        data: [654803, 645010, 638039, 547299, 588260, 583595],
         stack: 'eventos de tracking'
     }, {
         name: 'Demos',
-        data: [16568, 26303, 38759, 28163, 49580],
+        data: [16568, 26303, 38759, 28163, 49580, 41092],
         stack: 'eventos de tracking'
     }, {
         name: 'Hawkeye',
-        data: [15015, 11312, 14444, 14704, 14506],
+        data: [15015, 11312, 14444, 14704, 14506, 13846],
         stack: 'eventos de tracking'
     }, {
         name: 'Correos 1',
-        data: [229997, 218949, 250128, 210956, 261147],
+        data: [229997, 218949, 250128, 210956, 261147, 263930],
         stack: 'eventos de tracking'
     }, {
         name: 'Correos 2',
-        data: [222854, 215379, 258050, 205201, 248313],
+        data: [222854, 215379, 258050, 205201, 248313, 244770],
         stack: 'eventos de tracking'
     }, {
         name: 'Correos 3',
-        data: [263858, 233745, 278812, 227047, 278012],
+        data: [263858, 233745, 278812, 227047, 278012, 275274],
         stack: 'eventos de tracking'
     }, {
         name: 'Indra',
-        data: [0, 0, 0, 0, 85],
+        data: [0, 0, 0, 0, 85, 61],
         stack: 'eventos de tracking'
     },
 
     {
         name: 'Kyros',
-        data: [857783, 887523, 899012, 769510, 852183],
+        data: [857783, 887523, 899012, 769510, 852183, 783770],
         stack: 'eventos de vehiculo'
     }, {
         name: 'Demos',
-        data: [17393, 14673, 22214, 11648, 23554],
+        data: [17393, 14673, 22214, 11648, 23554, 36141],
         stack: 'eventos de vehiculo'
     }, {
         name: 'Hawkeye',
-        data: [144936, 133622, 157565, 168499, 184856],
+        data: [144936, 133622, 157565, 168499, 184856, 186224],
         stack: 'eventos de vehiculo'
     }, {
         name: 'Correos 1',
-        data: [222972, 214769, 242445, 199604, 242842],
+        data: [222972, 214769, 242445, 199604, 242842, 251195],
         stack: 'eventos de vehiculo'
     }, {
         name: 'Correos 2',
-        data: [224623, 206498, 247625, 201879, 239714],
+        data: [224623, 206498, 247625, 201879, 239714, 234918],
         stack: 'eventos de vehiculo'
     }, {
         name: 'Correos 3',
-        data: [247772, 228997, 255607, 211316, 258459],
+        data: [247772, 228997, 255607, 211316, 258459, 253326],
         stack: 'eventos de vehiculo'
     }, {
         name: 'Indra',
-        data: [0, 0, 0, 0, 1333],
+        data: [0, 0, 0, 0, 1333, 1165],
         stack: 'eventos de vehiculo'
     }]
 });

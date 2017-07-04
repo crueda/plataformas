@@ -84,17 +84,7 @@
     <section class="content">
 
 <div class="holds-the-iframe">
-<iframe src="http://<?php
-    $file = fopen('./credentials/user_nagios_sit.txt', 'r');
-    while(!feof($file)) {
-    echo fgets($file);
-    }
-    ?>:<?php
-    $file = fopen('./credentials/pass_nagios_sit.txt', 'r');
-    while(!feof($file)) {
-    echo fgets($file);
-    }
-    ?>@mykyros.es/traffic" frameborder="0" style="overflow: hidden; height: 100%;
+<iframe src="http://mykyros.es/traffic" frameborder="0" style="overflow: hidden; height: 100%;
         width: 100%; position: absolute;" height="100%" width="100%"></iframe>
 </div>
 

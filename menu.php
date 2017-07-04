@@ -142,12 +142,16 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="./plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
+<!--link rel="stylesheet" href="./dist/css/plataformas.css"-->
+  
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
+
+
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
   <aside class="main-sidebar">
@@ -199,7 +203,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
                 </span>
               </a>
               <ul class="treeview-menu">
-                <li <?php if ($o2=='traficouva') echo 'class="active"' ?>><a href="./cpd_uva_trafico.php"><i class="fa fa-circle-o"></i>Tráfico</a></li>
+                <li <?php if ($o2=='traficouva') echo 'class="active"' ?>><a href="./cpd_uva_trafico.php" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Tráfico</a></li>
               </ul>
               <ul class="treeview-menu">
                 <li><a href="https://docs.google.com/a/deimos-space.com/spreadsheets/d/1MN-UwZkIZv5jih2hYJoftQg1jv_c6cUAib_8f8NaKDs/edit?usp=sharing" target="_blank"><i class="fa fa-circle-o"></i>IPs</a></li>
@@ -219,20 +223,20 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
 
               </a>
               <ul class="treeview-menu">
-                <li <?php if ($o2=='traficooficina') echo 'class="active"' ?>><a href="./cpd_oficina_trafico.php"><i class="fa fa-circle-o"></i>Tráfico</a></li>
+                <li <?php if ($o2=='traficooficina') echo 'class="active"' ?>><a href="./cpd_oficina_trafico.php" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Tráfico</a></li>
               </ul>
               <ul class="treeview-menu">
-                <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estadocpd.php<?php echo '?o=cpd&o1=oficina'.'&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
+                <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estadocpd.php<?php echo '?o=cpd&o1=oficina'.'&o2=e'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Estado</a></li>
               </ul>
 
               <ul class="treeview-menu">
-                <li <?php if ($o2=='sf') echo 'class="active"' ?> ><a href="./estadocpd.php<?php echo '?o1=oficina'.'&o2=sf'?>"><i class="fa fa-circle-o"></i>Tº y humedad frontal</a></li>
+                <li <?php if ($o2=='sf') echo 'class="active"' ?> ><a href="./estadocpd.php<?php echo '?o1=oficina'.'&o2=sf'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Tº y humedad frontal</a></li>
               </ul>
               <ul class="treeview-menu">
-                <li <?php if ($o2=='st') echo 'class="active"' ?> ><a href="./estadocpd.php<?php echo '?o1=oficina'.'&o2=st'?>"><i class="fa fa-circle-o"></i>Tº y humedad trasera</a></li>
+                <li <?php if ($o2=='st') echo 'class="active"' ?> ><a href="./estadocpd.php<?php echo '?o1=oficina'.'&o2=st'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Tº y humedad trasera</a></li>
               </ul>
               <ul class="treeview-menu">
-                <li <?php if ($o2=='it') echo 'class="active"' ?> ><a href="./estadocpd.php<?php echo '?o1=oficina'.'&o2=it'?>"><i class="fa fa-circle-o"></i>Servicios IT
+                <li <?php if ($o2=='it') echo 'class="active"' ?> ><a href="./estadocpd.php<?php echo '?o1=oficina'.'&o2=it'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Servicios IT
 
                 <span class="pull-right-container">
                <small class="label pull-right bg-red"><?php  if ($it_error>0) echo $it_error; ?></small>
@@ -254,7 +258,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
                 </span>
               </a>
               <ul class="treeview-menu">
-                <li <?php if ($o2=='traficosit') echo 'class="active"' ?>><a href="./cpd_sit_trafico.php"><i class="fa fa-circle-o"></i>Tráfico SIT</a></li>
+                <li <?php if ($o2=='traficosit') echo 'class="active"' ?>><a href="./cpd_sit_trafico.php"><i class="fa fa-circle-o" data-toggle="tooltip" title="username:nagiosadmin password:p4j4r0"></i>Tráfico SIT</a></li>
               </ul>
               <!--ul class="treeview-menu">
                 <li <?php if ($o2=='traficocamionhttp') echo 'class="active"' ?>><a href="./cpd_sit_trafico_http_camion.php"><i class="fa fa-circle-o"></i>Tráfico Camión (http)</a></li>
@@ -263,17 +267,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
                 <li  <?php if ($o2=='traficocamionhttps') echo 'class="active"' ?>><a href="./cpd_sit_trafico_https_camion.php"><i class="fa fa-circle-o"></i>Tráfico Camión (https)</a></li>
               </ul-->
 <ul class="treeview-menu">
-<li><a href="http://<?php
-    $file = fopen('./credentials/user_nagios_sit.txt', 'r');
-    while(!feof($file)) {
-    echo fgets($file);
-    }
-    ?>:<?php
-    $file = fopen('./credentials/pass_nagios_sit.txt', 'r');
-    while(!feof($file)) {
-    echo fgets($file);
-    }
-    ?>@mykyros.es/cgi-bin/nagios3/status.cgi?hostgroup=all&style=overview" target="_blank"><i class="fa fa-circle-o"></i> <span>Estado</span></a></li>
+<li><a href="http://mykyros.es/cgi-bin/nagios3/status.cgi?hostgroup=all&style=overview" target="_blank" data-toggle="tooltip" title="username:nagiosadmin password:p4j4r0"><i class="fa fa-circle-o"></i> <span>Estado</span></a></li>
 </ul>                  
             </li>
           </ul>
@@ -291,14 +285,14 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
           </a>
           <ul class="treeview-menu">
            <!--li <?php if ($o2=='m') echo 'class="active"' ?> ><a href="./mapa.php?o1=k&o2=m"><i class="fa fa-circle-o"></i>Mapa</a></li-->
-            <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=k&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
-            <li  <?php if ($o2=='sw') echo 'class="active"' ?>><a href="./info.php<?php echo '?o1=k&o2=sw'?>"><i class="fa fa-circle-o"></i>Sesiones Web</a></li>
-            <li  <?php if ($o2=='tr') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=k&o2=tr'?>"><i class="fa fa-circle-o"></i>Tiempo de respuesta HTTPS</a></li>
-            <li  <?php if ($o2=='gprs5000') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=k&o2=gprs5000'?>"><i class="fa fa-circle-o"></i>Sesiones GPRS 5000</a></li>
-            <li  <?php if ($o2=='gprs5002') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=k&o2=gprs5002'?>"><i class="fa fa-circle-o"></i>Sesiones GPRS 5002</a></li>
-            <li  <?php if ($o2=='bd') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=k&o2=bd'?>"><i class="fa fa-circle-o"></i>BD estadisticas</a></li>
+            <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=k&o2=e'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Estado</a></li>
+            <li  <?php if ($o2=='sw') echo 'class="active"' ?>><a href="./info.php<?php echo '?o1=k&o2=sw'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Sesiones Web</a></li>
+            <li  <?php if ($o2=='tr') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=k&o2=tr'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Tiempo de respuesta HTTPS</a></li>
+            <li  <?php if ($o2=='gprs5000') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=k&o2=gprs5000'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Sesiones GPRS 5000</a></li>
+            <li  <?php if ($o2=='gprs5002') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=k&o2=gprs5002'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Sesiones GPRS 5002</a></li>
+            <li  <?php if ($o2=='bd') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=k&o2=bd'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>BD estadisticas</a></li>
             <li  <?php if ($o2=='backup') echo 'class="active"' ?> ><a href="./backups.php<?php echo '?o1=k&o2=backup'?>"><i class="fa fa-circle-o"></i>Backups</a></li>
-            <li  <?php if ($o2=='logs') echo 'class="active"' ?> ><a href="./logs.php<?php echo '?o1=k&o2=logs'?>"><i class="fa fa-circle-o"></i>Logs</a></li>
+            <li  <?php if ($o2=='logs') echo 'class="active"' ?> ><a href="./logs.php<?php echo '?o1=k&o2=logs'?>" data-toggle="tooltip" title="username:kyroslbs password:p4j4r0"><i class="fa fa-circle-o"></i>Logs</a></li>
             <li  <?php if ($o2=='tracking') echo 'class="active"' ?> ><a href="./tracking_stats.php<?php echo '?o1=k&o2=tracking'?>"><i class="fa fa-circle-o"></i>Estadísticas de tracking</a></li>
 
           </ul>
@@ -315,19 +309,9 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
             </span>
           </a>
           <ul class="treeview-menu">
-           <li <?php if ($o2=='m') echo 'class="active"' ?> ><a href="http://<?php
-    $file = fopen('./credentials/user_nagios.txt', 'r');
-    while(!feof($file)) {
-    echo fgets($file);
-    }
-    ?>:<?php
-    $file = fopen('./credentials/pass_nagios.txt', 'r');
-    while(!feof($file)) {
-    echo fgets($file);
-    }
-    ?>@172.26.30.252/nagvis/frontend/nagvis-js/index.php?mod=Map&act=view&show=KyrosPre&header_menu=0&zoombar=1" target="_blank"><i class="fa fa-circle-o"></i>Mapa</a></li>
+           <li <?php if ($o2=='m') echo 'class="active"' ?> ><a href="http://@172.26.30.252/nagvis/frontend/nagvis-js/index.php?mod=Map&act=view&show=KyrosPre&header_menu=0&zoombar=1" target="_blank" data-toggle="tooltip" title="username:admin password:admin"><i class="fa fa-circle-o"></i>Mapa</a></li>
            <!--li <?php if ($o2=='m') echo 'class="active"' ?> ><a href="./mapa.php?o1=kp&o2=m"><i class="fa fa-circle-o"></i>Mapa</a></li-->
-            <li <?php if ($o2=='e') echo 'class="active"' ?> active><a href="./estado.php<?php echo '?o1=kp'.'&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
+            <li <?php if ($o2=='e') echo 'class="active"' ?> active><a href="./estado.php<?php echo '?o1=kp'.'&o2=e'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Estado</a></li>
           </ul>
         </li>
 
@@ -342,7 +326,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
             </span>
           </a>
           <ul class="treeview-menu">
-            <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=d&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
+            <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=d&o2=e'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Estado</a></li>
             <li  <?php if ($o2=='backup') echo 'class="active"' ?> ><a href="./backups.php<?php echo '?o1=d&o2=backup'?>"><i class="fa fa-circle-o"></i>Backups</a></li>
 
           </ul>
@@ -362,24 +346,14 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
           </a>
           <ul class="treeview-menu">
            <!--li <?php if ($o2=='c') echo 'class="active"' ?> ><a href="./mapa.php?o1=c&o2=m"><i class="fa fa-circle-o"></i>Mapa</a></li-->
-            <li <?php if ($o2=='m') echo 'class="active"' ?> ><a href="http://<?php
-    $file = fopen('./credentials/user_nagios.txt', 'r');
-    while(!feof($file)) {
-    echo fgets($file);
-    }
-    ?>:<?php
-    $file = fopen('./credentials/pass_nagios.txt', 'r');
-    while(!feof($file)) {
-    echo fgets($file);
-    }
-    ?>@172.26.30.252/nagvis/frontend/nagvis-js/index.php?mod=Map&act=view&show=CorreosPre&header_menu=0&zoombar=1" target="_blank"><i class="fa fa-circle-o"></i>Mapa</a></li>
-            <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=c&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
-            <li  <?php if ($o2=='sw') echo 'class="active"' ?>><a href="./info.php<?php echo '?o1=c&o2=sw'?>"><i class="fa fa-circle-o"></i>Sesiones Web</a></li>
-            <li  <?php if ($o2=='tr') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=c&o2=tr'?>"><i class="fa fa-circle-o"></i>Tiempo de respuesta HTTPS</a></li>
+            <li <?php if ($o2=='m') echo 'class="active"' ?> ><a href="http://172.26.30.252/nagvis/frontend/nagvis-js/index.php?mod=Map&act=view&show=CorreosPre&header_menu=0&zoombar=1" target="_blank" data-toggle="tooltip" title="username:admin password:admin"><i class="fa fa-circle-o"></i>Mapa</a></li>
+            <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=c&o2=e'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Estado</a></li>
+            <li  <?php if ($o2=='sw') echo 'class="active"' ?>><a href="./info.php<?php echo '?o1=c&o2=sw'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Sesiones Web</a></li>
+            <li  <?php if ($o2=='tr') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=c&o2=tr'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Tiempo de respuesta HTTPS</a></li>
             <li  <?php if ($o2=='gprs5000') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=c&o2=gprs5000'?>"><i class="fa fa-circle-o"></i>Sesiones GPRS 5000</a></li>
-            <li  <?php if ($o2=='bd') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=c&o2=bd'?>"><i class="fa fa-circle-o"></i>BD estadisticas</a></li>
+            <li  <?php if ($o2=='bd') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=c&o2=bd'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>BD estadisticas</a></li>
             <li  <?php if ($o2=='backup') echo 'class="active"' ?> ><a href="./backups.php<?php echo '?o1=c&o2=backup'?>"><i class="fa fa-circle-o"></i>Backups</a></li>
-            <li  <?php if ($o2=='logs') echo 'class="active"' ?> ><a href="./logs.php<?php echo '?o1=c&o2=logs'?>"><i class="fa fa-circle-o"></i>Logs</a></li>
+            <li  <?php if ($o2=='logs') echo 'class="active"' ?> ><a href="./logs.php<?php echo '?o1=c&o2=logs'?>" data-toggle="tooltip" title="username:kyroslbs password:p4j4r0"><i class="fa fa-circle-o"></i>Logs</a></li>
             <li><a href="https://wiki.kyroslbs.com/wiki/index.php/Correos" target="_blank"><i class="fa fa-book"></i> <span>Documentación</span></a></li>
             
           </ul>
@@ -399,19 +373,8 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
           </a>
           <ul class="treeview-menu">
            <!--li <?php if ($o2=='m') echo 'class="active"' ?> ><a href="./mapa.php?o1=cp&o2=m"><i class="fa fa-circle-o"></i>Mapa</a></li-->
-            <li <?php if ($o2=='m') echo 'class="active"' ?> ><a href="http://<?php
-    $file = fopen('./credentials/user_nagios.txt', 'r');
-    while(!feof($file)) {
-    echo fgets($file);
-    }
-    ?>:<?php
-    $file = fopen('./credentials/pass_nagios.txt', 'r');
-    while(!feof($file)) {
-    echo fgets($file);
-    }
-    ?>@172.26.30.252/nagvis/frontend/nagvis-js/index.php?mod=Map&act=view&show=CorreosPreç
-    &header_menu=0&zoombar=1" target="_blank"><i class="fa fa-circle-o"></i>Mapa</a></li>
-            <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=cp'.'&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
+            <li <?php if ($o2=='m') echo 'class="active"' ?> ><a href="http://172.26.30.252/nagvis/frontend/nagvis-js/index.php?mod=Map&act=view&show=CorreosPre &header_menu=0&zoombar=1" target="_blank" data-toggle="tooltip" title="username:admin password:admin"><i class="fa fa-circle-o"></i>Mapa</a></li>
+            <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=cp'.'&o2=e'?>"><i class="fa fa-circle-o" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"></i>Estado</a></li>
           </ul>
         </li>
 
@@ -427,25 +390,15 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
             </span>
           </a>
           <ul class="treeview-menu">
-           <li <?php if ($o2=='m') echo 'class="active"' ?> ><a href="http://<?php
-    $file = fopen('./credentials/user_nagios.txt', 'r');
-    while(!feof($file)) {
-    echo fgets($file);
-    }
-    ?>:<?php
-    $file = fopen('./credentials/pass_nagios.txt', 'r');
-    while(!feof($file)) {
-    echo fgets($file);
-    }
-    ?>@172.26.30.252/nagvis/frontend/nagvis-js/index.php?mod=Map&act=view&show=Hawkeye&header_menu=0&zoombar=1" target="_blank"><i class="fa fa-circle-o"></i>Mapa</a></li>
+           <li <?php if ($o2=='m') echo 'class="active"' ?> ><a href="http://172.26.30.252/nagvis/frontend/nagvis-js/index.php?mod=Map&act=view&show=Hawkeye&header_menu=0&zoombar=1" target="_blank" data-toggle="tooltip" title="username:admin password:admin"><i class="fa fa-circle-o"></i>Mapa</a></li>
            <!--li <?php if ($o2=='m') echo 'class="active"' ?> ><a href="./mapa.php?o1=h&o2=m"><i class="fa fa-circle-o"></i>Mapa</a></li-->
-            <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=h'.'&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
-            <li  <?php if ($o2=='sw') echo 'class="active"' ?>><a href="./info.php<?php echo '?o1=h&o2=sw'?>"><i class="fa fa-circle-o"></i>Sesiones Web</a></li>
-            <li  <?php if ($o2=='tr') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=h&o2=tr'?>"><i class="fa fa-circle-o"></i>Tiempo de respuesta HTTPS</a></li>
+            <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=h'.'&o2=e'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Estado</a></li>
+            <li  <?php if ($o2=='sw') echo 'class="active"' ?>><a href="./info.php<?php echo '?o1=h&o2=sw'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Sesiones Web</a></li>
+            <li  <?php if ($o2=='tr') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=h&o2=tr'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Tiempo de respuesta HTTPS</a></li>
             <li  <?php if ($o2=='gprs5002') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=h&o2=gprs5002'?>"><i class="fa fa-circle-o"></i>Sesiones GPRS 5002</a></li>
-            <li  <?php if ($o2=='bd') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=h&o2=bd'?>"><i class="fa fa-circle-o"></i>BD estadisticas</a></li>
+            <li  <?php if ($o2=='bd') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=h&o2=bd'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>BD estadisticas</a></li>
             <li  <?php if ($o2=='backup') echo 'class="active"' ?> ><a href="./backups.php<?php echo '?o1=h&o2=backup'?>"><i class="fa fa-circle-o"></i>Backups</a></li>
-            <li  <?php if ($o2=='logs') echo 'class="active"' ?> ><a href="./logs.php<?php echo '?o1=h&o2=logs'?>"><i class="fa fa-circle-o"></i>Logs</a></li>
+            <li  <?php if ($o2=='logs') echo 'class="active"' ?> ><a href="./logs.php<?php echo '?o1=h&o2=logs'?>" data-toggle="tooltip" title="username:kyroslbs password:p4j4r0"><i class="fa fa-circle-o"></i>Logs</a></li>
             <li><a href="https://wiki.kyroslbs.com/wiki/index.php/Hawkeye" target="_blank"><i class="fa fa-book"></i> <span>Documentación</span></a></li>
           </ul>
         </li>
@@ -476,7 +429,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
             </span>
           </a>
           <ul class="treeview-menu">
-            <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=mongo&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
+            <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=mongo&o2=e'?>" data-toggle="tooltip" title="username:nagiosadmin password:1ndr4"><i class="fa fa-circle-o"></i>Estado</a></li>
             <li  <?php if ($o2=='stats') echo 'class="active"' ?> ><a href="./mongo_stats.php<?php echo '?o1=mongo&o2=stats'?>"><i class="fa fa-circle-o"></i>Estadísticas</a></li>
           </ul>
         </li>
@@ -509,7 +462,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
           </a>
           <ul class="treeview-menu">
             <li <?php if ($o2=='test') echo 'class="active"' ?> ><a href="./test.php?o1=api&o2=test'"><i class="fa fa-circle-o"></i>Tests</a></li>
-            <li  <?php if ($o2=='logs') echo 'class="active"' ?> ><a href="./logs.php<?php echo '?o1=api&o2=logs'?>"><i class="fa fa-circle-o"></i>Logs de accesos</a></li>
+            <li  <?php if ($o2=='logs') echo 'class="active"' ?> ><a href="./logs.php<?php echo '?o1=api&o2=logs'?>" data-toggle="tooltip" title="username:kyroslbs password:p4j4r0"><i class="fa fa-circle-o"></i>Logs de accesos</a></li>
             <li><a href="https://<?php
     $file = fopen('./credentials/user_plataformas.txt', 'r');
     while(!feof($file)) {
@@ -545,6 +498,12 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
           </a>
         </li>
         
+        <!--li <?php if ($o1=='credenciales') echo 'class="active"' ?>>
+          <a href="./credenciales.php">
+            <i class="fa fa-edit"></i> <span>Credenciales</span>
+          </a>
+        </li-->
+        
        
         
         <li><a href="https://wiki.kyroslbs.com" target="_blank"><i class="fa fa-book"></i> <span>Documentación</span></a></li>
@@ -558,7 +517,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
             </span>
           </a>
           <ul class="treeview-menu">
-            <li <?php if ($o2=='envios') echo 'class="active"' ?> ><a href="./servidor_correo.php?o1=mail&o2=envios"><i class="fa fa-circle-o"></i>Envíos</a></li>
+            <li <?php if ($o2=='envios') echo 'class="active"' ?> ><a href="./servidor_correo.php?o1=mail&o2=envios" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Envíos</a></li>
             <li <?php if ($o2=='stats') echo 'class="active"' ?> ><a href="./servidor_correo_stats.php<?php echo '?o1=mail&o2=stats'?>"><i class="fa fa-circle-o"></i>Estadísticas</a></li>
           </ul>
         </li>
@@ -591,23 +550,17 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
         </li-->
 
         <li class="header">Herramientas</li>
+        <li><a href="https://files.kyroslbs.com/downloads" target="_blank" data-toggle="tooltip" title="username:lbs password:01lbs10"><i class="fa fa-circle-o text-blue"></i> <span>Repositorio Apps</span></a></li>
         <li><a href="https://jira.kyroslbs.com" target="_blank"><i class="fa fa-circle-o text-red"></i> <span>Jira</span></a></li>
         <li><a href="https://cloud.kyroslbs.com" target="_blank"><i class="fa fa-circle-o text-yellow"></i> <span>Cloud</span></a></li>
-        <li><a href="https://<?php
-    $file = fopen('./credentials/user_repo.txt', 'r');
-    while(!feof($file)) {
-    echo fgets($file);
-    }
-    ?>:<?php
-    $file = fopen('./credentials/pass_repo.txt', 'r');
-    while(!feof($file)) {
-    echo fgets($file);
-    }
-    ?>@files.kyroslbs.com/downloads" target="_blank"><i class="fa fa-circle-o text-blue"></i> <span>Repositorio Apps</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->
   </aside>
+
+
+
+
 
 <!-- jQuery 2.2.3 -->
 <script src="./plugins/jQuery/jquery-2.2.3.min.js"></script>
@@ -616,6 +569,9 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button);
+
+
+
 </script>
 <!-- Bootstrap 3.3.6 -->
 <script src="./bootstrap/js/bootstrap.min.js"></script>

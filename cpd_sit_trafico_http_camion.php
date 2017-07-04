@@ -84,17 +84,7 @@
     <section class="content">
 
 <div class="holds-the-iframe">
-<iframe src="http://<?php
-    $file = fopen('./credentials/user_nagios_sit.txt', 'r');
-    while(!feof($file)) {
-    echo fgets($file);
-    }
-    ?>:<?php
-    $file = fopen('./credentials/pass_nagios_sit.txt', 'r');
-    while(!feof($file)) {
-    echo fgets($file);
-    }
-    ?>@mykyros.es/pnp4nagios/index.php/graph?host=trafico-web-camion&srv=http%20sessions" frameborder="0" style="overflow: hidden; height: 85%;
+<iframe src="http://mykyros.es/pnp4nagios/index.php/graph?host=trafico-web-camion&srv=http%20sessions" frameborder="0" style="overflow: hidden; height: 85%;
         width: 100%; position: absolute;"  scrolling="yes"></iframe>
 </div>
 

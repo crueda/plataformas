@@ -124,17 +124,7 @@
     <!-- Main content -->
     <section class="content">
 
-<iframe src="https://<?php
-    $file = fopen('./credentials/user_nagios.txt', 'r');
-    while(!feof($file)) {
-    echo fgets($file);
-    }
-    ?>:<?php
-    $file = fopen('./credentials/pass_nagios.txt', 'r');
-    while(!feof($file)) {
-    echo fgets($file);
-    }
-    ?>@<?php 
+<iframe src="https://<?php 
       if ($_GET["o2"]=='sf') {
         echo 'hawkeye.kyroslbs.com/pnp4nagios/index.php/graph?host=raspberry&srv=Sensor-frontal';
       } 

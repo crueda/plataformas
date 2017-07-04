@@ -130,13 +130,31 @@
                     <td><span class="label label-success">Ok</span></td>
               </tr>
               <tr>
-                <td><a href="https://view.kyroslbs.com">view.kyroslbs.com</a></td>
-                    <td>Kyros View</td>
+                <td>
+                  <a href="https://view.kyroslbs.com">view.kyroslbs.com</a>
+                  <br/>
+                  <a href="http://view.mygps.com">view.mygps.com</a>
+                </td>
+                    <td>Kyros View (Producción)</td>
+                    <td><span class="label label-success">Ok</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="https://view.kyroslbs.com">view-demos.kyroslbs.com</a>
+                  <br/>
+                  <a href="http://view.mygps.com">view-demos.mygps.com</a>
+                </td>
+                    <td>Kyros View (Demos)</td>
                     <td><span class="label label-success">Ok</span></td>
               </tr>
               <tr>
                 <td><a href="https://api.kyroslbs.com">api.kyroslbs.com</a></td>
-                    <td>Kyros API REST</td>
+                    <td>Kyros API REST (Producción)</td>
+                    <td><span class="label label-success">Ok</span></td>
+              </tr>
+              <tr>
+                <td><a href="https://api-demos.kyroslbs.com">api.kyroslbs.com</a></td>
+                    <td>Kyros API REST (demos)</td>
                     <td><span class="label label-success">Ok</span></td>
               </tr>
               <tr>

@@ -82,17 +82,7 @@
     <!-- Main content -->
     <section class="content">
 
-<iframe src="https://<?php
-    $file = fopen('./credentials/user_nagios.txt', 'r');
-    while(!feof($file)) {
-    echo fgets($file);
-    }
-    ?>:<?php
-    $file = fopen('./credentials/pass_nagios.txt', 'r');
-    while(!feof($file)) {
-    echo fgets($file);
-    }
-    ?>@hawkeye.kyroslbs.com/mrtg/" frameborder="0" style="overflow: hidden; height: 85%;
+<iframe src="https://hawkeye.kyroslbs.com/mrtg/" frameborder="0" style="overflow: hidden; height: 85%;
         width: 100%; position: absolute;" ></iframe>
 
 
