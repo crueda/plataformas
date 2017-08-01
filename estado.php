@@ -82,6 +82,12 @@
         else if ($_GET["o1"]=='cp') {
           echo 'CORREOS Pre-producción';
         } 
+        else if ($_GET["o2"]=='e-colas') {
+          echo 'KYROS Producción - Colas';
+        } 
+        else if ($_GET["o2"]=='e-mysql') {
+          echo 'KYROS Producción - MySQL';
+        } 
         else if ($_GET["o1"]=='k') {
           echo 'KYROS Producción';
         } 
@@ -110,7 +116,7 @@
           echo 'DEMOS';
         } 
         else if ($_GET["o1"]=='mongo') {
-          echo 'MongoDB';
+          echo 'KyrosView';
         } 
         else if ($_GET["o1"]=='indra') {
           echo 'Indra';
@@ -156,8 +162,14 @@
       else if ($_GET["o1"]=='kp') {
         echo 'hawkeye.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=KYROS-Pre-production&style=overview';
       } 
+      else if ($_GET["o2"]=='e-mysql') {
+        echo 'kyros.es:8443/cgi-bin/nagios3/status.cgi?hostgroup=BBDD&style=detail';
+      } 
+      else if ($_GET["o2"]=='e-colas') {
+        echo 'kyros.es:8443/cgi-bin/nagios3/status.cgi?hostgroup=COLAS&style=detail';
+      } 
       else if ($_GET["o1"]=='k') {
-        echo 'kyros.es:8443/cgi-bin/nagios3/status.cgi?hostgroup=KYROS-Production&style=overview';
+        echo 'kyros.es:8443/cgi-bin/nagios3/status.cgi?hostgroup=KYROS-Production&style=detail';
       } 
       else if ($_GET["o1"]=='d') {
         echo 'kyros.es:8443/cgi-bin/nagios3/status.cgi?hostgroup=KYROS-Demos&style=detail';

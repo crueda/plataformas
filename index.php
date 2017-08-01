@@ -176,6 +176,36 @@ header( "refresh:60;url=$url");
       <!-- /.row -->
 
 
+<div class="row">
+        <div class="col-md-6">
+          <!-- small box -->
+          <div class="small-box bg-aqua">
+            <div class="inner">
+              <p><b>Kyros</b> - Colas Strainer 1</p>
+              <img width="100%" src="./graphs/graphKyrosColas1.png"/>
+            </div>
+            <a href="./info.php?o1=k&o2=colas1" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+
+        </div>
+
+        <div class="col-md-6">
+          <!-- small box -->
+          <div class="small-box bg-aqua">
+            <div class="inner">
+              <p><b>Kyros</b> - Colas Strainer 2</p>
+              <img width="100%" src="./graphs/graphKyrosColas2.png"/>
+            </div>
+            <a href="./info.php?o1=k&o2=colas2" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+
+        </div>
+
+        
+       
+      </div>
+      <!-- /.row -->
+
   <!--div class="box box-info">
     <div class="box-header with-border">
       <h3 class="box-title">Sesiones Web</h3>

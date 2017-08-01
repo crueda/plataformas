@@ -285,7 +285,9 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
           </a>
           <ul class="treeview-menu">
            <!--li <?php if ($o2=='m') echo 'class="active"' ?> ><a href="./mapa.php?o1=k&o2=m"><i class="fa fa-circle-o"></i>Mapa</a></li-->
-            <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=k&o2=e'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Estado</a></li>
+            <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=k&o2=e'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Estado kyros</a></li>
+            <li <?php if ($o2=='e-mysql') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=k&o2=e-mysql'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Estado MySQL</a></li>
+            <li <?php if ($o2=='e-colas') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=k&o2=e-colas'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Estado colas</a></li>
             <li  <?php if ($o2=='sw') echo 'class="active"' ?>><a href="./info.php<?php echo '?o1=k&o2=sw'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Sesiones Web</a></li>
             <li  <?php if ($o2=='tr') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=k&o2=tr'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Tiempo de respuesta HTTPS</a></li>
             <li  <?php if ($o2=='gprs5000') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=k&o2=gprs5000'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Sesiones GPRS 5000</a></li>

@@ -98,6 +98,12 @@
         else if ($_GET["o2"]=='gprs5002') {
           echo 'Sesiones GPRS establecidas al puerto 5002';
         } 
+        else if ($_GET["o2"]=='colas1') {
+          echo 'Mensajes en cola para el strainer 1';
+        } 
+        else if ($_GET["o2"]=='colas2') {
+          echo 'Mensajes en cola para el strainer 2';
+        } 
         else if ($_GET["o2"]=='bd') {
           echo 'Estadísticas Base de Datos';
         } 
@@ -163,6 +169,12 @@
         } 
         else if ($_GET["o2"]=='gprs5002') {
           echo 'hawkeye.kyroslbs.com/pnp4nagios/index.php/graph?host=hawkeye-dmz-proxy&srv=GPRS%205002%20sessions';
+        }         
+        else if ($_GET["o2"]=='colas1') {
+          echo 'kyros.es:8443/pnp4nagios/index.php/graph?host=rabbit-strainer-1&srv=queue%20ALL';
+        }         
+        else if ($_GET["o2"]=='colas2') {
+          echo 'kyros.es:8443/pnp4nagios/index.php/graph?host=rabbit-strainer-2&srv=queue%20ALL';
         }         
         else if ($_GET["o2"]=='bd') {
           echo 'hawkeye.kyroslbs.com/pnp4nagios/index.php/graph?host=DB-stats&srv=Queries%20average';
