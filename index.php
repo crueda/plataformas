@@ -37,6 +37,10 @@ header( "refresh:60;url=$url");
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="./plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
+<script src="./js/highcharts.js"></script>
+<!--script src="https://code.highcharts.com/highcharts-3d.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script-->
+
 <script
   src="https://code.jquery.com/jquery-3.1.1.min.js"
   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
@@ -177,24 +181,70 @@ header( "refresh:60;url=$url");
 
 
 <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <p><b>Kyros</b> - Colas Strainer 1</p>
-              <img width="100%" src="./graphs/graphKyrosColas1.png"/>
+              <p><b>Kyros</b> - Colas Strainer</p>
+              <img width="100%" src="./graphs/graphKyrosColas.png"/>
             </div>
-            <a href="./info.php?o1=k&o2=colas1" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="./info.php?o1=k&o2=colas" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
-
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-4">
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <p><b>Kyros</b> - Colas Strainer 2</p>
-              <img width="100%" src="./graphs/graphKyrosColas2.png"/>
+              <p><b>Kyros</b> - Top tracking diario</p>
+              <div id="container_top_tracking" style="min-width: 310px; height: 145px; max-width: 600px; margin: 0 auto"></div>
+            </div>
+            <a href="./info.php?o1=k&o2=colas" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <!-- small box -->
+          <div class="small-box bg-aqua">
+            <div class="inner">
+              <p><b>Kyros</b> - Contadores tracking</p>
+              
+                        <!-- TABLE: LATEST ORDERS -->
+          <div class="box box-info">
+            
+            <!-- /.box-header -->
+            <div class="box-body">
+              <div class="table-responsive">
+                <table class="table no-margin">
+                  
+                  <tbody>
+                  <tr>
+                    <td><a href="pages/examples/invoice.html">Día</a></td>
+                    <td><span class="label label-success"><?php 
+                    echo file_get_contents( "./counters/kyros_tracking_day.txt" ); 
+                    ?></span></td>
+                  </tr>
+                  <tr>
+                    <td><a href="pages/examples/invoice.html">Semana</a></td>
+                    <td><span class="label label-warning"><?php 
+                    echo file_get_contents( "./counters/kyros_tracking_week.txt" ); 
+                    ?></span></td>
+                  </tr>
+                 
+                 
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.table-responsive -->
+            </div>
+            <!-- /.box-body -->
+           
+            <!-- /.box-footer -->
+          </div>
+          <!-- /.box -->
+      
+        <!-- /.col -->
+
             </div>
             <a href="./info.php?o1=k&o2=colas2" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
@@ -370,6 +420,45 @@ header( "refresh:60;url=$url");
 </div>
 <!-- ./wrapper -->
 
+<script>
+Highcharts.chart('container_top_tracking', {
+    chart: {
+        margin: [0, 0, 0, 0],
+        spacingTop: 10,
+        spacingBottom: 0,
+        spacingLeft: 0,
+        spacingRight: 0,
+        //plotBackgroundColor: '#00C0EF',
+        plotBackgroundColor: '#ffffff',
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+    },
+    title:{
+      text:''
+    },
+    exporting: {
+         enabled: false
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            /*dataLabels: {
+                enabled: false
+            }*/
+        }
+    },
+    series: [{
+        name: 'Trackings',
+        colorByPoint: true,
+        data: [<?php
+echo file_get_contents( "./counters/kyros_top_tracking.json" ); 
+?>
+]
+    }]
+});
+</script>
 <!-- jQuery 2.2.3 -->
 <script src="./plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
@@ -407,5 +496,8 @@ header( "refresh:60;url=$url");
 <script src="./dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="./dist/js/demo.js"></script>
+
+
+
 </body>
 </html>

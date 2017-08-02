@@ -9,8 +9,7 @@ urlGraphKyrosSesiones5000="https://admin:m0rt4d3l0@kyros.es:8443/pnp4nagios/imag
 urlGraphHawkeyeSesiones="https://admin:m0rt4d3l0@hawkeye.kyroslbs.com/pnp4nagios/image?host=hawkeye-dmz-proxy&srv=https_sessions&view=0&source=0&start="$initDate"&end="$endDate
 urlGraphCorreosSesiones="https://admin:m0rt4d3l0@correos.kyros.es/pnp4nagios/image?host=dmz-proxy-Virtual&srv=https_sessions&view=0&source=0&start="$initDate"&end="$endDate
 urlGraphKyrosSesiones="https://admin:m0rt4d3l0@kyros.es:8443/pnp4nagios/image?host=dmz-proxy-Virtual&srv=https_sessions&view=0&source=0&start="$initDate"&end="$endDate
-urlGraphKyrosColas1="https://admin:m0rt4d3l0@kyros.es:8443/pnp4nagios/image?host=rabbit-strainer-1&srv=queue%20ALL&view=0&source=0&start="$initDate"&end="$endDate
-urlGraphKyrosColas2="https://admin:m0rt4d3l0@kyros.es:8443/pnp4nagios/image?host=rabbit-strainer-2&srv=queue%20ALL&view=0&source=0&start="$initDate"&end="$endDate
+urlGraphKyrosColas="https://admin:m0rt4d3l0@kyros.es:8443/pnp4nagios/image?host=rabbit-strainer-1&srv=queue%20ALL%201y2&view=0&source=0&start="$initDate"&end="$endDate
 
 urlGraphHawkeyeBD="https://admin:m0rt4d3l0@hawkeye.kyroslbs.com/pnp4nagios/image?host=DB-stats&srv=Queries_average&view=0&source=0&start="$initDate"&end="$endDate
 urlGraphCorreosBD="https://admin:m0rt4d3l0@correos.kyros.es/pnp4nagios/image?host=DB-stats&srv=Queries_average&view=0&source=0&start="$initDate"&end="$endDate
@@ -28,8 +27,7 @@ wget --output-document=/var/www/html/plataformas/graphs/graphKyrosSesiones5000.p
 wget --output-document=/var/www/html/plataformas/graphs/graphHawkeyeSesiones.png $urlGraphHawkeyeSesiones
 wget --output-document=/var/www/html/plataformas/graphs/graphCorreosSesiones.png $urlGraphCorreosSesiones
 wget --output-document=/var/www/html/plataformas/graphs/graphKyrosSesiones.png $urlGraphKyrosSesiones
-wget --output-document=/var/www/html/plataformas/graphs/graphKyrosColas1.png $urlGraphKyrosColas1
-wget --output-document=/var/www/html/plataformas/graphs/graphKyrosColas2.png $urlGraphKyrosColas2
+wget --output-document=/var/www/html/plataformas/graphs/graphKyrosColas.png $urlGraphKyrosColas
 
 wget --output-document=/var/www/html/plataformas/graphs/graphUvaRed.png $urlGraphUvaRed
 wget --output-document=/var/www/html/plataformas/graphs/graphOficinaRed.png $urlGraphOficinaRed
