@@ -57,6 +57,7 @@ header( "refresh:60;url=$url");
 <script type="text/javascript">
             var timerStart = Date.now();
             var loadingImage;
+
         </script>
 
   <script language = "JavaScript">
@@ -72,18 +73,29 @@ header( "refresh:60;url=$url");
   </script>
 
 
+
 </head>
+
+
 <!--body class="hold-transition skin-blue sidebar-mini" onLoad="javascript:preloader()"-->
 <body class="hold-transition skin-blue sidebar-mini">
 
-<!--script type="text/javascript">
+
+
+
+<script type="text/javascript">
              $(document).ready(function() {
                  console.log("Time until DOMready: ", Date.now()-timerStart);
+                 var n_day = <?php echo file_get_contents( "./counters/kyros_tracking_day.txt" ); ?>;
+                 document.getElementById('kyros_tracking_day').innerHTML = n_day.toLocaleString();
+                 var n_week = <?php echo file_get_contents( "./counters/kyros_tracking_week.txt" ); ?>;
+                 document.getElementById('kyros_tracking_week').innerHTML = n_week.toLocaleString();
+
              });
              $(window).load(function() {
                  console.log("Time until everything loaded: ", Date.now()-timerStart);
              });
-        </script-->
+        </script>
 
 <script>setTimeout(loader(),5000);</script>
 
@@ -219,16 +231,14 @@ header( "refresh:60;url=$url");
                   
                   <tbody>
                   <tr>
-                    <td><a href="pages/examples/invoice.html">Día</a></td>
-                    <td><span class="label label-success"><?php 
+                    <td><a target="_blank" href="./tracking_diario.php">Día</a></td>
+                    <td><span class="label label-success" id="kyros_tracking_day"><?php 
                     echo file_get_contents( "./counters/kyros_tracking_day.txt" ); 
                     ?></span></td>
                   </tr>
                   <tr>
-                    <td><a href="pages/examples/invoice.html">Semana</a></td>
-                    <td><span class="label label-warning"><?php 
-                    echo file_get_contents( "./counters/kyros_tracking_week.txt" ); 
-                    ?></span></td>
+                    <td><a target="_blank" href="./tracking_semanal.php">Semana</a></td>
+                    <td><span class="label label-warning" id="kyros_tracking_week"></span></td>
                   </tr>
                  
                  
