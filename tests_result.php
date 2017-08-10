@@ -108,12 +108,14 @@
      <!-- /.row -->
       <div class="row">
         <div class="col-xs-12">
-          <div class="box">
-            <div class="box-header">
+          <div class="box box-success collapsed-box box-solid">
+          <!--div class="box box-warning collapsed-box box-solid"-->
+          <!--div class="box box-danger collapsed-box box-solid"-->
+            <div class="box-header with-border">
               <h3 class="box-title">Test_001 - Operaciones de login</h3>
 
               <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
                 </button>
               </div>
             </div>
@@ -135,14 +137,53 @@
                   <td>Test001_1</td>
                   <td><span class="label label-success">Ok</span></td>
                   <!--td><span class="label label-danger">Error</span></td-->
-                  <td>Titulo 'Kyros' en el navegador</td>
+                  <td>Comprobar titulo 'Kyros' en el navegador</td>
                 </tr>
                 <tr>
                   <td>Test001_2</td>
                   <td><span class="label label-success">Ok</span></td>
-                  <td>Cambio a idioma ruso</td>
+                  <td>Cambio a idioma ruso y comprobar texto 'Забыли пароль'</td>
+                </tr>               
+                <tr>
+                  <td>Test001_3</td>
+                  <td><span class="label label-success">Ok</span></td>
+                  <td>Cambio a idioma portugués y comprobar texto 'esqueceu sua senha'</td>
                 </tr>
-               
+                <tr>
+                  <td>Test001_4</td>
+                  <td><span class="label label-success">Ok</span></td>
+                  <td>Cambio a idioma aleman y comprobar texto 'Passwort vergessen'</td>
+                </tr>
+                <tr>
+                  <td>Test001_5</td>
+                  <td><span class="label label-success">Ok</span></td>
+                  <td>Cambio a idioma francés y comprobar texto 'votre mot de passe'</td>
+                </tr>
+                <tr>
+                  <td>Test001_6</td>
+                  <td><span class="label label-success">Ok</span></td>
+                  <td>Cambio a idioma inglés y comprobar texto 'Forgot your password'</td>
+                </tr>
+                <tr>
+                  <td>Test001_7</td>
+                  <td><span class="label label-success">Ok</span></td>
+                  <td>Cambio a idioma español y comprobar texto 'Olvidó su contraseña'</td>
+                </tr>
+                <tr>
+                  <td>Test001_8</td>
+                  <td><span class="label label-success">Ok</span></td>
+                  <td>Login pulsando enter en el campo usuario + logout</td>
+                </tr>
+                <tr>
+                  <td>Test001_9</td>
+                  <td><span class="label label-success">Ok</span></td>
+                  <td>Login pulsando enter en el campo contraseña + logout</td>
+                </tr>
+                <tr>
+                  <td>Test001_10</td>
+                  <td><span class="label label-success">Ok</span></td>
+                  <td>Login pulsando sobre el botón de acceder + logout</td>
+                </tr>
               </table>
            
            </div>
@@ -229,7 +270,7 @@ Highcharts.chart('container_test001', {
             y: 10,
         }, {
             name: 'Error',
-            y: 2,
+            y: 0,
         }]
     }]
 });
