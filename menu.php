@@ -293,6 +293,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
             <li  <?php if ($o2=='gprs5000') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=k&o2=gprs5000'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Sesiones GPRS 5000</a></li>
             <li  <?php if ($o2=='gprs5002') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=k&o2=gprs5002'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Sesiones GPRS 5002</a></li>
             <li  <?php if ($o2=='bd') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=k&o2=bd'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>BD estadisticas</a></li>
+            <li  <?php if ($o2=='tests') echo 'class="active"' ?> ><a href="./tests_result.php<?php echo '?o1=k&o2=tests'?>"><i class="fa fa-circle-o"></i>Tests funcionales</a></li>
             <li  <?php if ($o2=='backup') echo 'class="active"' ?> ><a href="./backups.php<?php echo '?o1=k&o2=backup'?>"><i class="fa fa-circle-o"></i>Backups</a></li>
             <li  <?php if ($o2=='logs') echo 'class="active"' ?> ><a href="./logs.php<?php echo '?o1=k&o2=logs'?>" data-toggle="tooltip" title="username:kyroslbs password:p4j4r0"><i class="fa fa-circle-o"></i>Logs</a></li>
             <li  <?php if ($o2=='tracking') echo 'class="active"' ?> ><a href="./tracking_stats.php<?php echo '?o1=k&o2=tracking'?>"><i class="fa fa-circle-o"></i>Estadísticas de tracking</a></li>
