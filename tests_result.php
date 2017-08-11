@@ -1,3 +1,19 @@
+<?php
+
+$csvResultsFile = file('./counters/test001_results.csv');
+
+$dataResults = [];
+foreach ($csvResultsFile as $line) {
+  $dataResults[] = str_getcsv($line, $delimiter = "," );              
+}
+
+
+$resultsDate = $dataResults[0][0];
+
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -112,7 +128,7 @@
           <!--div class="box box-warning collapsed-box box-solid"-->
           <!--div class="box box-danger collapsed-box box-solid"-->
             <div class="box-header with-border">
-              <h3 class="box-title">Test_001 - Operaciones de login</h3>
+              <h3 class="box-title"><b>Test_001</b> - Operaciones de login<br><br><p style="font-size:14px"><?php echo $resultsDate ?></p></h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
@@ -189,7 +205,21 @@
            </div>
 
             <div class="col-xs-4">
-           <div id="container_test001" style="min-width: 310px; max-width: 600px; height: 400px; margin: 0 auto"></div>
+         
+
+           <div id="container_test001" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+
+
+
+
+
+
+
+
+
+
+
+
 
            </div>
            </div>
@@ -239,39 +269,64 @@
 
 <script type="text/javascript">
   // Create the chart
-Highcharts.chart('container_test001', {
+
+
+   Highcharts.chart('container_test001', {
     chart: {
-        type: 'pie'
+        type: 'bar'
     },
     title: {
         text: 'Resultados'
     },
     subtitle: {
-        text: ''
+        text: 'Por tipo de navegador'
+    },
+    xAxis: {
+        categories: ['Chrome', 'Firefox', 'Edge', 'Safari'],
+        title: {
+            text: null
+        }
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: '',
+            align: 'high'
+        },
+        labels: {
+            overflow: 'justify'
+        }
+    },
+    tooltip: {
+        valueSuffix: ' '
     },
     plotOptions: {
-        series: {
+        bar: {
             dataLabels: {
-                enabled: true,
-                format: '{point.name}: {point.y:.0f}'
+                enabled: false
             }
         }
     },
-
-    tooltip: {
-        headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
-        pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.0f}</b><br/>'
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'top',
+        x: -40,
+        y: 80,
+        floating: true,
+        borderWidth: 1,
+        backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+        shadow: true
+    },
+    credits: {
+        enabled: false
     },
     series: [{
-        name: 'Tests ejecutados',
-        colorByPoint: true,
-        data: [{
-            name: 'Ok',
-            y: 10,
-        }, {
-            name: 'Error',
-            y: 0,
-        }]
+        name: 'Ok',
+        data: [10, 0, 0, 10]
+    }, {
+        name: 'Error',
+        data: [0, 0, 0, 0]
     }]
 });
 
