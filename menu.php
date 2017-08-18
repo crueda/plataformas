@@ -525,8 +525,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
           </ul>
         </li>
 
-
-<li class="<?php if ($o1=='carto') echo 'active' ?> treeview">
+        <!--li class="<?php if ($o1=='carto') echo 'active' ?> treeview">
           <a href="#">
             <i class="fa fa-folder"></i> <span>Ejemplos Carto</span>
               <span class="pull-right-container">
@@ -544,7 +543,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
             <li <?php if ($o2=='cercania_pois') echo 'class="active"' ?> ><a href="./carto.php?o1=carto&o2=cercania_pois"><i class="fa fa-circle-o"></i>Cercanía a POIs</a></li>
             <li <?php if ($o2=='wrc1') echo 'class="active"' ?> ><a href="./carto.php?o1=carto&o2=wrc1"><i class="fa fa-circle-o"></i>WRC compara velocidades</a></li>
           </ul>
-        </li>
+        </li-->
 
         <!--li>
           <a href="./servidor_correo.php">
