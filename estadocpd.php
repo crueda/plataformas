@@ -126,22 +126,22 @@
 
 <iframe src="https://<?php 
       if ($_GET["o2"]=='sf') {
-        echo 'hawkeye.kyroslbs.com/pnp4nagios/index.php/graph?host=raspberry&srv=Sensor-frontal';
+        echo 'oficina.kyroslbs.com/pnp4nagios/index.php/graph?host=raspberry&srv=Sensor-frontal';
       } 
       else if ($_GET["o2"]=='st') {
-        echo 'hawkeye.kyroslbs.com/pnp4nagios/index.php/graph?host=raspberry&srv=Sensor-trasero';
+        echo 'oficina.kyroslbs.com/pnp4nagios/index.php/graph?host=raspberry&srv=Sensor-trasero';
       } 
       else if ($_GET["o2"]=='it') {
-        echo 'hawkeye.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=IT-services&style=detail';
+        echo 'oficina.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=IT-services&style=detail';
       } 
       else if ($_GET["o1"]=='uva') {
         echo 'correos.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=all&style=overview';
       } 
       else if ($_GET["o1"]=='oficina') {
-        echo 'hawkeye.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=all&style=overview';
+        echo 'oficina.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=all&style=overview';
       } 
       else {
-        echo 'hawkeye.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=all';
+        echo 'oficina.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=all';
       }?>" frameborder="0" style="overflow: hidden; height: 90%;
         width: 100%; position: absolute;"></iframe>
 

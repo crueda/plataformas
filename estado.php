@@ -154,7 +154,7 @@
 
 <iframe src="https://<?php 
       if ($_GET["o1"]=='h') {
-        echo 'hawkeye.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=Hawkeye-production&style=overview';
+        echo 'hawkeye.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=Hawkeye&style=overview';
       } 
       else if ($_GET["o1"]=='cp') {
         echo 'hawkeye.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=CORREOS-Pre-production&style=overview';

@@ -393,9 +393,56 @@ header( "refresh:60;url=$url");
             <a href="./cpd_sit_trafico.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
-       
+              
+      </div>
+      <!-- /.row -->
 
+
+      <div class="row">
+        <div class="col-md-3">
+          <!-- small box -->
+          <div class="small-box bg-red">
+            <div class="inner">
+              <p><b>Kyros</b> - Tráfico de red</p>
+              <img id="pic" width="100%" src="./graphs/graphKyrosRed.png" alt="Generando el gráfico..." title="Generando el gráfico..."/>              
+            </div>
+            <a href="./cpd_uva_trafico.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-md-3 ">
+          <!-- small box -->
+          <div class="small-box bg-red">
+            <div class="inner">
+              <p><b>Correos</b> - Tráfico de red</p>
+              <img width="100%" src="./graphs/graphCorreosRed.png"/>
+            </div>
+            <a href="./cpd_oficina_trafico.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
        
+        <!-- ./col -->
+        <div class="col-md-3 ">
+          <div class="small-box bg-red">
+            <div class="inner">
+              <p><b>Hawkeye</b> - Tráfico de red</p>
+              <img width="100%" src="./graphs/graphHawkeyeRed.png"/>              
+            </div>
+            <a href="./cpd_sit_trafico.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+              
+        <!-- ./col -->
+        <div class="col-md-3 ">
+          <div class="small-box bg-red">
+            <div class="inner">
+              <p><b>Indra</b> - Tráfico de red</p>
+              <img width="100%" src="./graphs/graphIndraRed.png"/>              
+            </div>
+            <a href="./cpd_sit_trafico.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+              
       </div>
       <!-- /.row -->
 
