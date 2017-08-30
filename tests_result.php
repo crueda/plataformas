@@ -1,14 +1,41 @@
 <?php
 
-$csvResultsFile = file('./counters/test001_results.csv');
+$csvResultsFile_chrome = file('./counters/test001_results_chrome.csv');
+$csvResultsFile_firefox = file('./counters/test001_results_firefox.csv');
 
-$dataResults = [];
-foreach ($csvResultsFile as $line) {
-  $dataResults[] = str_getcsv($line, $delimiter = "," );              
+$dataResults_chrome = [];
+foreach ($csvResultsFile_chrome as $line) {
+  $dataResults_chrome[] = str_getcsv($line, $delimiter = "," );              
+}
+$dataResults_firefox = [];
+foreach ($csvResultsFile_firefox as $line) {
+  $dataResults_firefox[] = str_getcsv($line, $delimiter = "," );              
 }
 
 
-$resultsDate = $dataResults[0][0];
+$resultsDate = $dataResults_chrome[0][0];
+$resultCode = $dataResults_chrome[0][1];
+$test0001_1_chrome = $dataResults_chrome[0][3];
+$test0001_2_chrome = $dataResults_chrome[0][4];
+$test0001_3_chrome = $dataResults_chrome[0][5];
+$test0001_4_chrome = $dataResults_chrome[0][6];
+$test0001_5_chrome = $dataResults_chrome[0][7];
+$test0001_6_chrome = $dataResults_chrome[0][8];
+$test0001_7_chrome = $dataResults_chrome[0][9];
+$test0001_8_chrome = $dataResults_chrome[0][10];
+$test0001_9_chrome = $dataResults_chrome[0][11];
+$test0001_10_chrome = $dataResults_chrome[0][12];
+
+$test0001_1_firefox = $dataResults_firefox[0][3];
+$test0001_2_firefox = $dataResults_firefox[0][4];
+$test0001_3_firefox = $dataResults_firefox[0][5];
+$test0001_4_firefox = $dataResults_firefox[0][6];
+$test0001_5_firefox = $dataResults_firefox[0][7];
+$test0001_6_firefox = $dataResults_firefox[0][8];
+$test0001_7_firefox = $dataResults_firefox[0][9];
+$test0001_8_firefox = $dataResults_firefox[0][10];
+$test0001_9_firefox = $dataResults_firefox[0][11];
+$test0001_10_firefox = $dataResults_firefox[0][12];
 
 
 
@@ -124,9 +151,15 @@ $resultsDate = $dataResults[0][0];
      <!-- /.row -->
       <div class="row">
         <div class="col-xs-12">
-          <div class="box box-success collapsed-box box-solid">
-          <!--div class="box box-warning collapsed-box box-solid"-->
-          <!--div class="box box-danger collapsed-box box-solid"-->
+        <?php if ($resultCode==0) {
+          echo ('<div class="box box-success collapsed-box box-solid">');
+        } else if ($resultCode==1) {
+          echo ('<div class="box box-warning collapsed-box box-solid">');          
+        } else {
+          echo ('<div class="box box-danger collapsed-box box-solid">');                    
+        }
+        ?>
+          
             <div class="box-header with-border">
               <h3 class="box-title"><b>Test_001</b> - Operaciones de login<br><br><p style="font-size:14px"><?php echo $resultsDate ?></p></h3>
 
@@ -141,87 +174,185 @@ $resultsDate = $dataResults[0][0];
             
 
             <div class="row">
-            <div class="col-xs-8">
+            <div class="col-xs-12">
 
                  <table class="table table-hover">
                 <tr>
                   <th>ID</th>
-                  <th>Estado</th>
+                  <th>Chrome</th>
+                  <th>Firefox</th>
                   <th>Descripción</th>
                 </tr>
                 <tr>
                   <td>Test001_1</td>
-                  <td><span class="label label-success">Ok</span></td>
-                  <!--td><span class="label label-danger">Error</span></td-->
+                   <?php if ($test0001_1_chrome==0) {
+                    echo ('<td><span class="label label-success">Ok</span></td>');
+                  } else {
+                    echo ('<td><span class="label label-danger">Error</span></td>');          
+                  } 
+                  ?>                 
+                   <?php if ($test0001_1_firefox==0) {
+                    echo ('<td><span class="label label-success">Ok</span></td>');
+                  } else {
+                    echo ('<td><span class="label label-danger">Error</span></td>');          
+                  } 
+                  ?>                 
                   <td>Comprobar titulo 'Kyros' en el navegador</td>
                 </tr>
                 <tr>
                   <td>Test001_2</td>
-                  <td><span class="label label-success">Ok</span></td>
+                   <?php if ($test0001_2_chrome==0) {
+                    echo ('<td><span class="label label-success">Ok</span></td>');
+                  } else {
+                    echo ('<td><span class="label label-danger">Error</span></td>');          
+                  } 
+                  ?>
+                   <?php if ($test0001_2_firefox==0) {
+                    echo ('<td><span class="label label-success">Ok</span></td>');
+                  } else {
+                    echo ('<td><span class="label label-danger">Error</span></td>');          
+                  } 
+                  ?>                 
                   <td>Cambio a idioma ruso y comprobar texto 'Забыли пароль'</td>
                 </tr>               
                 <tr>
                   <td>Test001_3</td>
-                  <td><span class="label label-success">Ok</span></td>
+                   <?php if ($test0001_3_chrome==0) {
+                    echo ('<td><span class="label label-success">Ok</span></td>');
+                  } else {
+                    echo ('<td><span class="label label-danger">Error</span></td>');          
+                  } 
+                  ?>
+                   <?php if ($test0001_3_firefox==0) {
+                    echo ('<td><span class="label label-success">Ok</span></td>');
+                  } else {
+                    echo ('<td><span class="label label-danger">Error</span></td>');          
+                  } 
+                  ?>                 
                   <td>Cambio a idioma portugués y comprobar texto 'esqueceu sua senha'</td>
                 </tr>
                 <tr>
                   <td>Test001_4</td>
-                  <td><span class="label label-success">Ok</span></td>
+                   <?php if ($test0001_4_chrome==0) {
+                    echo ('<td><span class="label label-success">Ok</span></td>');
+                  } else {
+                    echo ('<td><span class="label label-danger">Error</span></td>');          
+                  } 
+                  ?>
+                   <?php if ($test0001_4_firefox==0) {
+                    echo ('<td><span class="label label-success">Ok</span></td>');
+                  } else {
+                    echo ('<td><span class="label label-danger">Error</span></td>');          
+                  } 
+                  ?>                 
                   <td>Cambio a idioma aleman y comprobar texto 'Passwort vergessen'</td>
                 </tr>
                 <tr>
                   <td>Test001_5</td>
-                  <td><span class="label label-success">Ok</span></td>
+                   <?php if ($test0001_5_chrome==0) {
+                    echo ('<td><span class="label label-success">Ok</span></td>');
+                  } else {
+                    echo ('<td><span class="label label-danger">Error</span></td>');          
+                  } 
+                  ?>
+                   <?php if ($test0001_5_firefox==0) {
+                    echo ('<td><span class="label label-success">Ok</span></td>');
+                  } else {
+                    echo ('<td><span class="label label-danger">Error</span></td>');          
+                  } 
+                  ?>                 
                   <td>Cambio a idioma francés y comprobar texto 'votre mot de passe'</td>
                 </tr>
                 <tr>
                   <td>Test001_6</td>
-                  <td><span class="label label-success">Ok</span></td>
+                   <?php if ($test0001_6_chrome==0) {
+                    echo ('<td><span class="label label-success">Ok</span></td>');
+                  } else {
+                    echo ('<td><span class="label label-danger">Error</span></td>');          
+                  } 
+                  ?>
+                   <?php if ($test0001_6_firefox==0) {
+                    echo ('<td><span class="label label-success">Ok</span></td>');
+                  } else {
+                    echo ('<td><span class="label label-danger">Error</span></td>');          
+                  } 
+                  ?>                 
                   <td>Cambio a idioma inglés y comprobar texto 'Forgot your password'</td>
                 </tr>
                 <tr>
                   <td>Test001_7</td>
-                  <td><span class="label label-success">Ok</span></td>
+                   <?php if ($test0001_7_chrome==0) {
+                    echo ('<td><span class="label label-success">Ok</span></td>');
+                  } else {
+                    echo ('<td><span class="label label-danger">Error</span></td>');          
+                  } 
+                  ?>
+                   <?php if ($test0001_7_firefox==0) {
+                    echo ('<td><span class="label label-success">Ok</span></td>');
+                  } else {
+                    echo ('<td><span class="label label-danger">Error</span></td>');          
+                  } 
+                  ?>                 
                   <td>Cambio a idioma español y comprobar texto 'Olvidó su contraseña'</td>
                 </tr>
                 <tr>
                   <td>Test001_8</td>
-                  <td><span class="label label-success">Ok</span></td>
+                   <?php if ($test0001_8_chrome==0) {
+                    echo ('<td><span class="label label-success">Ok</span></td>');
+                  } else {
+                    echo ('<td><span class="label label-danger">Error</span></td>');          
+                  } 
+                  ?>
+                   <?php if ($test0001_8_firefox==0) {
+                    echo ('<td><span class="label label-success">Ok</span></td>');
+                  } else {
+                    echo ('<td><span class="label label-danger">Error</span></td>');          
+                  } 
+                  ?>                 
                   <td>Login pulsando enter en el campo usuario + logout</td>
                 </tr>
                 <tr>
                   <td>Test001_9</td>
-                  <td><span class="label label-success">Ok</span></td>
+                   <?php if ($test0001_9_chrome==0) {
+                    echo ('<td><span class="label label-success">Ok</span></td>');
+                  } else {
+                    echo ('<td><span class="label label-danger">Error</span></td>');          
+                  } 
+                  ?>
+                   <?php if ($test0001_9_firefox==0) {
+                    echo ('<td><span class="label label-success">Ok</span></td>');
+                  } else {
+                    echo ('<td><span class="label label-danger">Error</span></td>');          
+                  } 
+                  ?>                 
                   <td>Login pulsando enter en el campo contraseña + logout</td>
                 </tr>
                 <tr>
                   <td>Test001_10</td>
-                  <td><span class="label label-success">Ok</span></td>
+                   <?php if ($test0001_10_chrome==0) {
+                    echo ('<td><span class="label label-success">Ok</span></td>');
+                  } else {
+                    echo ('<td><span class="label label-danger">Error</span></td>');          
+                  } 
+                  ?>
+                   <?php if ($test0001_10_firefox==0) {
+                    echo ('<td><span class="label label-success">Ok</span></td>');
+                  } else {
+                    echo ('<td><span class="label label-danger">Error</span></td>');          
+                  } 
+                  ?>                 
                   <td>Login pulsando sobre el botón de acceder + logout</td>
                 </tr>
               </table>
            
            </div>
 
-            <div class="col-xs-4">
+            <!--div class="col-xs-4">
          
 
-           <div id="container_test001" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+              <div id="container_test001" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-           </div>
+            </div-->
            </div>
 
 
@@ -265,7 +396,7 @@ $resultsDate = $dataResults[0][0];
 </div>
 <!-- ./wrapper -->
 
-<script src="./js/highcharts.js"></script>
+<!--script src="./js/highcharts.js"></script>
 
 <script type="text/javascript">
   // Create the chart
@@ -330,7 +461,7 @@ $resultsDate = $dataResults[0][0];
     }]
 });
 
-</script>
+</script-->
 
 
 <!-- jQuery 2.2.3 -->
