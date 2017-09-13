@@ -139,15 +139,31 @@ header( "refresh:60;url=$url");
     <!-- Main content -->
     <section class="content">
 
+
 <div class="row">
+
+ <div class="col-xs-12">
+   <div class="box">
+            
+      <div class="box-header with-border">
+              <h3 class="box-title"><b>Sesiones GPRS</b></h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+              </div>
+      </div>
+      <!-- /.box-header -->
+           
+        <div class="box-body table-responsive no-padding">
+
         <div class="col-md-3">
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <p><b>Kyros</b> - Sesiones GPRS 5000</p>
-              <img width="100%" src="./graphs/graphKyrosSesiones5000.png"/>
+              <p><b>Kyros</b> - Sesiones puerto 5000</p>
+              <a href="./info.php?o1=k&o2=gprs5000"><img width="100%"  src="./graphs/graphKyrosSesiones5000.png"/></a>
             </div>
-            <a href="./info.php?o1=k&o2=gprs5000" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
 
         </div>
@@ -156,10 +172,9 @@ header( "refresh:60;url=$url");
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <p><b>Kyros</b> - Sesiones GPRS 5002</p>
-              <img width="100%" src="./graphs/graphKyrosSesiones5002.png"/>
+              <p><b>Kyros</b> - Sesiones puerto 5002</p>
+              <a href="./info.php?o1=k&o2=gprs5002"><img width="100%"  src="./graphs/graphKyrosSesiones5002.png"/></a>
             </div>
-            <a href="./info.php?o1=k&o2=gprs5002" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
 
         </div>
@@ -169,10 +184,9 @@ header( "refresh:60;url=$url");
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
-              <p><b>Correos</b> - Sesiones GPRS 5000</p>
-              <img width="100%" src="./graphs/graphCorreosSesiones5000.png"/>
+              <p><b>Correos</b> - Sesiones puerto 5000</p>
+              <a href="./info.php?o1=c&o2=gprs5000"><img width="100%"  src="./graphs/graphCorreosSesiones5000.png"/></a>
             </div>            
-            <a href="./info.php?o1=c&o2=gprs5000" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
        
@@ -181,26 +195,41 @@ header( "refresh:60;url=$url");
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <p><b>Hawkeye</b> - Sesiones GPRS 5002</p>
-              <img width="100%" src="./graphs/graphHawkeyeSesiones5002.png"/>
+              <p><b>Hawkeye</b> - Sesiones puerto 5002</p>
+              <a href="./info.php?o1=h&o2=gprs5002"><img width="100%" src="./graphs/graphHawkeyeSesiones5002.png"/></a>
             </div>
-            <a href="./info.php?o1=h&o2=gprs5002" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
        
+      </div></div></div>
       </div>
       <!-- /.row -->
 
 
 <div class="row">
+
+ <div class="col-xs-12">
+   <div class="box">
+            
+      <div class="box-header with-border">
+              <h3 class="box-title"><b>Colas y tracking</b></h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+              </div>
+      </div>
+      <!-- /.box-header -->
+        <div class="box-body table-responsive no-padding">
+
+
         <div class="col-md-4">
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
               <p><b>Kyros</b> - Colas Strainer</p>
-              <img width="100%" src="./graphs/graphKyrosColas.png"/>
+              <a href="./info.php?o1=k&o2=colas"><img width="100%" src="./graphs/graphKyrosColas.png"/></a>
             </div>
-            <a href="./info.php?o1=k&o2=colas" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
 
@@ -209,9 +238,8 @@ header( "refresh:60;url=$url");
           <div class="small-box bg-aqua">
             <div class="inner">
               <p><b>Kyros</b> - Top tracking diario</p>
-              <div id="container_top_tracking" style="min-width: 310px; height: 145px; max-width: 600px; margin: 0 auto"></div>
+              <div id="container_top_tracking" style="min-width: 310px; height: 120px; max-width: 600px; margin: 0 auto"></div>
             </div>
-            <a href="./info.php?o1=k&o2=colas" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
 
@@ -227,7 +255,7 @@ header( "refresh:60;url=$url");
             <!-- /.box-header -->
             <div class="box-body">
               <div class="table-responsive">
-                <table class="table no-margin">
+                <table class="table no-margin" height="75px" >
                   
                   <tbody>
                   <tr>
@@ -256,38 +284,39 @@ header( "refresh:60;url=$url");
         <!-- /.col -->
 
             </div>
-            <a href="./info.php?o1=k&o2=colas2" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
 
         </div>
 
-        
+    </div></div></div>
        
       </div>
       <!-- /.row -->
 
-  <!--div class="box box-info">
-    <div class="box-header with-border">
-      <h3 class="box-title">Sesiones Web</h3>
-
-      <div class="box-tools pull-right">
-        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-        </button>
-      </div>
-    </div>
-
-    <div class="box-body">
-      <div class="table-responsive"-->
       
       <div class="row">
+
+ <div class="col-xs-12">
+   <div class="box">
+            
+      <div class="box-header with-border">
+              <h3 class="box-title"><b>Sesiones Web</b></h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+              </div>
+      </div>
+
+        <div class="box-body table-responsive no-padding">
+
         <div class="col-md-4">
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <p><b>Kyros</b> - Sesiones Web</p>
-              <img width="100%" src="./graphs/graphKyrosSesiones.png"/>
+              <p><b>Kyros</b></p>
+              <a href="./info.php?o1=k&o2=sw"><img width="100%"  src="./graphs/graphKyrosSesiones.png"/></a>
             </div>
-            <a href="./info.php?o1=k&o2=sw" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -295,10 +324,9 @@ header( "refresh:60;url=$url");
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
-              <p><b>Correos</b> - Sesiones Web</p>
-              <img width="100%" src="./graphs/graphCorreosSesiones.png"/>
+              <p><b>Correos</b></p>
+              <a href="./info.php?o1=c&o2=sw"><img width="100%"  src="./graphs/graphCorreosSesiones.png"/></a>
             </div>
-            <a href="./info.php?o1=c&o2=sw" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
        
@@ -307,13 +335,13 @@ header( "refresh:60;url=$url");
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <p><b>Hawkeye</b> - Sesiones Web</p>
-              <img width="100%" src="./graphs/graphHawkeyeSesiones.png"/>
+              <p><b>Hawkeye</b> </p>
+              <a href="./info.php?o1=h&o2=sw"><img width="100%"  src="./graphs/graphHawkeyeSesiones.png"/></a>
             </div>
-            <a href="./info.php?o1=h&o2=sw" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
-       
+      
+      </div></div></div>
       </div>
       <!-- /.row -->
         <!--/div>
@@ -322,14 +350,28 @@ header( "refresh:60;url=$url");
 
       
       <div class="row">
+
+ <div class="col-xs-12">
+   <div class="box">
+            
+      <div class="box-header with-border">
+              <h3 class="box-title"><b>Base de datos</b></h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+              </div>
+      </div>
+
+        <div class="box-body table-responsive no-padding">
+
         <div class="col-md-4">
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <p><b>Kyros</b> - Base de datos</p>
-              <img width="100%" src="./graphs/graphKyrosBD.png"/>
+              <p><b>Kyros</b>s</p>
+              <a href="./info.php?o1=c&o2=bd"><img width="100%" src="./graphs/graphKyrosBD.png"/></a>
             </div>
-            <a href="./info.php?o1=c&o2=bd" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -337,10 +379,9 @@ header( "refresh:60;url=$url");
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
-              <p><b>Correos</b> - Base de datos</p>
-              <img width="100%" src="./graphs/graphCorreosBD.png"/>
+              <p><b>Correos</b></p>
+              <a href="./info.php?o1=c&o2=bd"><img width="100%" src="./graphs/graphCorreosBD.png"/></a>
             </div>
-            <a href="./info.php?o1=c&o2=bd" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
        
@@ -349,26 +390,93 @@ header( "refresh:60;url=$url");
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <p><b>Hawkeye</b> - Base de datos</p>
-              <img width="100%" src="./graphs/graphHawkeyeBD.png"/>
+              <p><b>Hawkeye</b></p>
+              <a href="./info.php?o1=h&o2=bd"><img width="100%" src="./graphs/graphHawkeyeBD.png"/></a>
             </div>
-            <a href="./info.php?o1=h&o2=bd" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
        
+      </div></div></div>
+      </div>
+      <!-- /.row -->
+
+      <div class="row">
+
+ <div class="col-xs-12">
+   <div class="box">
+            
+      <div class="box-header with-border">
+              <h3 class="box-title"><b>Geocoding nominatim</b></h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+              </div>
+      </div>
+
+        <div class="box-body table-responsive no-padding">
+
+        <div class="col-md-4">
+          <!-- small box -->
+          <div class="small-box bg-aqua">
+            <div class="inner">
+              <p><b>Peticiones</b></p>
+              <a href="./info.php?o1=k&o2=geo_requests"><img width="100%" src="./graphs/graphGeocodingRequests.png"/></a>
+            </div>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-md-4 ">
+          <!-- small box -->
+          <div class="small-box bg-aqua">
+            <div class="inner">
+              <p><b>Cache squid</b></p>
+              <a href="./info.php?o1=k&o2=geo_squid"><img width="100%" src="./graphs/graphGeocodingHits.png"/></a>
+            </div>
+          </div>
+        </div>
+       
+        <!-- ./col -->
+        <div class="col-md-4 ">
+          <!-- small box -->
+          <div class="small-box bg-aqua">
+            <div class="inner">
+              <p><b>Carga</b></p>
+              <a href="./info.php?o1=k&o2=geo_load"><img width="100%" src="./graphs/graphGeocodingLoad.png"/></a>
+            </div>
+          </div>
+        </div>
+       
+      </div></div></div>
       </div>
       <!-- /.row -->
 
 
       <div class="row">
+
+      <div class="col-xs-12">
+   <div class="box">
+            
+      <div class="box-header with-border">
+              <h3 class="box-title"><b>Tráfico de red</b></h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+              </div>
+      </div>
+
+<div class="box-body table-responsive no-padding">
+
+       <div class="row">
+
         <div class="col-md-4">
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
-              <p><b>UVA</b> - Tráfico de red</p>
-              <img id="pic" width="100%" src="./graphs/graphUvaRed.png" alt="Generando el gráfico..." title="Generando el gráfico..."/>              
+              <p><b>UVA</b></p>
+              <a href="./cpd_uva_trafico.php"><img id="pic" width="100%" src="./graphs/graphUvaRed.png"/></a>              
             </div>
-            <a href="./cpd_uva_trafico.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -376,10 +484,9 @@ header( "refresh:60;url=$url");
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
-              <p><b>Oficina</b> - Tráfico de red</p>
-              <img width="100%" src="./graphs/graphOficinaRed.png"/>
+              <p><b>Oficina</b></p>
+               <a href="./cpd_oficina_trafico.php"><img width="100%" src="./graphs/graphOficinaRed.png"/></a>
             </div>
-            <a href="./cpd_oficina_trafico.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
        
@@ -387,10 +494,9 @@ header( "refresh:60;url=$url");
         <div class="col-md-4 ">
           <div class="small-box bg-red">
             <div class="inner">
-              <p><b>SIT</b> - Tráfico de red</p>
-              <img width="100%" src="./graphs/graphSitRed.png"/>              
+              <p><b>SIT</b></p>
+              <a href="./cpd_sit_trafico.php"><img width="100%" src="./graphs/graphSitRed.png"/></a>
             </div>
-            <a href="./cpd_sit_trafico.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
               
@@ -403,10 +509,9 @@ header( "refresh:60;url=$url");
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
-              <p><b>Kyros</b> - Tráfico de red</p>
-              <img id="pic" width="100%" src="./graphs/graphKyrosRed.png" alt="Generando el gráfico..." title="Generando el gráfico..."/>              
+              <p><b>Kyros</b></p>
+              <a href="./cpd_uva_trafico.php"><img id="pic" width="100%" src="./graphs/graphKyrosRed.png"/></a>
             </div>
-            <a href="./cpd_uva_trafico.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -414,10 +519,9 @@ header( "refresh:60;url=$url");
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
-              <p><b>Correos</b> - Tráfico de red</p>
-              <img width="100%" src="./graphs/graphCorreosRed.png"/>
+              <p><b>Correos</b></p>
+              <a href="./cpd_oficina_trafico.php"><img width="100%" src="./graphs/graphCorreosRed.png"/></a>
             </div>
-            <a href="./cpd_oficina_trafico.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
        
@@ -425,10 +529,9 @@ header( "refresh:60;url=$url");
         <div class="col-md-3 ">
           <div class="small-box bg-red">
             <div class="inner">
-              <p><b>Hawkeye</b> - Tráfico de red</p>
-              <img width="100%" src="./graphs/graphHawkeyeRed.png"/>              
+              <p><b>Hawkeye</b></p>
+              <a href="./cpd_sit_trafico.php"><img width="100%" src="./graphs/graphHawkeyeRed.png"/></a>              
             </div>
-            <a href="./cpd_sit_trafico.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
               
@@ -436,15 +539,16 @@ header( "refresh:60;url=$url");
         <div class="col-md-3 ">
           <div class="small-box bg-red">
             <div class="inner">
-              <p><b>Indra</b> - Tráfico de red</p>
-              <img width="100%" src="./graphs/graphIndraRed.png"/>              
+              <p><b>Indra</b></p>
+              <a href="./cpd_sit_trafico.php"><img width="100%" src="./graphs/graphIndraRed.png"/></a> 
             </div>
-            <a href="./cpd_sit_trafico.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
-              
+      
+      </div></div></div></div>       
       </div>
       <!-- /.row -->
+
 
 
     </section>

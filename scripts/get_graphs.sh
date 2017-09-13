@@ -11,13 +11,21 @@ urlGraphCorreosSesiones="https://admin:m0rt4d3l0@correos.kyros.es/pnp4nagios/ima
 urlGraphKyrosSesiones="https://admin:m0rt4d3l0@kyros.es:8443/pnp4nagios/image?host=dmz-proxy-Virtual&srv=https_sessions&view=0&source=0&start="$initDate"&end="$endDate
 urlGraphKyrosColas="https://admin:m0rt4d3l0@kyros.es:8443/pnp4nagios/image?host=rabbit-strainer-1&srv=queue%20ALL%201y2&view=0&source=0&start="$initDate"&end="$endDate
 
-urlGraphHawkeyeBD="https://admin:m0rt4d3l0@hawkeye.kyroslbs.com/pnp4nagios/image?host=DB-stats&srv=Queries_average&view=0&source=0&start="$initDate"&end="$endDate
+urlGraphHawkeyeBD="https://admin:m0rt4d3l0@hawkeye.kyroslbs.com/pnp4nagios/image?host=hawkeye-DB-stats&srv=Queries_average&view=0&source=0&start="$initDate"&end="$endDate
 urlGraphCorreosBD="https://admin:m0rt4d3l0@correos.kyros.es/pnp4nagios/image?host=DB-stats&srv=Queries_average&view=0&source=0&start="$initDate"&end="$endDate
 urlGraphKyrosBD="https://admin:m0rt4d3l0@kyros.es:8443/pnp4nagios/image?host=DB-stats&srv=Queries_average&view=0&source=0&start="$initDate"&end="$endDate
 
+urlGeocodingRequests="https://admin:m0rt4d3l0@kyros.es:8443/pnp4nagios/image?host=osm-nominatim&srv=Squid&view=0&source=2&start="$initDate"&end="$endDate
+urlGeocodingHits="https://admin:m0rt4d3l0@kyros.es:8443/pnp4nagios/image?host=osm-nominatim&srv=Squid&view=0&source=0&start="$initDate"&end="$endDate
+urlGeocodingLoad="https://admin:m0rt4d3l0@kyros.es:8443/pnp4nagios/image?host=osm-nominatim&srv=Load&view=0&source=0&start="$initDate"&end="$endDate
+
 urlGraphUvaRed="https://admin:m0rt4d3l0@correos.kyros.es/traffic/internet-day.png"
-urlGraphOficinaRed="https://admin:m0rt4d3l0@hawkeye.kyroslbs.com/mrtg/89.140.174.193_1-day.png"
+urlGraphOficinaRed="https://admin:m0rt4d3l0@oficina.kyroslbs.com/mrtg/89.140.174.193_1-day.png"
 urlGraphSitRed="http://nagiosadmin:p4j4r0@mykyros.es/traffic/192.168.24.1_3-day.png"
+urlGraphKyrosRed="https://admin:m0rt4d3l0@correos.kyros.es/traffic/kyros-day.png"
+urlGraphCorreosRed="https://admin:m0rt4d3l0@correos.kyros.es/traffic/correos-day.png"
+urlGraphHawkeyeRed="https://admin:m0rt4d3l0@correos.kyros.es/traffic/hawkeye-day.png"
+urlGraphIndraRed="https://admin:m0rt4d3l0@correos.kyros.es/traffic/indra-day.png"
 
 wget --output-document=/var/www/html/plataformas/graphs/graphHawkeyeSesiones5002.png $urlGraphHawkeyeSesiones5002
 wget --output-document=/var/www/html/plataformas/graphs/graphCorreosSesiones5000.png $urlGraphCorreosSesiones5000
@@ -30,9 +38,17 @@ wget --output-document=/var/www/html/plataformas/graphs/graphKyrosSesiones.png $
 wget --output-document=/var/www/html/plataformas/graphs/graphKyrosColas.png $urlGraphKyrosColas
 
 wget --output-document=/var/www/html/plataformas/graphs/graphUvaRed.png $urlGraphUvaRed
+wget --output-document=/var/www/html/plataformas/graphs/graphKyrosRed.png $urlGraphKyrosRed
+wget --output-document=/var/www/html/plataformas/graphs/graphCorreosRed.png $urlGraphCorreosRed
+wget --output-document=/var/www/html/plataformas/graphs/graphHawkeyeRed.png $urlGraphHawkeyeRed
+wget --output-document=/var/www/html/plataformas/graphs/graphIndraRed.png $urlGraphIndraRed
 wget --output-document=/var/www/html/plataformas/graphs/graphOficinaRed.png $urlGraphOficinaRed
 wget --output-document=/var/www/html/plataformas/graphs/graphSitRed.png $urlGraphSitRed
 
 wget --output-document=/var/www/html/plataformas/graphs/graphHawkeyeBD.png $urlGraphHawkeyeBD
 wget --output-document=/var/www/html/plataformas/graphs/graphCorreosBD.png $urlGraphCorreosBD
 wget --output-document=/var/www/html/plataformas/graphs/graphKyrosBD.png $urlGraphKyrosBD
+
+wget --output-document=/var/www/html/plataformas/graphs/graphGeocodingRequests.png $urlGeocodingRequests
+wget --output-document=/var/www/html/plataformas/graphs/graphGeocodingHits.png $urlGeocodingHits
+wget --output-document=/var/www/html/plataformas/graphs/graphGeocodingLoad.png $urlGeocodingLoad

@@ -104,6 +104,15 @@
         else if ($_GET["o2"]=='bd') {
           echo 'Estadísticas Base de Datos';
         } 
+        else if ($_GET["o2"]=='geo_requests') {
+          echo 'Número de peticiones';
+        } 
+        else if ($_GET["o2"]=='geo_squid') {
+          echo 'Cacheo del squid';
+        } 
+        else if ($_GET["o2"]=='geo_load') {
+          echo 'Carga de CPU';
+        } 
         else {
           echo '';
         }
@@ -138,6 +147,15 @@
         } 
         else if ($_GET["o2"]=='bd') {
           echo 'kyros.es:8443/pnp4nagios/index.php/graph?host=DB-stats&srv=Queries%20average';
+        } 
+        else if ($_GET["o2"]=='geo_requests') {
+          echo 'kyros.es:8443/pnp4nagios/index.php/graph?host=osm-nominatim&srv=Squid';
+        } 
+        else if ($_GET["o2"]=='geo_squid') {
+          echo 'kyros.es:8443/pnp4nagios/index.php/graph?host=osm-nominatim&srv=Squid';
+        } 
+        else if ($_GET["o2"]=='geo_requests') {
+          echo 'kyros.es:8443/pnp4nagios/index.php/graph?host=osm-nominatim&srv=Load';
         } 
 
         else {
