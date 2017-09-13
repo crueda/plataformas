@@ -28,6 +28,36 @@
   <![endif]-->
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
+<audio id="player" loop> 
+  <source src="alert.wav" />
+</audio>
+
+<script type="">
+  
+function playSound()
+{            
+  $('#player').get(0).play();
+    console.log("-->");
+  var soundEmbed = document.createElement("embed");
+    console.log("-->");
+    soundEmbed.id = "soundFlashEmbed";
+
+    console.log("-->");
+    soundEmbed.quality = "high";
+    soundEmbed.type="application/x-shockwave-flash";
+    soundEmbed.WMODE="transparent";
+    soundEmbed.width="1";
+    soundEmbed.height="1";
+
+    console.log("-->");
+    soundEmbed.src = "./alert.swf";
+    document.body.appendChild(soundEmbed);
+    console.log("-->");
+  
+}
+
+
+</script>
 <div class="wrapper">
 
   <header class="main-header">
@@ -359,7 +389,11 @@
         <li class="treeview">
           <a href="#">
             <i class="fa fa-pie-chart"></i>
+            <em unselectable="on">
             <span>Charts</span>
+            <button id="aaa" name="ccc">aaa</button>
+            <!--a href="javascript:playSound()">bbb</a-->
+            </em>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>

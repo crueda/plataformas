@@ -338,7 +338,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
 
         <li class="<?php if ($o1=='c') echo 'active' ?> treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Correos</span>
+            <i class="fa fa-dashboard"></i> <span name="correos77">Correos</span>
               <span class="pull-right-container">
 
               <small class="label pull-right bg-red"><?php  if ($correos_error>0) echo $correos_error; ?></small>

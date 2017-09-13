@@ -13,6 +13,19 @@ foreach ($csvResultsFile_firefox as $line) {
 }
 
 
+$csvResultsFile_test002_chrome = file('./counters/test002_results_chrome.csv');
+$csvResultsFile_test002_firefox = file('./counters/test002_results_firefox.csv');
+
+$dataResults_test002_chrome = [];
+foreach ($csvResultsFile_test002_chrome as $line) {
+  $dataResults_test002_chrome[] = str_getcsv($line, $delimiter = "," );              
+}
+$dataResults_test002_firefox = [];
+foreach ($csvResultsFile_test002_firefox as $line) {
+  $dataResults_test002_firefox[] = str_getcsv($line, $delimiter = "," );              
+}
+
+
 $resultsDate = $dataResults_chrome[0][0];
 $resultCode = $dataResults_chrome[0][1];
 $test0001_1_chrome = $dataResults_chrome[0][3];
@@ -37,6 +50,23 @@ $test0001_8_firefox = $dataResults_firefox[0][10];
 $test0001_9_firefox = $dataResults_firefox[0][11];
 $test0001_10_firefox = $dataResults_firefox[0][12];
 
+
+$resultsDate_test002 = $dataResults_test002_chrome[0][0];
+$resultCode_test002 = $dataResults_test002_chrome[0][1];
+
+$test0002_1_chrome = $dataResults_teste002_chrome[0][3];
+$test0002_2_chrome = $dataResults_teste002_chrome[0][4];
+$test0002_3_chrome = $dataResults_teste002_chrome[0][5];
+$test0002_4_chrome = $dataResults_teste002_chrome[0][6];
+$test0002_5_chrome = $dataResults_teste002_chrome[0][7];
+$test0002_6_chrome = $dataResults_teste002_chrome[0][8];
+
+$test0002_1_firefox = $dataResults_teste002_firefox[0][3];
+$test0002_2_firefox = $dataResults_teste002_firefox[0][4];
+$test0002_3_firefox = $dataResults_teste002_firefox[0][5];
+$test0002_4_firefox = $dataResults_teste002_firefox[0][6];
+$test0002_5_firefox = $dataResults_teste002_firefox[0][7];
+$test0002_6_firefox = $dataResults_teste002_firefox[0][8];
 
 
 ?>
@@ -158,8 +188,7 @@ $test0001_10_firefox = $dataResults_firefox[0][12];
         } else {
           echo ('<div class="box box-danger collapsed-box box-solid">');                    
         }
-        ?>
-          
+        ?>          
             <div class="box-header with-border">
               <h3 class="box-title"><b>Test_001</b> - Operaciones de login<br><br><p style="font-size:14px"><?php echo $resultsDate ?></p></h3>
 
@@ -347,26 +376,158 @@ $test0001_10_firefox = $dataResults_firefox[0][12];
            
            </div>
 
-            <!--div class="col-xs-4">
-         
-
-              <div id="container_test001" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
-
-            </div-->
            </div>
-
-
 
             </div>
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
-        </div>
-
-        
-        
-        
+        </div>        
       </div>
+
+      <!-- /.row - test002 -->
+      <div class="row">
+        <div class="col-xs-12">
+        <?php if ($resultCode==0) {
+          echo ('<div class="box box-success collapsed-box box-solid">');
+        } else if ($resultCode==1) {
+          echo ('<div class="box box-warning collapsed-box box-solid">');          
+        } else {
+          echo ('<div class="box box-danger collapsed-box box-solid">');                    
+        }
+        ?>          
+            <div class="box-header with-border">
+              <h3 class="box-title"><b>Test_002</b> - Usuario de flota<br><br><p style="font-size:14px"><?php echo $resultsDate ?></p></h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                </button>
+              </div>
+            </div>
+            <!-- /.box-header -->
+           
+            <div class="box-body table-responsive no-padding">
+            
+
+            <div class="row">
+            <div class="col-xs-12">
+
+                 <table class="table table-hover">
+                <tr>
+                  <th>ID</th>
+                  <th>Chrome</th>
+                  <th>Firefox</th>
+                  <th>Descripción</th>
+                </tr>
+                <tr>
+                  <td>Test001_1</td>
+                   <?php if ($test0002_1_chrome==0) {
+                    echo ('<td><span class="label label-success">Ok</span></td>');
+                  } else {
+                    echo ('<td><span class="label label-danger">Error</span></td>');          
+                  } 
+                  ?>                 
+                   <?php if ($test0002_1_firefox==0) {
+                    echo ('<td><span class="label label-success">Ok</span></td>');
+                  } else {
+                    echo ('<td><span class="label label-danger">Error</span></td>');          
+                  } 
+                  ?>                 
+                  <td>Crear flota</td>
+                </tr>
+                <tr>
+                  <td>Test001_2</td>
+                   <?php if ($test0002_2_chrome==0) {
+                    echo ('<td><span class="label label-success">Ok</span></td>');
+                  } else {
+                    echo ('<td><span class="label label-danger">Error</span></td>');          
+                  } 
+                  ?>
+                   <?php if ($test0002_2_firefox==0) {
+                    echo ('<td><span class="label label-success">Ok</span></td>');
+                  } else {
+                    echo ('<td><span class="label label-danger">Error</span></td>');          
+                  } 
+                  ?>                 
+                  <td>Crear usuario de flota</td>
+                </tr>               
+                <tr>
+                  <td>Test001_3</td>
+                   <?php if ($test0002_3_chrome==0) {
+                    echo ('<td><span class="label label-success">Ok</span></td>');
+                  } else {
+                    echo ('<td><span class="label label-danger">Error</span></td>');          
+                  } 
+                  ?>
+                   <?php if ($test0002_3_firefox==0) {
+                    echo ('<td><span class="label label-success">Ok</span></td>');
+                  } else {
+                    echo ('<td><span class="label label-danger">Error</span></td>');          
+                  } 
+                  ?>                 
+                  <td>Login con el nuevo usuario</td>
+                </tr>
+                <tr>
+                  <td>Test001_4</td>
+                   <?php if ($test0002_4_chrome==0) {
+                    echo ('<td><span class="label label-success">Ok</span></td>');
+                  } else {
+                    echo ('<td><span class="label label-danger">Error</span></td>');          
+                  } 
+                  ?>
+                   <?php if ($test0002_4_firefox==0) {
+                    echo ('<td><span class="label label-success">Ok</span></td>');
+                  } else {
+                    echo ('<td><span class="label label-danger">Error</span></td>');          
+                  } 
+                  ?>                 
+                  <td>Comprobar visualización de flota</td>
+                </tr>
+                <tr>
+                  <td>Test001_5</td>
+                   <?php if ($test0002_5_chrome==0) {
+                    echo ('<td><span class="label label-success">Ok</span></td>');
+                  } else {
+                    echo ('<td><span class="label label-danger">Error</span></td>');          
+                  } 
+                  ?>
+                   <?php if ($test0002_5_firefox==0) {
+                    echo ('<td><span class="label label-success">Ok</span></td>');
+                  } else {
+                    echo ('<td><span class="label label-danger">Error</span></td>');          
+                  } 
+                  ?>                 
+                  <td>Eliminar usuario</td>
+                </tr>
+                <tr>
+                  <td>Test001_6</td>
+                   <?php if ($test0002_6_chrome==0) {
+                    echo ('<td><span class="label label-success">Ok</span></td>');
+                  } else {
+                    echo ('<td><span class="label label-danger">Error</span></td>');          
+                  } 
+                  ?>
+                   <?php if ($test0002_6_firefox==0) {
+                    echo ('<td><span class="label label-success">Ok</span></td>');
+                  } else {
+                    echo ('<td><span class="label label-danger">Error</span></td>');          
+                  } 
+                  ?>                 
+                  <td>Eliminar flota</td>
+                </tr>
+               
+              </table>
+           
+           </div>
+           </div>
+
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>  
+      </div>
+      <!-- /.row - test002 -->
 
     </section>
     <!-- /.content -->
