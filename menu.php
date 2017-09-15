@@ -332,6 +332,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
           <ul class="treeview-menu">
             <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=d&o2=e'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Estado</a></li>
             <li  <?php if ($o2=='backup') echo 'class="active"' ?> ><a href="./backups.php<?php echo '?o1=d&o2=backup'?>"><i class="fa fa-circle-o"></i>Backups</a></li>
+            <li  <?php if ($o2=='logs') echo 'class="active"' ?> ><a href="./logs.php<?php echo '?o1=d&o2=logs'?>" data-toggle="tooltip" title="username:kyroslbs password:p4j4r0"><i class="fa fa-circle-o"></i>Logs</a></li>
 
           </ul>
         </li>        

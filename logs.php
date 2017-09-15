@@ -107,7 +107,10 @@
     <section class="content">
 
 <iframe src="https://<?php 
-      if ($_GET["o1"]=='c') {
+      if ($_GET["o1"]=='d') {
+        echo 'demos.kyroslbs.com/logs/';
+      }       
+      else if ($_GET["o1"]=='c') {
         echo 'correos.kyros.es/logs/';
       }       
       else if ($_GET["o1"]=='k') {
