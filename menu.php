@@ -483,6 +483,30 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
         </li>
 
 
+       <li class="treeview">
+          <a href="#">
+            <i class="fa fa-share"></i> <span>Desarrollo</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li <?php if ($o1=='dispatcher') echo 'class="active"' ?> >
+              <a href="#"><i class="fa fa-circle-o"></i> Dispatcher
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                <!--li <?php if ($o2=='readme') echo 'class="active"' ?> ><a href="./desarrollo.php?o1=dispatcher&o2=readme"><i class="fa fa-circle-o"></i>README</a></li-->
+                <li><a href="https://git.kyroslbs.com/git/?p=repository/kyrosview_dispatcher.git;a=blob_plain;f=README.md;hb=HEAD" target="_blank"><i class="fa fa-circle-o"></i> README</a></li>
+                <li><a href="https://git.kyroslbs.com/git/?p=repository/kyrosview_dispatcher.git;a=blob_plain;f=CHANGELOG.md;hb=HEAD" target="_blank"><i class="fa fa-circle-o"></i> CHANGELOG</a></li>
+
+              </ul>
+            </li>
+          </ul>
+        </li>
+
 
         
         <li <?php if ($o1=='incidencias') echo 'class="active"' ?>>
