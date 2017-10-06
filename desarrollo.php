@@ -100,10 +100,10 @@
     <!-- Main content -->
     <section class="content">
 
-<iframe src="https://<?php 
+<iframe src="./<?php 
       if ($_GET["o1"]=='dispatcher') {
-        if ($_GET["o2"]=='readme') {
-          echo 'git.kyroslbs.com/git/?p=repository/kyrosview_dispatcher.git;a=blob_plain;f=README.md;hb=HEAD';          
+        if ($_GET["o2"]=='changelog') {
+          echo 'desarrollo/dispatcher_CHANGELOG.html';          
         } else if ($_GET["o2"]=='readme') {
           echo '';    
         } else {

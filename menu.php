@@ -500,7 +500,8 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
               <ul class="treeview-menu">
                 <!--li <?php if ($o2=='readme') echo 'class="active"' ?> ><a href="./desarrollo.php?o1=dispatcher&o2=readme"><i class="fa fa-circle-o"></i>README</a></li-->
                 <li><a href="https://git.kyroslbs.com/git/?p=repository/kyrosview_dispatcher.git;a=blob_plain;f=README.md;hb=HEAD" target="_blank"><i class="fa fa-circle-o"></i> README</a></li>
-                <li><a href="https://git.kyroslbs.com/git/?p=repository/kyrosview_dispatcher.git;a=blob_plain;f=CHANGELOG.md;hb=HEAD" target="_blank"><i class="fa fa-circle-o"></i> CHANGELOG</a></li>
+                <!--li><a href="https://git.kyroslbs.com/git/?p=repository/kyrosview_dispatcher.git;a=blob_plain;f=CHANGELOG.md;hb=HEAD" target="_blank"><i class="fa fa-circle-o"></i> CHANGELOG</a></li-->
+                <li <?php if ($o2=='readme') echo 'class="active"' ?> ><a href="./desarrollo.php?o1=dispatcher&o2=changelog"><i class="fa fa-circle-o"></i>CHANGELOG</a></li>
 
               </ul>
             </li>
