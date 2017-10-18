@@ -132,30 +132,31 @@
       if ($_GET["o1"]=='k') {
 
         if ($_GET["o2"]=='sw') {
-          echo 'kyros.es:8443/pnp4nagios/index.php/graph?host=dmz-proxy-Virtual&srv=https%20sessions';
+          echo 'www.kyros.es/pnp4nagios/index.php/graph?host=dmz-proxy-Virtual&srv=https%20sessions';
         } 
         else if ($_GET["o2"]=='colas') {
-          echo 'kyros.es:8443/pnp4nagios/index.php/graph?host=rabbit-strainer-1&srv=queue%20ALL%201y2';
+          echo 'www.kyros.es/pnp4nagios/index.php/graph?host=rabbit-strainer-1&srv=queue%20ALL%201y2';
         }         
         else if ($_GET["o2"]=='tr') {
-          echo 'hawkeye.kyroslbs.com/pnp4nagios/index.php/graph?host=kyros.es&srv=HTTPs%20health';        } 
+          echo 'oficina.kyroslbs.com/pnp4nagios/index.php/graph?host=www.kyros.es&srv=HTTPs%20health';        
+        } 
         else if ($_GET["o2"]=='gprs5000') {
-          echo 'kyros.es:8443/pnp4nagios/index.php/graph?host=dmz-proxy-Virtual&srv=GPRS%205000%20sessions';
+          echo 'www.kyros.es/pnp4nagios/index.php/graph?host=dmz-proxy-Virtual&srv=GPRS%205000%20sessions';
         }         
         else if ($_GET["o2"]=='gprs5002') {
-          echo 'kyros.es:8443/pnp4nagios/index.php/graph?host=dmz-proxy-Virtual&srv=GPRS%205002%20sessions';
+          echo 'www.kyros.es/pnp4nagios/index.php/graph?host=dmz-proxy-Virtual&srv=GPRS%205002%20sessions';
         } 
         else if ($_GET["o2"]=='bd') {
-          echo 'kyros.es:8443/pnp4nagios/index.php/graph?host=DB-stats&srv=Queries%20average';
+          echo 'www.kyros.es/pnp4nagios/index.php/graph?host=DB-stats&srv=Queries%20average';
         } 
         else if ($_GET["o2"]=='geo_requests') {
-          echo 'kyros.es:8443/pnp4nagios/index.php/graph?host=osm-nominatim&srv=Squid';
+          echo 'www.kyros.es/pnp4nagios/index.php/graph?host=osm-nominatim&srv=Squid';
         } 
         else if ($_GET["o2"]=='geo_squid') {
-          echo 'kyros.es:8443/pnp4nagios/index.php/graph?host=osm-nominatim&srv=Squid';
+          echo 'www.kyros.es/pnp4nagios/index.php/graph?host=osm-nominatim&srv=Squid';
         } 
         else if ($_GET["o2"]=='geo_requests') {
-          echo 'kyros.es:8443/pnp4nagios/index.php/graph?host=osm-nominatim&srv=Load';
+          echo 'www.kyros.es/pnp4nagios/index.php/graph?host=osm-nominatim&srv=Load';
         } 
 
         else {
@@ -166,7 +167,7 @@
           echo 'correos.kyros.es/pnp4nagios/index.php/graph?host=dmz-proxy-Virtual&srv=https%20sessions';
         } 
         else if ($_GET["o2"]=='tr') {
-          echo 'hawkeye.kyroslbs.com/pnp4nagios/index.php/graph?host=correos.kyros.es&srv=HTTPs%20service';
+          echo 'oficina.kyroslbs.com/pnp4nagios/index.php/graph?host=correos.kyros.es&srv=HTTPs%20service';
         } 
         else if ($_GET["o2"]=='gprs5000') {
           echo 'correos.kyros.es/pnp4nagios/index.php/graph?host=dmz-proxy-Virtual&srv=GPRS%205000%20sessions';
@@ -182,14 +183,14 @@
           echo 'hawkeye.kyroslbs.com/pnp4nagios/index.php/graph?host=hawkeye-dmz-proxy&srv=https%20sessions';
         } 
         else if ($_GET["o2"]=='tr') {
-          echo 'kyros.es:8443/pnp4nagios/index.php/graph?host=hawkeye.kyroslbs.com&srv=HTTPs%20service';
+          echo 'oficina.kyroslbs.com/pnp4nagios/index.php/graph?host=hawkeye.kyroslbs.com&srv=HTTPs%20service';
 
         } 
         else if ($_GET["o2"]=='gprs5002') {
           echo 'hawkeye.kyroslbs.com/pnp4nagios/index.php/graph?host=hawkeye-dmz-proxy&srv=GPRS%205002%20sessions';
         }         
         else if ($_GET["o2"]=='bd') {
-          echo 'hawkeye.kyroslbs.com/pnp4nagios/index.php/graph?host=DB-stats&srv=Queries%20average';
+          echo 'hawkeye.kyroslbs.com/pnp4nagios/index.php/graph?host=hawkeye-DB-stats&srv=Queries%20average';
         } 
         else {
           echo 'kyros.kyroslbs.com/nagios3';

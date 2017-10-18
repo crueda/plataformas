@@ -136,39 +136,6 @@
       if ($_GET["o1"]=='h') {
         echo 'hawkeye.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=Hawkeye-production&style=overview';
       } 
-      else if ($_GET["o1"]=='cp') {
-        echo 'hawkeye.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=CORREOS-Pre-production&style=overview';
-      } 
-      else if ($_GET["o1"]=='kp') {
-        echo 'hawkeye.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=KYROS-Pre-production&style=overview';
-      } 
-      else if ($_GET["o1"]=='k') {
-        echo 'kyros.es:8443/cgi-bin/nagios3/status.cgi?hostgroup=KYROS-Production&style=overview';
-      } 
-      else if ($_GET["o1"]=='d') {
-        echo 'kyros.es:8443/cgi-bin/nagios3/status.cgi?hostgroup=KYROS-Demos&style=detail';
-      } 
-      else if ($_GET["o1"]=='s') {
-        echo 'kyros.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=SUMO-Production&style=overview';
-      } 
-      else if ($_GET["o1"]=='c') {
-        echo 'correos.kyros.es/cgi-bin/nagios3/status.cgi?hostgroup=all&style=overview';
-      } 
-      else if ($_GET["o1"]=='uva') {
-        echo 'correos.kyros.es/cgi-bin/nagios3/status.cgi?hostgroup=all&style=overview';
-      } 
-      else if ($_GET["o1"]=='oficina') {
-        echo 'hawkeye.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=all&style=overview';
-      } 
-      else if ($_GET["o1"]=='sf') {
-        echo 'hawkeye.kyroslbs.com/pnp4nagios/index.php/graph?host=raspberry&srv=Sensor-frontal';
-      } 
-      else if ($_GET["o1"]=='st') {
-        echo 'hawkeye.kyroslbs.com/pnp4nagios/index.php/graph?host=raspberry&srv=Sensor-trasero';
-      } 
-      else if ($_GET["o1"]=='mongo') {
-        echo 'kyros.es:8443/cgi-bin/nagios3/status.cgi?hostgroup=KYROSVIEW-Production&style=detail';
-      } 
       else if ($_GET["o1"]=='indra') {
         echo 'indra.kyroslbs.com/nagios3/';
       } 

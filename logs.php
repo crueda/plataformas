@@ -114,7 +114,7 @@
         echo 'correos.kyros.es/logs/';
       }       
       else if ($_GET["o1"]=='k') {
-        echo 'kyros.es:8443/logs/';
+        echo 'kyros.es/logs/';
       }       
       else if ($_GET["o1"]=='h') {
         echo 'hawkeye.kyroslbs.com/logs/';

@@ -400,7 +400,7 @@ header( "refresh:60;url=$url");
       </div>
       <!-- /.row -->
 
-      <div class="row">
+      <!--div class="row">
 
  <div class="col-xs-12">
    <div class="box">
@@ -417,7 +417,6 @@ header( "refresh:60;url=$url");
         <div class="box-body table-responsive no-padding">
 
         <div class="col-md-4">
-          <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
               <p><b>Peticiones</b></p>
@@ -425,9 +424,7 @@ header( "refresh:60;url=$url");
             </div>
           </div>
         </div>
-        <!-- ./col -->
         <div class="col-md-4 ">
-          <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
               <p><b>Cache squid</b></p>
@@ -435,10 +432,7 @@ header( "refresh:60;url=$url");
             </div>
           </div>
         </div>
-       
-        <!-- ./col -->
         <div class="col-md-4 ">
-          <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
               <p><b>Carga</b></p>
@@ -448,8 +442,7 @@ header( "refresh:60;url=$url");
         </div>
        
       </div></div></div>
-      </div>
-      <!-- /.row -->
+      </div-->
 
 
       <div class="row">
@@ -470,7 +463,7 @@ header( "refresh:60;url=$url");
 
        <div class="row">
 
-        <div class="col-md-4">
+        <div class="col-md-6">
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
@@ -480,7 +473,7 @@ header( "refresh:60;url=$url");
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-md-4 ">
+        <div class="col-md-6 ">
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
@@ -491,14 +484,14 @@ header( "refresh:60;url=$url");
         </div>
        
         <!-- ./col -->
-        <div class="col-md-4 ">
+        <!--div class="col-md-4 ">
           <div class="small-box bg-red">
             <div class="inner">
               <p><b>SIT</b></p>
               <a href="./cpd_sit_trafico.php"><img width="100%" src="./graphs/graphSitRed.png"/></a>
             </div>
           </div>
-        </div>
+        </div-->
               
       </div>
       <!-- /.row -->

@@ -1,54 +1,142 @@
-endDate=$(date +%s)
-initDate=$((endDate-7800))
+#!/usr/bin/env python
 
-urlGraphHawkeyeSesiones5002="https://admin:m0rt4d3l0@hawkeye.kyroslbs.com/pnp4nagios/image?host=hawkeye-dmz-proxy&srv=GPRS_5002_sessions&view=0&source=0&start="$initDate"&end="$endDate
-urlGraphCorreosSesiones5000="https://admin:m0rt4d3l0@correos.kyros.es/pnp4nagios/image?host=dmz-proxy-Virtual&srv=GPRS_5000_sessions&view=0&source=0&start="$initDate"&end="$endDate
-urlGraphKyrosSesiones5002="https://admin:m0rt4d3l0@kyros.es:8443/pnp4nagios/image?host=dmz-proxy-Virtual&srv=GPRS_5002_sessions&view=0&source=0&start="$initDate"&end="$endDate
-urlGraphKyrosSesiones5000="https://admin:m0rt4d3l0@kyros.es:8443/pnp4nagios/image?host=dmz-proxy-Virtual&srv=GPRS_5000_sessions&view=0&source=0&start="$initDate"&end="$endDate
+import requests
+import time
+import shutil
 
-urlGraphHawkeyeSesiones="https://admin:m0rt4d3l0@hawkeye.kyroslbs.com/pnp4nagios/image?host=hawkeye-dmz-proxy&srv=https_sessions&view=0&source=0&start="$initDate"&end="$endDate
-urlGraphCorreosSesiones="https://admin:m0rt4d3l0@correos.kyros.es/pnp4nagios/image?host=dmz-proxy-Virtual&srv=https_sessions&view=0&source=0&start="$initDate"&end="$endDate
-urlGraphKyrosSesiones="https://admin:m0rt4d3l0@kyros.es:8443/pnp4nagios/image?host=dmz-proxy-Virtual&srv=https_sessions&view=0&source=0&start="$initDate"&end="$endDate
-urlGraphKyrosColas="https://admin:m0rt4d3l0@kyros.es:8443/pnp4nagios/image?host=rabbit-strainer-1&srv=queue%20ALL%201y2&view=0&source=0&start="$initDate"&end="$endDate
 
-urlGraphHawkeyeBD="https://admin:m0rt4d3l0@hawkeye.kyroslbs.com/pnp4nagios/image?host=hawkeye-DB-stats&srv=Queries_average&view=0&source=0&start="$initDate"&end="$endDate
-urlGraphCorreosBD="https://admin:m0rt4d3l0@correos.kyros.es/pnp4nagios/image?host=DB-stats&srv=Queries_average&view=0&source=0&start="$initDate"&end="$endDate
-urlGraphKyrosBD="https://admin:m0rt4d3l0@kyros.es:8443/pnp4nagios/image?host=DB-stats&srv=Queries_average&view=0&source=0&start="$initDate"&end="$endDate
+endDate = int(time.time())
+startDate = endDate - 7800
+path = '/var/www/html/plataformas/graphs/'
+authPlataformas = ('plataformas', '01lbs10')
 
-urlGeocodingRequests="https://admin:m0rt4d3l0@kyros.es:8443/pnp4nagios/image?host=osm-nominatim&srv=Squid&view=0&source=2&start="$initDate"&end="$endDate
-urlGeocodingHits="https://admin:m0rt4d3l0@kyros.es:8443/pnp4nagios/image?host=osm-nominatim&srv=Squid&view=0&source=0&start="$initDate"&end="$endDate
-urlGeocodingLoad="https://admin:m0rt4d3l0@kyros.es:8443/pnp4nagios/image?host=osm-nominatim&srv=Load&view=0&source=0&start="$initDate"&end="$endDate
+platforms = ['hawkeye', 'correos', 'kyros', 'indra', 'oficina']
 
-urlGraphUvaRed="https://admin:m0rt4d3l0@correos.kyros.es/traffic/internet-day.png"
-urlGraphOficinaRed="https://admin:m0rt4d3l0@oficina.kyroslbs.com/mrtg/89.140.174.193_1-day.png"
-urlGraphSitRed="http://nagiosadmin:p4j4r0@mykyros.es/traffic/192.168.24.1_3-day.png"
-urlGraphKyrosRed="https://admin:m0rt4d3l0@correos.kyros.es/traffic/kyros-day.png"
-urlGraphCorreosRed="https://admin:m0rt4d3l0@correos.kyros.es/traffic/correos-day.png"
-urlGraphHawkeyeRed="https://admin:m0rt4d3l0@correos.kyros.es/traffic/hawkeye-day.png"
-urlGraphIndraRed="https://admin:m0rt4d3l0@correos.kyros.es/traffic/indra-day.png"
 
-wget --output-document=/var/www/html/plataformas/graphs/graphHawkeyeSesiones5002.png $urlGraphHawkeyeSesiones5002
-wget --output-document=/var/www/html/plataformas/graphs/graphCorreosSesiones5000.png $urlGraphCorreosSesiones5000
-wget --output-document=/var/www/html/plataformas/graphs/graphKyrosSesiones5002.png $urlGraphKyrosSesiones5002
-wget --output-document=/var/www/html/plataformas/graphs/graphKyrosSesiones5000.png $urlGraphKyrosSesiones5000
+hawkeyeGPRS5002 = path + 'graphHawkeyeSesiones5002.png'
+hawkeyeSesiones = path + 'graphHawkeyeSesiones.png'
+hawkeyeRed = path + 'graphHawkeyeRed.png'
+hawkeyeDB = path + 'graphHawkeyeBD.png'
 
-wget --output-document=/var/www/html/plataformas/graphs/graphHawkeyeSesiones.png $urlGraphHawkeyeSesiones
-wget --output-document=/var/www/html/plataformas/graphs/graphCorreosSesiones.png $urlGraphCorreosSesiones
-wget --output-document=/var/www/html/plataformas/graphs/graphKyrosSesiones.png $urlGraphKyrosSesiones
-wget --output-document=/var/www/html/plataformas/graphs/graphKyrosColas.png $urlGraphKyrosColas
+correosGPRS5000 = path + 'graphCorreosSesiones5000.png'
+correosSesiones = path + 'graphCorreosSesiones.png'
+correosRed = path + 'graphCorreosRed.png'
+correosDB = path + 'graphCorreosBD.png'
 
-wget --output-document=/var/www/html/plataformas/graphs/graphUvaRed.png $urlGraphUvaRed
-wget --output-document=/var/www/html/plataformas/graphs/graphKyrosRed.png $urlGraphKyrosRed
-wget --output-document=/var/www/html/plataformas/graphs/graphCorreosRed.png $urlGraphCorreosRed
-wget --output-document=/var/www/html/plataformas/graphs/graphHawkeyeRed.png $urlGraphHawkeyeRed
-wget --output-document=/var/www/html/plataformas/graphs/graphIndraRed.png $urlGraphIndraRed
-wget --output-document=/var/www/html/plataformas/graphs/graphOficinaRed.png $urlGraphOficinaRed
-wget --output-document=/var/www/html/plataformas/graphs/graphSitRed.png $urlGraphSitRed
+kyrosGPRS5002 = path + 'graphKyrosSesiones5002.png'
+kyrosGPRS5000 = path + 'graphKyrosSesiones5000.png'
+kyrosSesiones = path + 'graphKyrosSesiones.png'
+kyrosColas = path + 'graphKyrosColas.png'
+kyrosRed = path + 'graphKyrosRed.png'
+kyrosDB = path + 'graphKyrosBD.png'
 
-wget --output-document=/var/www/html/plataformas/graphs/graphHawkeyeBD.png $urlGraphHawkeyeBD
-wget --output-document=/var/www/html/plataformas/graphs/graphCorreosBD.png $urlGraphCorreosBD
-wget --output-document=/var/www/html/plataformas/graphs/graphKyrosBD.png $urlGraphKyrosBD
+uvaRed = path + 'graphUvaRed.png'
+indraRed = path + 'graphIndraRed.png'
+oficinaRed = path + 'graphOficinaRed.png'
 
-wget --output-document=/var/www/html/plataformas/graphs/graphGeocodingRequests.png $urlGeocodingRequests
-wget --output-document=/var/www/html/plataformas/graphs/graphGeocodingHits.png $urlGeocodingHits
-wget --output-document=/var/www/html/plataformas/graphs/graphGeocodingLoad.png $urlGeocodingLoad
+geocodingRequest = path + 'graphGeocodingRequests.png'
+geocodingHits = path + 'graphGeocodingHits.png'
+geocodingLoad = path + 'graphGeocodingLoad.png'
+
+
+
+hawkeyeURL = 'https://hawkeye.kyroslbs.com/pnp4nagios/image'
+kyrosURL = 'https://www.kyros.es/pnp4nagios/image'
+correosURL = 'https://correos.kyros.es/pnp4nagios/image'
+
+
+hawkeyeGPRS5002Payload = {'host':'hawkeye-dmz-proxy', 'srv' : 'GPRS_5002_sessions', 'view' : '0', 'source': '0', 'start': startDate, 'end': endDate  }
+response = requests.get(hawkeyeURL, params=hawkeyeGPRS5002Payload, auth=authPlataformas, stream=True)
+with open(hawkeyeGPRS5002, 'wb') as out_file:
+    shutil.copyfileobj(response.raw, out_file)
+del response
+
+hawkeyeSessionsPayload = {'host':'hawkeye-dmz-proxy', 'srv' : 'https_sessions', 'view' : '0', 'source': '0', 'start': startDate, 'end': endDate  }
+response = requests.get(hawkeyeURL, params=hawkeyeSessionsPayload, auth=authPlataformas, stream=True)
+with open(hawkeyeSesiones, 'wb') as out_file:
+    shutil.copyfileobj(response.raw, out_file)
+del response
+
+response = requests.get('https://correos.kyros.es/traffic/hawkeye-day.png', auth=authPlataformas, stream=True)
+with open(hawkeyeRed, 'wb') as out_file:
+    shutil.copyfileobj(response.raw, out_file)
+del response
+
+hawkeyeDBPayload= {'host':'hawkeye-DB-stats', 'srv' : 'Queries_average', 'view' : '0', 'source': '0', 'start': startDate, 'end': endDate  }
+response = requests.get(hawkeyeURL, params=hawkeyeDBPayload, auth=authPlataformas, stream=True)
+with open(hawkeyeDB, 'wb') as out_file:
+    shutil.copyfileobj(response.raw, out_file)
+del response
+
+kyrosGPRS5002Payload = {'host':'dmz-proxy-Virtual', 'srv' : 'GPRS_5002_sessions', 'view' : '0', 'source': '0', 'start': startDate, 'end': endDate  }
+response = requests.get(kyrosURL, params=kyrosGPRS5002Payload, auth=authPlataformas, stream=True)
+with open(kyrosGPRS5002, 'wb') as out_file:
+    shutil.copyfileobj(response.raw, out_file)
+del response
+
+kyrosGPRS5000Payload = {'host':'dmz-proxy-Virtual', 'srv' : 'GPRS_5000_sessions', 'view' : '0', 'source': '0', 'start': startDate, 'end': endDate  }
+response = requests.get(kyrosURL, params=kyrosGPRS5000Payload, auth=authPlataformas, stream=True)
+with open(kyrosGPRS5000, 'wb') as out_file:
+    shutil.copyfileobj(response.raw, out_file)
+del response
+
+kyrosSesionesPayload = {'host':'dmz-proxy-Virtual', 'srv' : 'https_sessions', 'view' : '0', 'source': '0', 'start': startDate, 'end': endDate  }
+response = requests.get(kyrosURL, params=kyrosSesionesPayload, auth=authPlataformas, stream=True)
+with open(kyrosSesiones, 'wb') as out_file:
+    shutil.copyfileobj(response.raw, out_file)
+del response
+
+kyrosColasPayload = {'host':'rabbit-strainer-1', 'srv' : 'queue ALL 1y2', 'view' : '0', 'source': '0', 'start': startDate, 'end': endDate  }
+response = requests.get(kyrosURL, params=kyrosColasPayload, auth=authPlataformas, stream=True)
+with open(kyrosColas, 'wb') as out_file:
+    shutil.copyfileobj(response.raw, out_file)
+del response
+
+response = requests.get('https://correos.kyros.es/traffic/kyros-day.png', auth=authPlataformas, stream=True)
+with open(kyrosRed, 'wb') as out_file:
+    shutil.copyfileobj(response.raw, out_file)
+del response
+
+kyrosDBPayload = {'host':'DB-stats', 'srv' : 'Queries_average', 'view' : '0', 'source': '0', 'start': startDate, 'end': endDate  }
+response = requests.get(kyrosURL, params=kyrosDBPayload, auth=authPlataformas, stream=True)
+with open(kyrosDB, 'wb') as out_file:
+    shutil.copyfileobj(response.raw, out_file)
+del response
+
+correosGPRS5000Payload = {'host':'dmz-proxy-Virtual', 'srv' : 'GPRS_5000_sessions', 'view' : '0', 'source': '0', 'start': startDate, 'end': endDate  }
+response = requests.get(correosURL, params=correosGPRS5000Payload, auth=authPlataformas, stream=True)
+with open(correosGPRS5000, 'wb') as out_file:
+    shutil.copyfileobj(response.raw, out_file)
+del response
+
+correosSesionesPayload = {'host':'dmz-proxy-Virtual', 'srv' : 'https_sessions', 'view' : '0', 'source': '0', 'start': startDate, 'end': endDate  }
+response = requests.get(correosURL, params=correosSesionesPayload, auth=authPlataformas, stream=True)
+with open(correosSesiones, 'wb') as out_file:
+    shutil.copyfileobj(response.raw, out_file)
+del response
+
+response = requests.get('https://correos.kyros.es/traffic/correos-day.png', auth=authPlataformas, stream=True)
+with open(correosRed, 'wb') as out_file:
+    shutil.copyfileobj(response.raw, out_file)
+del response
+
+correosDBPayload = {'host':'DB-stats', 'srv' : 'Queries_average', 'view' : '0', 'source': '0', 'start': startDate, 'end': endDate  }
+response = requests.get(correosURL, params=correosDBPayload, auth=authPlataformas, stream=True)
+with open(correosDB, 'wb') as out_file:
+    shutil.copyfileobj(response.raw, out_file)
+del response
+
+response = requests.get('https://correos.kyros.es/traffic/internet-day.png', auth=authPlataformas, stream=True)
+with open(uvaRed, 'wb') as out_file:
+    shutil.copyfileobj(response.raw, out_file)
+del response
+
+response = requests.get('https://correos.kyros.es/traffic/indra-day.png', auth=authPlataformas, stream=True)
+with open(indraRed, 'wb') as out_file:
+    shutil.copyfileobj(response.raw, out_file)
+del response
+
+response = requests.get('https://oficina.kyroslbs.com/mrtg/89.140.174.193_1-day.png', auth=authPlataformas, stream=True)
+with open(oficinaRed, 'wb') as out_file:
+    shutil.copyfileobj(response.raw, out_file)
+del response

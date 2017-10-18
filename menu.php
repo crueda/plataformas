@@ -203,7 +203,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
                 </span>
               </a>
               <ul class="treeview-menu">
-                <li <?php if ($o2=='traficouva') echo 'class="active"' ?>><a href="./cpd_uva_trafico.php" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Tráfico</a></li>
+                <li <?php if ($o2=='traficouva') echo 'class="active"' ?>><a href="./cpd_uva_trafico.php" data-toggle="tooltip" title="username:plataformas password:01lbs10"><i class="fa fa-circle-o"></i>Tráfico</a></li>
               </ul>
               <ul class="treeview-menu">
                 <li><a href="https://docs.google.com/a/deimos-space.com/spreadsheets/d/1MN-UwZkIZv5jih2hYJoftQg1jv_c6cUAib_8f8NaKDs/edit?usp=sharing" target="_blank"><i class="fa fa-circle-o"></i>IPs</a></li>
@@ -223,20 +223,20 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
 
               </a>
               <ul class="treeview-menu">
-                <li <?php if ($o2=='traficooficina') echo 'class="active"' ?>><a href="./cpd_oficina_trafico.php" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Tráfico</a></li>
+                <li <?php if ($o2=='traficooficina') echo 'class="active"' ?>><a href="./cpd_oficina_trafico.php" data-toggle="tooltip" title="username:plataformas password:01lbs10"><i class="fa fa-circle-o"></i>Tráfico</a></li>
               </ul>
               <ul class="treeview-menu">
-                <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estadocpd.php<?php echo '?o=cpd&o1=oficina'.'&o2=e'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Estado</a></li>
+                <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estadocpd.php<?php echo '?o=cpd&o1=oficina'.'&o2=e'?>" data-toggle="tooltip" title="username:plataformas password:01lbs10"><i class="fa fa-circle-o"></i>Estado</a></li>
               </ul>
 
               <ul class="treeview-menu">
-                <li <?php if ($o2=='sf') echo 'class="active"' ?> ><a href="./estadocpd.php<?php echo '?o1=oficina'.'&o2=sf'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Tº y humedad frontal</a></li>
+                <li <?php if ($o2=='sf') echo 'class="active"' ?> ><a href="./estadocpd.php<?php echo '?o1=oficina'.'&o2=sf'?>" data-toggle="tooltip" title="username:plataformas password:01lbs10"><i class="fa fa-circle-o"></i>Tº y humedad frontal</a></li>
               </ul>
               <ul class="treeview-menu">
-                <li <?php if ($o2=='st') echo 'class="active"' ?> ><a href="./estadocpd.php<?php echo '?o1=oficina'.'&o2=st'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Tº y humedad trasera</a></li>
+                <li <?php if ($o2=='st') echo 'class="active"' ?> ><a href="./estadocpd.php<?php echo '?o1=oficina'.'&o2=st'?>" data-toggle="tooltip" title="username:plataformas password:01lbs10"><i class="fa fa-circle-o"></i>Tº y humedad trasera</a></li>
               </ul>
               <ul class="treeview-menu">
-                <li <?php if ($o2=='it') echo 'class="active"' ?> ><a href="./estadocpd.php<?php echo '?o1=oficina'.'&o2=it'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Servicios IT
+                <li <?php if ($o2=='it') echo 'class="active"' ?> ><a href="./estadocpd.php<?php echo '?o1=oficina'.'&o2=it'?>" data-toggle="tooltip" title="username:plataformas password:01lbs10"><i class="fa fa-circle-o"></i>Servicios IT
 
                 <span class="pull-right-container">
                <small class="label pull-right bg-red"><?php  if ($it_error>0) echo $it_error; ?></small>
@@ -266,9 +266,9 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
               <ul class="treeview-menu">
                 <li  <?php if ($o2=='traficocamionhttps') echo 'class="active"' ?>><a href="./cpd_sit_trafico_https_camion.php"><i class="fa fa-circle-o"></i>Tráfico Camión (https)</a></li>
               </ul-->
-<ul class="treeview-menu">
-<li><a href="http://mykyros.es/cgi-bin/nagios3/status.cgi?hostgroup=all&style=overview" target="_blank" data-toggle="tooltip" title="username:nagiosadmin password:p4j4r0"><i class="fa fa-circle-o"></i> <span>Estado</span></a></li>
-</ul>                  
+              <ul class="treeview-menu">
+              <li><a href="http://mykyros.es/cgi-bin/nagios3/status.cgi?hostgroup=all&style=overview" target="_blank" data-toggle="tooltip" title="username:nagiosadmin password:p4j4r0"><i class="fa fa-circle-o"></i> <span>Estado</span></a></li>
+              </ul>                  
             </li>
           </ul>
         </li>
@@ -285,14 +285,14 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
           </a>
           <ul class="treeview-menu">
            <!--li <?php if ($o2=='m') echo 'class="active"' ?> ><a href="./mapa.php?o1=k&o2=m"><i class="fa fa-circle-o"></i>Mapa</a></li-->
-            <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=k&o2=e'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Estado kyros</a></li>
-            <li <?php if ($o2=='e-mysql') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=k&o2=e-mysql'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Estado MySQL</a></li>
-            <li <?php if ($o2=='e-colas') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=k&o2=e-colas'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Estado colas</a></li>
-            <li  <?php if ($o2=='sw') echo 'class="active"' ?>><a href="./info.php<?php echo '?o1=k&o2=sw'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Sesiones Web</a></li>
-            <li  <?php if ($o2=='tr') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=k&o2=tr'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Tiempo de respuesta HTTPS</a></li>
-            <li  <?php if ($o2=='gprs5000') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=k&o2=gprs5000'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Sesiones GPRS 5000</a></li>
-            <li  <?php if ($o2=='gprs5002') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=k&o2=gprs5002'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Sesiones GPRS 5002</a></li>
-            <li  <?php if ($o2=='bd') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=k&o2=bd'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>BD estadisticas</a></li>
+            <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=k&o2=e'?>" data-toggle="tooltip" title="username:plataformas password:01lbs10"><i class="fa fa-circle-o"></i>Estado kyros</a></li>
+            <li <?php if ($o2=='e-mysql') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=k&o2=e-mysql'?>" data-toggle="tooltip" title="username:plataformas password:01lbs10"><i class="fa fa-circle-o"></i>Estado MySQL</a></li>
+            <li <?php if ($o2=='e-colas') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=k&o2=e-colas'?>" data-toggle="tooltip" title="username:plataformas password:01lbs10"><i class="fa fa-circle-o"></i>Estado colas</a></li>
+            <li  <?php if ($o2=='sw') echo 'class="active"' ?>><a href="./info.php<?php echo '?o1=k&o2=sw'?>" data-toggle="tooltip" title="username:plataformas password:01lbs10"><i class="fa fa-circle-o"></i>Sesiones Web</a></li>
+            <li  <?php if ($o2=='tr') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=k&o2=tr'?>" data-toggle="tooltip" title="username:plataformas password:01lbs10"><i class="fa fa-circle-o"></i>Tiempo de respuesta HTTPS</a></li>
+            <li  <?php if ($o2=='gprs5000') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=k&o2=gprs5000'?>" data-toggle="tooltip" title="username:plataformas password:01lbs10"><i class="fa fa-circle-o"></i>Sesiones GPRS 5000</a></li>
+            <li  <?php if ($o2=='gprs5002') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=k&o2=gprs5002'?>" data-toggle="tooltip" title="username:plataformas password:01lbs10"><i class="fa fa-circle-o"></i>Sesiones GPRS 5002</a></li>
+            <li  <?php if ($o2=='bd') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=k&o2=bd'?>" data-toggle="tooltip" title="username:plataformas password:01lbs10"><i class="fa fa-circle-o"></i>BD estadisticas</a></li>
             <li  <?php if ($o2=='tests') echo 'class="active"' ?> ><a href="./tests_result.php<?php echo '?o1=k&o2=tests'?>"><i class="fa fa-circle-o"></i>Tests funcionales</a></li>
             <li  <?php if ($o2=='backup') echo 'class="active"' ?> ><a href="./backups.php<?php echo '?o1=k&o2=backup'?>"><i class="fa fa-circle-o"></i>Backups</a></li>
             <li  <?php if ($o2=='logs') echo 'class="active"' ?> ><a href="./logs.php<?php echo '?o1=k&o2=logs'?>" data-toggle="tooltip" title="username:kyroslbs password:p4j4r0"><i class="fa fa-circle-o"></i>Logs</a></li>
@@ -313,9 +313,9 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
             </span>
           </a>
           <ul class="treeview-menu">
-           <li <?php if ($o2=='m') echo 'class="active"' ?> ><a href="http://@172.26.30.252/nagvis/frontend/nagvis-js/index.php?mod=Map&act=view&show=KyrosPre&header_menu=0&zoombar=1" target="_blank" data-toggle="tooltip" title="username:admin password:admin"><i class="fa fa-circle-o"></i>Mapa</a></li>
+           <li <?php if ($o2=='m') echo 'class="active"' ?> ><a href="http://@172.26.30.252/nagvis/frontend/nagvis-js/index.php?mod=Map&act=view&show=KyrosPre&header_menu=0&zoombar=1" target="_blank" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Mapa</a></li>
            <!--li <?php if ($o2=='m') echo 'class="active"' ?> ><a href="./mapa.php?o1=kp&o2=m"><i class="fa fa-circle-o"></i>Mapa</a></li-->
-            <li <?php if ($o2=='e') echo 'class="active"' ?> active><a href="./estado.php<?php echo '?o1=kp'.'&o2=e'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Estado</a></li>
+            <li <?php if ($o2=='e') echo 'class="active"' ?> active><a href="./estado.php<?php echo '?o1=kp'.'&o2=e'?>" data-toggle="tooltip" title="username:plataformas password:01lbs10"><i class="fa fa-circle-o"></i>Estado</a></li>
           </ul>
         </li>
 
@@ -330,7 +330,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
             </span>
           </a>
           <ul class="treeview-menu">
-            <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=d&o2=e'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Estado</a></li>
+            <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=d&o2=e'?>" data-toggle="tooltip" title="username:plataformas password:01lbs10"><i class="fa fa-circle-o"></i>Estado</a></li>
             <li  <?php if ($o2=='backup') echo 'class="active"' ?> ><a href="./backups.php<?php echo '?o1=d&o2=backup'?>"><i class="fa fa-circle-o"></i>Backups</a></li>
             <li  <?php if ($o2=='logs') echo 'class="active"' ?> ><a href="./logs.php<?php echo '?o1=d&o2=logs'?>" data-toggle="tooltip" title="username:kyroslbs password:p4j4r0"><i class="fa fa-circle-o"></i>Logs</a></li>
 
@@ -351,12 +351,12 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
           </a>
           <ul class="treeview-menu">
            <!--li <?php if ($o2=='c') echo 'class="active"' ?> ><a href="./mapa.php?o1=c&o2=m"><i class="fa fa-circle-o"></i>Mapa</a></li-->
-            <li <?php if ($o2=='m') echo 'class="active"' ?> ><a href="http://172.26.30.252/nagvis/frontend/nagvis-js/index.php?mod=Map&act=view&show=CorreosPre&header_menu=0&zoombar=1" target="_blank" data-toggle="tooltip" title="username:admin password:admin"><i class="fa fa-circle-o"></i>Mapa</a></li>
-            <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=c&o2=e'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Estado</a></li>
-            <li  <?php if ($o2=='sw') echo 'class="active"' ?>><a href="./info.php<?php echo '?o1=c&o2=sw'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Sesiones Web</a></li>
-            <li  <?php if ($o2=='tr') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=c&o2=tr'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Tiempo de respuesta HTTPS</a></li>
+            <li <?php if ($o2=='m') echo 'class="active"' ?> ><a href="http://172.26.30.252/nagvis/frontend/nagvis-js/index.php?mod=Map&act=view&show=CorreosPre&header_menu=0&zoombar=1" target="_blank" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Mapa</a></li>
+            <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=c&o2=e'?>" data-toggle="tooltip" title="username:plataformas password:01lbs10"><i class="fa fa-circle-o"></i>Estado</a></li>
+            <li  <?php if ($o2=='sw') echo 'class="active"' ?>><a href="./info.php<?php echo '?o1=c&o2=sw'?>" data-toggle="tooltip" title="username:plataformas password:01lbs10"><i class="fa fa-circle-o"></i>Sesiones Web</a></li>
+            <li  <?php if ($o2=='tr') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=c&o2=tr'?>" data-toggle="tooltip" title="username:plataformas password:01lbs10"><i class="fa fa-circle-o"></i>Tiempo de respuesta HTTPS</a></li>
             <li  <?php if ($o2=='gprs5000') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=c&o2=gprs5000'?>"><i class="fa fa-circle-o"></i>Sesiones GPRS 5000</a></li>
-            <li  <?php if ($o2=='bd') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=c&o2=bd'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>BD estadisticas</a></li>
+            <li  <?php if ($o2=='bd') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=c&o2=bd'?>" data-toggle="tooltip" title="username:plataformas password:01lbs10"><i class="fa fa-circle-o"></i>BD estadisticas</a></li>
             <li  <?php if ($o2=='backup') echo 'class="active"' ?> ><a href="./backups.php<?php echo '?o1=c&o2=backup'?>"><i class="fa fa-circle-o"></i>Backups</a></li>
             <li  <?php if ($o2=='logs') echo 'class="active"' ?> ><a href="./logs.php<?php echo '?o1=c&o2=logs'?>" data-toggle="tooltip" title="username:kyroslbs password:p4j4r0"><i class="fa fa-circle-o"></i>Logs</a></li>
             <li><a href="https://wiki.kyroslbs.com/wiki/index.php/Correos" target="_blank"><i class="fa fa-book"></i> <span>Documentación</span></a></li>
@@ -378,8 +378,8 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
           </a>
           <ul class="treeview-menu">
            <!--li <?php if ($o2=='m') echo 'class="active"' ?> ><a href="./mapa.php?o1=cp&o2=m"><i class="fa fa-circle-o"></i>Mapa</a></li-->
-            <li <?php if ($o2=='m') echo 'class="active"' ?> ><a href="http://172.26.30.252/nagvis/frontend/nagvis-js/index.php?mod=Map&act=view&show=CorreosPre &header_menu=0&zoombar=1" target="_blank" data-toggle="tooltip" title="username:admin password:admin"><i class="fa fa-circle-o"></i>Mapa</a></li>
-            <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=cp'.'&o2=e'?>"><i class="fa fa-circle-o" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"></i>Estado</a></li>
+            <li <?php if ($o2=='m') echo 'class="active"' ?> ><a href="http://172.26.30.252/nagvis/frontend/nagvis-js/index.php?mod=Map&act=view&show=CorreosPre &header_menu=0&zoombar=1" target="_blank" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Mapa</a></li>
+            <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=cp'.'&o2=e'?>"><i class="fa fa-circle-o" data-toggle="tooltip" title="username:plataformas password:01lbs10"></i>Estado</a></li>
           </ul>
         </li>
 
@@ -395,13 +395,13 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
             </span>
           </a>
           <ul class="treeview-menu">
-           <li <?php if ($o2=='m') echo 'class="active"' ?> ><a href="http://172.26.30.252/nagvis/frontend/nagvis-js/index.php?mod=Map&act=view&show=Hawkeye&header_menu=0&zoombar=1" target="_blank" data-toggle="tooltip" title="username:admin password:admin"><i class="fa fa-circle-o"></i>Mapa</a></li>
+           <li <?php if ($o2=='m') echo 'class="active"' ?> ><a href="http://172.26.30.252/nagvis/frontend/nagvis-js/index.php?mod=Map&act=view&show=Hawkeye&header_menu=0&zoombar=1" target="_blank" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Mapa</a></li>
            <!--li <?php if ($o2=='m') echo 'class="active"' ?> ><a href="./mapa.php?o1=h&o2=m"><i class="fa fa-circle-o"></i>Mapa</a></li-->
-            <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=h'.'&o2=e'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Estado</a></li>
-            <li  <?php if ($o2=='sw') echo 'class="active"' ?>><a href="./info.php<?php echo '?o1=h&o2=sw'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Sesiones Web</a></li>
-            <li  <?php if ($o2=='tr') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=h&o2=tr'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Tiempo de respuesta HTTPS</a></li>
+            <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=h'.'&o2=e'?>" data-toggle="tooltip" title="username:plataformas password:01lbs10"><i class="fa fa-circle-o"></i>Estado</a></li>
+            <li  <?php if ($o2=='sw') echo 'class="active"' ?>><a href="./info.php<?php echo '?o1=h&o2=sw'?>" data-toggle="tooltip" title="username:plataformas password:01lbs10"><i class="fa fa-circle-o"></i>Sesiones Web</a></li>
+            <li  <?php if ($o2=='tr') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=h&o2=tr'?>" data-toggle="tooltip" title="username:plataformas password:01lbs10"><i class="fa fa-circle-o"></i>Tiempo de respuesta HTTPS</a></li>
             <li  <?php if ($o2=='gprs5002') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=h&o2=gprs5002'?>"><i class="fa fa-circle-o"></i>Sesiones GPRS 5002</a></li>
-            <li  <?php if ($o2=='bd') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=h&o2=bd'?>" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>BD estadisticas</a></li>
+            <li  <?php if ($o2=='bd') echo 'class="active"' ?> ><a href="./info.php<?php echo '?o1=h&o2=bd'?>" data-toggle="tooltip" title="username:plataformas password:01lbs10"><i class="fa fa-circle-o"></i>BD estadisticas</a></li>
             <li  <?php if ($o2=='backup') echo 'class="active"' ?> ><a href="./backups.php<?php echo '?o1=h&o2=backup'?>"><i class="fa fa-circle-o"></i>Backups</a></li>
             <li  <?php if ($o2=='logs') echo 'class="active"' ?> ><a href="./logs.php<?php echo '?o1=h&o2=logs'?>" data-toggle="tooltip" title="username:kyroslbs password:p4j4r0"><i class="fa fa-circle-o"></i>Logs</a></li>
             <li><a href="https://wiki.kyroslbs.com/wiki/index.php/Hawkeye" target="_blank"><i class="fa fa-book"></i> <span>Documentación</span></a></li>
@@ -419,7 +419,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
             </span>
           </a>
           <ul class="treeview-menu">
-            <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado_indra.php<?php echo '?o1=indra&o2=e'?>"><i class="fa fa-circle-o"></i>Estado</a></li>
+            <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado_indra.php<?php echo '?o1=indra&o2=e'?>" data-toggle="tooltip" title="username:nagiosadmin password:1ndr4"><i class="fa fa-circle-o"></i>Estado</a></li>
           </ul>
         </li>
         
@@ -434,7 +434,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
             </span>
           </a>
           <ul class="treeview-menu">
-            <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=mongo&o2=e'?>" data-toggle="tooltip" title="username:nagiosadmin password:1ndr4"><i class="fa fa-circle-o"></i>Estado</a></li>
+            <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado.php<?php echo '?o1=mongo&o2=e'?>" data-toggle="tooltip" title="username:plataformas password:01lbs10"><i class="fa fa-circle-o"></i>Estado</a></li>
             <li  <?php if ($o2=='stats') echo 'class="active"' ?> ><a href="./mongo_stats.php<?php echo '?o1=mongo&o2=stats'?>"><i class="fa fa-circle-o"></i>Estadísticas</a></li>
           </ul>
         </li>
@@ -547,7 +547,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
             </span>
           </a>
           <ul class="treeview-menu">
-            <li <?php if ($o2=='envios') echo 'class="active"' ?> ><a href="./servidor_correo.php?o1=mail&o2=envios" data-toggle="tooltip" title="username:admin password:m0rt4d3l0"><i class="fa fa-circle-o"></i>Envíos</a></li>
+            <li <?php if ($o2=='envios') echo 'class="active"' ?> ><a href="./servidor_correo.php?o1=mail&o2=envios" data-toggle="tooltip" title="username:plataformas password:01lbs10"><i class="fa fa-circle-o"></i>Envíos</a></li>
             <li <?php if ($o2=='stats') echo 'class="active"' ?> ><a href="./servidor_correo_stats.php<?php echo '?o1=mail&o2=stats'?>"><i class="fa fa-circle-o"></i>Estadísticas</a></li>
           </ul>
         </li>

@@ -157,22 +157,22 @@
         echo 'hawkeye.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=Hawkeye&style=overview';
       } 
       else if ($_GET["o1"]=='cp') {
-        echo 'hawkeye.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=CORREOS-Pre-production&style=overview';
+        echo 'oficina.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=CORREOS-Pre-production&style=overview';
       } 
       else if ($_GET["o1"]=='kp') {
-        echo 'hawkeye.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=KYROS-Pre-production&style=overview';
+        echo 'oficina.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=KYROS-Pre-production&style=overview';
       } 
       else if ($_GET["o2"]=='e-mysql') {
-        echo 'kyros.es:8443/cgi-bin/nagios3/status.cgi?hostgroup=BBDD&style=detail';
+        echo 'www.kyros.es/cgi-bin/nagios3/status.cgi?hostgroup=BBDD&style=detail';
       } 
       else if ($_GET["o2"]=='e-colas') {
-        echo 'kyros.es:8443/cgi-bin/nagios3/status.cgi?hostgroup=COLAS&style=detail';
+        echo 'www.kyros.es/cgi-bin/nagios3/status.cgi?hostgroup=COLAS&style=detail';
       } 
       else if ($_GET["o1"]=='k') {
-        echo 'kyros.es:8443/cgi-bin/nagios3/status.cgi?hostgroup=KYROS-Production&style=detail';
+        echo 'www.kyros.es/cgi-bin/nagios3/status.cgi?hostgroup=KYROS-Production&style=detail';
       } 
       else if ($_GET["o1"]=='d') {
-        echo 'kyros.es:8443/cgi-bin/nagios3/status.cgi?hostgroup=KYROS-Demos&style=detail';
+        echo 'www.kyros.es/cgi-bin/nagios3/status.cgi?hostgroup=KYROS-Demos&style=detail';
       } 
       else if ($_GET["o1"]=='s') {
         echo 'kyros.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=SUMO-Production&style=overview';
@@ -193,10 +193,10 @@
         echo 'hawkeye.kyroslbs.com/pnp4nagios/index.php/graph?host=raspberry&srv=Sensor-trasero';
       } 
       else if ($_GET["o1"]=='mongo') {
-        echo 'kyros.es:8443/cgi-bin/nagios3/status.cgi?hostgroup=KYROSVIEW-Production&style=detail';
+        echo 'www.kyros.es/cgi-bin/nagios3/status.cgi?hostgroup=KYROSVIEW-Production&style=detail';
       } 
       else if ($_GET["o1"]=='indra') {
-        echo 'kyros.es:8443/cgi-bin/nagios3/status.cgi?hostgroup=KYROSVIEW-Production&style=detail';
+        echo 'kyros.es/cgi-bin/nagios3/status.cgi?hostgroup=KYROSVIEW-Production&style=detail';
       } 
       else {
         echo 'hawkeye.kyroslbs.com/cgi-bin/nagios3/status.cgi?hostgroup=all';
