@@ -26,6 +26,7 @@ $csvKyrosFile = file('./counters/kyros.csv');
 $csvDemosFile = file('./counters/demos.csv');
 $csvItFile = file('./counters/it.csv');
 $csvIndraFile = file('./counters/indra.csv');
+$csvSonarFile = file('./counters/sonarqube.csv');
 
 $dataHawkeye = [];
 foreach ($csvHawkeyeFile as $line) {
@@ -63,6 +64,10 @@ $dataIndra = [];
 foreach ($csvIndraFile as $line) {
   $dataIndra[] = str_getcsv($line, $delimiter = ";" );              
 }
+$dataSonar = [];  
+foreach ($csvSonarFile as $line) {
+  $dataSonar[] = str_getcsv($line, $delimiter = ";" );              
+}
 
 $hawkeye_ok = $dataHawkeye[0][0];
 $hawkeye_warning = $dataHawkeye[0][1]; 
@@ -99,6 +104,19 @@ $it_error = $dataIt[0][2];
 $indra_ok = $dataIndra[0][0];
 $indra_warning = $dataIndra[0][1]; 
 $indra_error = $dataIndra[0][2];
+
+$sonar_bug = $dataSonar[0][0];
+$sonar_vul = $dataSonar[0][1];
+$sonar_smell = $dataSonar[0][2];
+$sonar_dispatcher_bug = $dataSonar[1][0];
+$sonar_dispatcher_vul = $dataSonar[1][1];
+$sonar_dispatcher_smell = $dataSonar[1][2];
+$sonar_kyrosview_bug = $dataSonar[2][0];
+$sonar_kyrosview_vul = $dataSonar[2][1];
+$sonar_kyrosview_smell = $dataSonar[2][2];
+$sonar_kyrosapi_bug = $dataSonar[3][0];
+$sonar_kyrosapi_vul = $dataSonar[3][1];
+$sonar_kyrosapi_smell = $dataSonar[3][2];
 
 
 $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyros_ok  + $mongo_ok + $demos_ok + $it_ok + $indra_ok;
@@ -444,7 +462,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Kyros API</span>
               <span class="pull-right-container">
-              <small class="label pull-right bg-red"><?php
+              <!--small class="label pull-right bg-red"><?php
               $xml=simplexml_load_file("./counters/test-api-report.xml");
               $api_errors = $xml->testsuite[0]['errors'];
               $api_failures = $xml->testsuite[0]['skipped'];
@@ -456,7 +474,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
               ?></small>
               <small class="label pull-right bg-blue"><?php
               echo $api_ok;
-              ?></small>
+              ?></small-->
 
 
               <i class="fa fa-angle-left pull-right"></i>
@@ -485,7 +503,13 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
 
        <li class="treeview">
           <a href="#">
-            <i class="fa fa-share"></i> <span>Desarrollo</span>
+            <i class="fa fa-dashboard"></i> <span>Desarrollo</span>
+              <span class="pull-right-container">
+              <small class="label pull-right bg-red"><?php  if ($sonar_bug>0) echo $sonar_bug; ?></small>
+              <small class="label pull-right bg-yellow"><?php if ($sonar_vul>0) echo $sonar_vul; ?></small>
+              <small class="label pull-right bg-blue"><?php if ($sonar_smell>0) echo $sonar_smell; ?></small>
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -498,16 +522,65 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
                 </span>
               </a>
               <ul class="treeview-menu">
+                <li><a href="http://192.168.28.82:9000/dashboard?id=KyrosDispatcher" target="_blank">
+                  <small class="label pull-right bg-red"><?php  if ($sonar_dispatcher_bug>0) echo $sonar_dispatcher_bug; ?></small>
+                  <small class="label pull-right bg-yellow"><?php if ($sonar_dispatcher_vul>0) echo $sonar_dispatcher_vul; ?></small>
+                  <small class="label pull-right bg-blue"><?php if ($sonar_dispatcher_smell>0) echo $sonar_dispatcher_smell; ?></small>
+                  <i class="fa fa-circle-o"></i> Sonarqube</a>
+                </li>
                 <!--li <?php if ($o2=='readme') echo 'class="active"' ?> ><a href="./desarrollo.php?o1=dispatcher&o2=readme"><i class="fa fa-circle-o"></i>README</a></li-->
                 <li><a href="https://git.kyroslbs.com/git/?p=repository/kyrosview_dispatcher.git;a=blob_plain;f=README.md;hb=HEAD" target="_blank"><i class="fa fa-circle-o"></i> README</a></li>
                 <!--li><a href="https://git.kyroslbs.com/git/?p=repository/kyrosview_dispatcher.git;a=blob_plain;f=CHANGELOG.md;hb=HEAD" target="_blank"><i class="fa fa-circle-o"></i> CHANGELOG</a></li-->
                 <li <?php if ($o2=='readme') echo 'class="active"' ?> ><a href="./desarrollo.php?o1=dispatcher&o2=changelog"><i class="fa fa-circle-o"></i>CHANGELOG</a></li>
-
               </ul>
             </li>
           </ul>
-        </li>
+          <ul class="treeview-menu">
+            <li <?php if ($o1=='dispatcher') echo 'class="active"' ?> >
+              <a href="#"><i class="fa fa-circle-o"></i> KyrosView
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="http://192.168.28.82:9000/dashboard?id=KyrosDispatcher" target="_blank">
+                <li><a href="http://192.168.28.82:9000/dashboard?id=KyrosView" target="_blank">
+                  <small class="label pull-right bg-red"><?php  if ($sonar_kyrosview_bug>0) echo $sonar_kyrosview_bug; ?></small>
+                  <small class="label pull-right bg-yellow"><?php if ($sonar_kyrosview_vul>0) echo $sonar_kyrosview_vul; ?></small>
+                  <small class="label pull-right bg-blue"><?php if ($sonar_kyrosview_smell>0) echo $sonar_kyrosview_smell; ?></small>
+                  <i class="fa fa-circle-o"></i> Sonarqube</a>
+                </li>
+                <!--li <?php if ($o2=='readme') echo 'class="active"' ?> ><a href="./desarrollo.php?o1=dispatcher&o2=readme"><i class="fa fa-circle-o"></i>README</a></li-->
+                <li><a href="https://git.kyroslbs.com/git/?p=repository/kyrosview_dispatcher.git;a=blob_plain;f=README.md;hb=HEAD" target="_blank"><i class="fa fa-circle-o"></i> README</a></li>
+                <!--li><a href="https://git.kyroslbs.com/git/?p=repository/kyrosview_dispatcher.git;a=blob_plain;f=CHANGELOG.md;hb=HEAD" target="_blank"><i class="fa fa-circle-o"></i> CHANGELOG</a></li-->
+                <li <?php if ($o2=='readme') echo 'class="active"' ?> ><a href="./desarrollo.php?o1=dispatcher&o2=changelog"><i class="fa fa-circle-o"></i>CHANGELOG</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="treeview-menu">
+            <li <?php if ($o1=='dispatcher') echo 'class="active"' ?> >
+              <a href="#"><i class="fa fa-circle-o"></i> KyrosAPI
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="http://192.168.28.82:9000/dashboard?id=KyrosDispatcher" target="_blank">
+                <li><a href="http://192.168.28.82:9000/dashboard?id=KyrosView" target="_blank">
+                  <small class="label pull-right bg-red"><?php  if ($sonar_kyrosapi_bug>0) echo $sonar_kyrosapi_bug; ?></small>
+                  <small class="label pull-right bg-yellow"><?php if ($sonar_kyrosapi_vul>0) echo $sonar_kyrosapi_vul; ?></small>
+                  <small class="label pull-right bg-blue"><?php if ($sonar_kyrosapi_smell>0) echo $sonar_kyrosapi_smell; ?></small>
+                  <i class="fa fa-circle-o"></i> Sonarqube</a>
+                </li>
+                <!--li <?php if ($o2=='readme') echo 'class="active"' ?> ><a href="./desarrollo.php?o1=dispatcher&o2=readme"><i class="fa fa-circle-o"></i>README</a></li-->
+                <li><a href="https://git.kyroslbs.com/git/?p=repository/kyrosview_dispatcher.git;a=blob_plain;f=README.md;hb=HEAD" target="_blank"><i class="fa fa-circle-o"></i> README</a></li>
+                <!--li><a href="https://git.kyroslbs.com/git/?p=repository/kyrosview_dispatcher.git;a=blob_plain;f=CHANGELOG.md;hb=HEAD" target="_blank"><i class="fa fa-circle-o"></i> CHANGELOG</a></li-->
+                <li <?php if ($o2=='readme') echo 'class="active"' ?> ><a href="./desarrollo.php?o1=dispatcher&o2=changelog"><i class="fa fa-circle-o"></i>CHANGELOG</a></li>
+              </ul>
+            </li>
+          </ul>
 
+        </li>
 
         
         <li <?php if ($o1=='incidencias') echo 'class="active"' ?>>
