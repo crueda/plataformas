@@ -201,6 +201,22 @@ Highcharts.chart('container', {
             name: '06/17',
             y: 7848548,
             drilldown: 'Junio 2017'
+        }, {
+            name: '07/17',
+            y: 6640111,
+            drilldown: 'Julio 2017'
+        }, {
+            name: '08/17',
+            y: 6188390,
+            drilldown: 'Agosto 2017'
+        }, {
+            name: '09/17',
+            y: 6467811,
+            drilldown: 'Septiembre 2017'
+        }, {
+            name: '10/17',
+            y: 6860643,
+            drilldown: 'Octubre 2017'
         }
 
         ]
@@ -216,7 +232,7 @@ Highcharts.chart('container2', {
         text: 'Número de posiciones por mes'
     },
     xAxis: {
-        categories: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio']
+        categories: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre']
     },
     yAxis: {
         min: 0,
@@ -257,31 +273,31 @@ Highcharts.chart('container2', {
     },
     series: [{
         name: 'Kyros',
-        data: [9365529, 8936243, 8932990, 7356874, 8582359, 7848548],
+        data: [9365529, 8936243, 8932990, 7356874, 8582359, 7848548, 6640111, 6188390, 6467811, 6860643],
         stack: 'tracking'
     }, {
         name: 'Demos',
-        data: [173145, 151432, 272744, 1085654, 232095, 356648],
+        data: [173145, 151432, 272744, 1085654, 232095, 356648, 362873, 411560, 241918, 301289],
         stack: 'tracking'
     }, {
         name: 'Hawkeye',
-        data: [1678262, 1547549, 2069944, 1859005, 2039095, 1988308],
+        data: [1678262, 1547549, 2069944, 1859005, 2039095, 1988308,1679978, 1915145, 1954831, 1818079],
         stack: 'tracking'
     }, {
         name: 'Correos 1',
-        data: [2137390, 2076611, 2304516, 1846246, 2233172, 2244962],
+        data: [2137390, 2076611, 2304516, 1846246, 2233172, 2244962, 2505550,2917461,2809754, 2809754],
         stack: 'tracking'
     }, {
         name: 'Correos 2',
-        data: [1957136, 1870474, 2216982, 1734732, 2087210, 2059063],
+        data: [1957136, 1870474, 2216982, 1734732, 2087210, 2059063, 2301179,2619812, 2734334,2911597],
         stack: 'tracking'
     }, {
         name: 'Correos 3',
-        data: [2185789, 2044604, 2358187, 1862033, 2246849, 2234393],
+        data: [2185789, 2044604, 2358187, 1862033, 2246849, 2234393, 2532532, 3062769, 3144308, 3274941],
         stack: 'tracking'
     }, {
         name: 'Indra',
-        data: [0, 0, 0, 0, 6114, 10300],
+        data: [0, 0, 0, 0, 6114, 10300, 16965, 1517, 8072, 1151],
         stack: 'tracking'
     }]
 });
