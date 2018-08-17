@@ -26,6 +26,7 @@ $csvKyrosFile = file('./counters/kyros.csv');
 $csvDemosFile = file('./counters/demos.csv');
 $csvItFile = file('./counters/it.csv');
 $csvIndraFile = file('./counters/indra.csv');
+$csvSitFile = file('./counters/sit.csv');
 $csvSonarFile = file('./counters/sonarqube.csv');
 
 $dataHawkeye = [];
@@ -63,6 +64,10 @@ foreach ($csvItFile as $line) {
 $dataIndra = [];  
 foreach ($csvIndraFile as $line) {
   $dataIndra[] = str_getcsv($line, $delimiter = ";" );              
+}
+$dataSit = [];  
+foreach ($csvSitFile as $line) {
+  $dataSit[] = str_getcsv($line, $delimiter = ";" );              
 }
 $dataSonar = [];  
 foreach ($csvSonarFile as $line) {
@@ -104,6 +109,10 @@ $it_error = $dataIt[0][2];
 $indra_ok = $dataIndra[0][0];
 $indra_warning = $dataIndra[0][1]; 
 $indra_error = $dataIndra[0][2];
+
+$sit_ok = $dataSit[0][0];
+$sit_warning = $dataSit[0][1]; 
+$sit_error = $dataSit[0][2];
 
 $sonar_bug = $dataSonar[0][0];
 $sonar_vul = $dataSonar[0][1];
@@ -449,6 +458,21 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
             <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado_indra.php<?php echo '?o1=indra&o2=e'?>" data-toggle="tooltip" title="username:nagiosadmin password:1ndr4"><i class="fa fa-circle-o"></i>Estado</a></li>
           </ul>
         </li>
+
+        <li class="<?php if ($o1=='sit') echo 'active' ?> treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>SIT</span>
+              <span class="pull-right-container">
+              <small class="label pull-right bg-red"><?php  if ($sit_error>0) echo $sit_error; ?></small>
+              <small class="label pull-right bg-yellow"><?php if ($sit_warning>0) echo $sit_warning; ?></small>
+              <small class="label pull-right bg-green"><?php echo $sit_ok ?></small>
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado_sit.php<?php echo '?o1=sit&o2=e'?>" data-toggle="tooltip" title="username:plataformas password:01lbs10"><i class="fa fa-circle-o"></i>Estado</a></li>
+          </ul>
+        </li>
         
         <li class="<?php if ($o1=='mongo') echo 'active' ?> treeview">
           <a href="#">
@@ -493,6 +517,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
             </span>
           </a>
           <ul class="treeview-menu">
+            <li  <?php if ($o2=='stats') echo 'class="active"' ?> ><a href="./api_stats.php<?php echo '?o1=api&o2=stats'?>"><i class="fa fa-circle-o"></i>Estadísticas</a></li>
             <li <?php if ($o2=='test') echo 'class="active"' ?> ><a href="./test.php?o1=api&o2=test'"><i class="fa fa-circle-o"></i>Tests</a></li>
             <li  <?php if ($o2=='logs') echo 'class="active"' ?> ><a href="./logs.php<?php echo '?o1=api&o2=logs'?>" data-toggle="tooltip" title="username:kyroslbs password:p4j4r0"><i class="fa fa-circle-o"></i>Logs de accesos</a></li>
             <li><a href="https://<?php
@@ -717,7 +742,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
         </li-->
 
         <li class="header">Herramientas</li>
-        <li><a href="https://files.kyroslbs.com/downloads" target="_blank" data-toggle="tooltip" title="username:lbs password:01lbs10"><i class="fa fa-circle-o text-blue"></i> <span>Repositorio Apps</span></a></li>
+        <li><a href="https://files.kyroslbs.com/app" target="_blank" data-toggle="tooltip" title="username:lbs password:01lbs10"><i class="fa fa-circle-o text-blue"></i> <span>Repositorio Apps</span></a></li>
         <li><a href="https://jira.kyroslbs.com" target="_blank"><i class="fa fa-circle-o text-red"></i> <span>Jira</span></a></li>
         <li><a href="https://cloud.kyroslbs.com" target="_blank"><i class="fa fa-circle-o text-yellow"></i> <span>Cloud</span></a></li>
       </ul>

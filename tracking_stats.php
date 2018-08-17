@@ -84,6 +84,7 @@
     <!-- Main content -->
     <section class="content">
 
+<div id="container0" style="height: 280px"></div>
 <div id="container" style="height: 280px"></div>
 <div id="container2" style="height: 520px"></div>
 <div id="container3" style="height: 520px"></div>
@@ -104,6 +105,71 @@
   <!-- /.content-wrapper -->
 
 <script>
+
+    // Create the chart
+Highcharts.chart('container0', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Número de posiciones por semana en Kyros'
+    },
+    subtitle: {
+        text: ''
+    },
+    xAxis: {
+        type: 'category'
+    },
+    yAxis: {
+        title: {
+            text: 'Número de trackings'
+        }
+
+    },
+    legend: {
+        enabled: false
+    },
+    plotOptions: {
+        series: {
+            borderWidth: 0,
+            dataLabels: {
+                enabled: true,
+                format: '{point.y:,.0f}'
+            }
+        }
+    },
+
+    tooltip: {
+        headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+        pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:,.0f}</b> trackings<br/>'
+    },
+
+    series: [{
+        name: 'Semana',
+        colorByPoint: true,
+        data: [{
+            name: 'Semana 23',
+            y: 658489,
+            drilldown: '4 junio'
+        }, {
+            name: 'Semana 22',
+            y: 1758509,
+            drilldown: '28 mayo'
+        }, {
+            name: 'Semana 21',
+            y: 1667335,
+            drilldown: '21 mayo'
+        }, {
+            name: 'Semana 20',
+            y: 1623771,
+            drilldown: '14 mayo'
+        }
+
+        ]
+    }],
+ 
+});
+
 // Create the chart
 Highcharts.chart('container', {
     chart: {
@@ -217,7 +283,47 @@ Highcharts.chart('container', {
             name: '10/17',
             y: 6860643,
             drilldown: 'Octubre 2017'
+        }, {
+            name: '11/17',
+            y: 7137664,
+            drilldown: 'Noviembre 2017'
+        }, {
+            name: '12/17',
+            y: 6158792,
+            drilldown: 'Diciembre 2017'
+        }, {
+            name: '01/18',
+            y: 6816986,
+            drilldown: 'Enero 2018'
+        }, {
+            name: '02/18',
+            y: 6779013,
+            drilldown: 'Febrero 2018'
+        },
+      {
+            name: '03/18',
+            y: 6815054,
+            drilldown: 'Marzo 2018'
+        },
+        {
+            name: '04/18',
+            y: 6789309,
+            drilldown: 'Abril 2018'
+        },
+        {
+            name: '05/18',
+            y: 7482102,
+            drilldown: 'Mayo 2018'
+        },
+        {
+            name: '06/18',
+            y: 1148856,
+            drilldown: 'Junio 2018'
         }
+
+
+
+
 
         ]
     }],
