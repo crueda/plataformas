@@ -27,6 +27,7 @@ $csvDemosFile = file('./counters/demos.csv');
 $csvItFile = file('./counters/it.csv');
 $csvIndraFile = file('./counters/indra.csv');
 $csvSitFile = file('./counters/sit.csv');
+$csvFinanzautoFile = file('./counters/finanzauto.csv');
 $csvSonarFile = file('./counters/sonarqube.csv');
 
 $dataHawkeye = [];
@@ -73,6 +74,10 @@ $dataSonar = [];
 foreach ($csvSonarFile as $line) {
   $dataSonar[] = str_getcsv($line, $delimiter = ";" );              
 }
+$dataFinanzauto = [];  
+foreach ($csvFinanzautoFile as $line) {
+  $dataFinanzauto[] = str_getcsv($line, $delimiter = ";" );              
+}
 
 $hawkeye_ok = $dataHawkeye[0][0];
 $hawkeye_warning = $dataHawkeye[0][1]; 
@@ -114,6 +119,10 @@ $sit_ok = $dataSit[0][0];
 $sit_warning = $dataSit[0][1]; 
 $sit_error = $dataSit[0][2];
 
+$finanzauto_ok = $dataFinanzauto[0][0];
+$finanzauto_warning = $dataFinanzauto[0][1]; 
+$finanzauto_error = $dataFinanzauto[0][2];
+
 $sonar_bug = $dataSonar[0][0];
 $sonar_vul = $dataSonar[0][1];
 $sonar_smell = $dataSonar[0][2];
@@ -137,7 +146,7 @@ $sonar_dispatcher_correos_vul = $dataSonar[6][1];
 $sonar_dispatcher_correos_smell = $dataSonar[6][2];
 
 
-$services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyros_ok  + $mongo_ok + $demos_ok + $it_ok + $indra_ok;
+$services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyros_ok  + $mongo_ok + $demos_ok + $it_ok + $indra_ok + $sit_ok + $finanzauto_ok;
 ?>
 
 
@@ -474,6 +483,21 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
           </ul>
         </li>
         
+        <li class="<?php if ($o1=='sit') echo 'active' ?> treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Finanzauto</span>
+              <span class="pull-right-container">
+              <small class="label pull-right bg-red"><?php  if ($finanzauto_error>0) echo $finanzauto_error; ?></small>
+              <small class="label pull-right bg-yellow"><?php if ($finanzauto_warning>0) echo $finanzauto_warning; ?></small>
+              <small class="label pull-right bg-green"><?php echo $finanzauto_ok ?></small>
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li <?php if ($o2=='e') echo 'class="active"' ?> ><a href="./estado_finanzauto.php<?php echo '?o1=sit&o2=e'?>" data-toggle="tooltip" title="username:plataformas password:01lbs10"><i class="fa fa-circle-o"></i>Estado</a></li>
+          </ul>
+        </li>
+        
         <li class="<?php if ($o1=='mongo') echo 'active' ?> treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>KyrosView</span>
@@ -742,7 +766,7 @@ $services_ok = $hawkeye_ok + $correos_ok + $correospre_ok + $kyrospre_ok + $kyro
         </li-->
 
         <li class="header">Herramientas</li>
-        <li><a href="https://files.kyroslbs.com/app" target="_blank" data-toggle="tooltip" title="username:lbs password:01lbs10"><i class="fa fa-circle-o text-blue"></i> <span>Repositorio Apps</span></a></li>
+        <li><a href="https://files.kyroslbs.com/app/" target="_blank" data-toggle="tooltip" title="username:lbs password:01lbs10"><i class="fa fa-circle-o text-blue"></i> <span>Repositorio Apps</span></a></li>
         <li><a href="https://jira.kyroslbs.com" target="_blank"><i class="fa fa-circle-o text-red"></i> <span>Jira</span></a></li>
         <li><a href="https://cloud.kyroslbs.com" target="_blank"><i class="fa fa-circle-o text-yellow"></i> <span>Cloud</span></a></li>
       </ul>
